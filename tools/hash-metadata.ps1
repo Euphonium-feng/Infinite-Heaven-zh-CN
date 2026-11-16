@@ -10,7 +10,14 @@ $metadataPath = (Resolve-Path -LiteralPath $Metadata).Path
 $root = (Resolve-Path -LiteralPath $GameDir).Path
 [xml]$xml = Get-Content -LiteralPath $metadataPath -Raw
 
-foreach ($entry in $xml.ModEntry.FileEntries.FileEntry) {
+$fileEntriesNode = $xml.ModEntry.SelectSingleNode("FileEntries")
+if ($null -eq $fileEntriesNode) {
+  $entries = $xml.CreateElement("FileEntries")
+  [void]$xml.ModEntry.AppendChild($entries)
+  $fileEntriesNode = $entries
+}
+
+foreach ($entry in $fileEntriesNode.SelectNodes("FileEntry")) {
   $relative = $entry.FilePath.TrimStart("/").Replace("/", "\")
   $file = Join-Path $root $relative
   if (-not (Test-Path -LiteralPath $file)) {
@@ -20,7 +27,7 @@ foreach ($entry in $xml.ModEntry.FileEntries.FileEntry) {
 }
 
 $known = @{}
-foreach ($entry in $xml.ModEntry.FileEntries.FileEntry) {
+foreach ($entry in $fileEntriesNode.SelectNodes("FileEntry")) {
   $known[$entry.FilePath] = $true
 }
 foreach ($file in Get-ChildItem -LiteralPath (Join-Path $root "mod") -Recurse -File) {
@@ -29,7 +36,7 @@ foreach ($file in Get-ChildItem -LiteralPath (Join-Path $root "mod") -Recurse -F
   $entry = $xml.CreateElement("FileEntry")
   $entry.SetAttribute("FilePath", $relative)
   $entry.SetAttribute("ContentHash", (Get-FileHash -LiteralPath $file.FullName -Algorithm MD5).Hash)
-  [void]$xml.ModEntry.FileEntries.AppendChild($entry)
+  [void]$fileEntriesNode.AppendChild($entry)
   $known[$relative] = $true
 }
 
