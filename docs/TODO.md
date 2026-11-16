@@ -11,8 +11,8 @@
 
 ## 待完成
 
-- 创建公开 GitHub 仓库并推送。
-- 等待 GitHub Actions 构建成功。
+- 云构建已能编译 IHHook 并生成两个 `.mgsv`；当前只剩工作流收尾状态修正。
+- 等待修正后的 GitHub Actions 运行成功。
 - 下载制品并在 SnakeBite 中实机安装检查。
 
 ## 下一步
