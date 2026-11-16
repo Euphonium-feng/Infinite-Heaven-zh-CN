@@ -1,0 +1,62 @@
+param(
+  [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot)
+)
+
+$ErrorActionPreference = "Stop"
+$repo = (Resolve-Path -LiteralPath $RepoRoot).Path
+$file = Join-Path $repo "vendor\infinite-heaven\GameDir\mod\modules\InfLangProc.lua"
+$source = Get-Content -LiteralPath $file -Raw
+
+if ($source -notmatch 'InfChinese') {
+  $before = @'
+  -- Apply translated setting lists after all language tables are merged.
+  local settingsStr="Settings"
+  local languageCode=this.GetLanguageCode()
+  local langTable=InfLang[languageCode] or InfLang.eng
+'@
+  $after = @'
+  if InfChinese and InfChinese.modules then
+    InfLang.cht=InfLang.cht or {}
+    InfLang.help.cht=InfLang.help.cht or {}
+    for moduleName, moduleStrings in pairs(InfChinese.modules) do
+      for key, value in pairs(moduleStrings.eng or {}) do
+        InfLang.cht[key]=value
+      end
+      for key, value in pairs(moduleStrings.help or {}) do
+        InfLang.help.cht[key]=value
+      end
+    end
+  end
+
+  -- Apply translated setting lists after all language tables are merged.
+  local settingsStr="Settings"
+  local languageCode=this.GetLanguageCode()
+  local langTable=InfLang[languageCode] or InfLang.eng
+'@
+  if (-not $source.Contains($before)) {
+    throw "InfLangProc.lua merge anchor not found"
+  }
+  $source = $source.Replace($before, $after)
+  Set-Content -LiteralPath $file -Value $source -Encoding utf8
+}
+
+if ($source -notmatch 'ihChineseTranslation') {
+  $file = Join-Path $repo "vendor\infinite-heaven\GameDir\mod\modules\Ivars.lua"
+  $source = Get-Content -LiteralPath $file -Raw
+  $anchor = "this.startOffline={`r`n"
+  if (-not $source.Contains($anchor)) { throw "Ivars.lua anchor not found" }
+  $insert = @'
+this.ihChineseTranslation={
+  save=IvarProc.CATEGORY_EXTERNAL,
+  default=1,
+  range=Ivars.switchRange,
+  settingNames="set_switch",
+}
+
+'@
+  $source = $source.Replace($anchor, $insert + $anchor)
+  Set-Content -LiteralPath $file -Value $source -Encoding utf8
+}
+
+Copy-Item -LiteralPath (Join-Path $repo "patches\infinite-heaven\InfLangProc.lua") `
+  -Destination (Join-Path $repo "vendor\infinite-heaven\GameDir\mod\modules\InfLangProc.lua") -Force

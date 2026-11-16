@@ -1,0 +1,462 @@
+### InfAnimal.lua
+### InfAutoDoc.lua
+runAutoDoc = AutoDoc creates the Features and Options txt and html in docs folder, and profiles/All_Options_Example based on the current menus and options, including any added by other mod IH modules. It will overwrite any existing files.
+### InfAvatar.lua
+avatar_load = Load avatar from MGS_TPP\mod\avatars
+avatar_save = Save avatar to MGS_TPP\mod\avatars
+### InfBossEvent.lua
+bossEventMenu = [[The Boss Event system manages random attacks from different boss types and their subTypes.
+The system will choose a subType for each bossType for the event.
+(*multiple boss types may cause crashes depending on what other game features are loaded).
+TppParasite2 has ARMOR and MIST Skull subTypes.
+TppBossQuiet2 has CAMO Skull.]]
+bossEvent_repeatEvents = When a boss event ends the countdown to another will start.
+bossEvent_combinedAttacks = [[WARNING: This may be unstable depending on what other IH features are loaded.
+Multiple boss types can be chosen for an attack. 
+Though a boss type may randomly not be chosen. 
+The normal selection of one sub type per boss type will be chosen.
+FACTION = Only those of the same faction in the addon info file will be in the selection (see MGS_TPP\mod\bosses)]]
+bossEvent_timeOut = [["When an even is active the player can 'escape' the event after the Timeout period, if further away from the last player focus point (not visualized, it's different from the alert point on map) than Escape distance. 
+Damage to and from bosses will reset the timeout and focus point.]]
+bossEvent_escapeDistance = [["When an even is active the player can 'escape' the event after the Timeout period, if further away from the last player focus point (not visualized, it's different from the alert point on map) than Escape distance. 
+Damage to and from bosses will reset the timeout and focus point.]]
+bossEvent_minBossCount = The number of bosses for a particular type is chosen between a random min,max. Min 0 means theres a chance of that subType not being selected.
+bossEvent_maxBossCount = Whether to use the maximum number of bosses defined by the boss subType, or a random amount up to max. Note: Only really applies to TppBossQuiet2 as the rest have hard coded counts.
+bossEvent_enableFREE = Skulls attack at a random time (in minutes) between Skull attack min and Skull attack max settings.
+bossEvent_msfRate = Percentage chance a zombified soldier will have 'lost MSF' behavior
+bossEvent_enableMB_ALL = Skulls attack at a random time (in minutes) between Skull attack min and Skull attack max settings.
+bossEvent_quarantine = Trigger boss attacks at Quarantine Platform by consecutively damaging them inside the cages 45 times.
+### InfBossTppBossQuiet2.lua
+bossMenuName = In the base game TppBossQuiet2 is used for the both Quiet and 'Camo' Sniper Parasite Skull units.
+### InfBossTppParasite2.lua
+bossMenuName = In the base game TppParasite2 is used for the Armor and Mist Parasite Skull units.
+### InfBossTppVolgin2.lua
+### InfBuddy.lua
+buddyChangeEquipVar = Buddy equiment is changed to selected setting when [ACTION] is pressed.
+### InfCamera.lua
+cam_aroundMenu = Lets you move a detached camera, use the main movement stick/keys in combination with other keys/buttons to adjust camera settings, including Zoom, aperture, focus distance.
+adjustCameraUpdate = [[Turning this on sets AroundCam mode to Free cam, and lets you use keys/buttons to adjust the options.
+  Move cam with normal move keys   
+  
+  [DASH] (Shift or Left stick click) to move up  
+  [SWITCH_ZOOM](Middle mouse or Right stick click) to move down  
+  
+  Hold the following and move left stick up/down to increase/decrease the settings:  
+  
+  [FIRE] - Zoom/focal length   
+  [RELOAD] - Aperture (DOF)  
+  [STANCE] - Focus distance (DOF)   
+  [ACTION] - Cam move speed  
+  [AIM] - Camera orbit distance  
+  
+  Or hold [BINOCULARS] and press the above to reset that setting.  
+  
+  Hold [BINOCULARS] and press [DASH] to move free cam position to the player position]]
+cameraMode = Lets you turn on freecam, if Adjust-cam mode is off 
+moveScale = Movement speed scale when in Adjust-cam mode
+setStageBlockPositionToFreeCam = Sets the map loading position to the free cam position.
+updateStageBlockLoadPositionToCameraPosition = Sets the map loading position to the free cam position as it moves. Warning: As the LOD changes away from player position your player may fall through the terrain.
+disableCamText = Disables Adjust-cams repeating announce log of the current 'hold button to adjust' settings.
+### InfCameraPlayCam.lua
+playCamMenu = An alternate camera than the one used by freecam. WARNING: is sometimes unstable and may crash the game.
+playCameraNonAnimation = Starts PlayCam with current settings. Changing any setting also automatically starts the PlayCam.
+cam_selectListObject = Selects game object for camerat to target. You can add more game objects via the Objects menu in the main Mission menu.
+cam_focalLength = DOF variable
+cam_focusDistance = DOF variable
+cam_aperture = DOF variable
+cam_isFollowPos = Follows position of Camera target. Overrides Follow Rotation.
+cam_isFollowRot = Follows rotation of Camera target.
+cam_offsetTargetX = Adjusts X axis of camera target
+cam_offsetTargetY = Adjusts Y axis of camera target
+cam_offsetTargetZ = Adjusts Z axis of camera target
+cam_offsetPosX = Adjusts X axis of camera position
+cam_offsetPosY = Adjusts Y axis of camera position
+cam_offsetPosZ = Adjusts Z axis of camera position
+cam_followTime = Time in seconds before camera follow turns off. See Follow Position and Follow Rotation.
+cam_followDelayTime = Delay before camera follows. Acts more like interpolation time than one-off. See Follow Position and Follow Rotation.
+cam_timeToSleep = Time in seconds before PlayCam turns off. Set to high number if you don't want it to end.
+cam_fitOnCamera = Unknown
+cam_timeToStartToFitCamera = For Fit on camera.
+cam_fitCameraInterpTime = Interpolation time for Fit on camera.
+cam_diffFocalLengthToReFitCamera = Fit diff focal length
+cam_callSeOfCameraInterp = Unknown
+cam_useLastSelectedIndex = Unknown
+cam_isCollisionCheck = Checks between camera and target and moves camera in if there is something in the way.
+### InfCamHook.lua
+camhookMenu = Uses IHHook to adjust the player camera focal length.
+ Same method as the FOV mod d3d11.dll
+camhook_focalLength_NORMAL = Only updates after changing cam mode.
+Focal lengths between modes not equivalent (some other factor being applied)
+Lower focal length = wider FOV,
+Higher focal length = lower FOV
+camhook_focalLength_AIMING = Only updates after changing cam mode.
+Focal lengths between modes not equivalent (some other factor being applied)
+Lower focal length = wider FOV,
+Higher focal length = lower FOV
+camhook_focalLength_HIDING = Only updates after changing cam mode.
+Focal lengths between modes not equivalent (some other factor being applied)
+Lower focal length = wider FOV,
+Higher focal length = lower FOV
+camhook_focalLength_CQC = Only updates after changing cam mode.
+Focal lengths between modes not equivalent (some other factor being applied)
+Lower focal length = wider FOV,
+Higher focal length = lower FOV
+camhook_ApplyFOV = Applies FOV(degrees) proportionally to the different cam mode focal length options.
+### InfChimera.lua
+chimeraMenu = Chimera is MGSVs weapon cusomization system, this menu lets you save/load from the Customize > Weapons idroid menu
+chimera_weaponCategory = Changes which weapon category the slots refer to.
+chimera_loadSlot1 = Load chimera from MGS_TPP\mod\chimeras to specified slot
+chimera_saveSlot1 = Save chimera of specified slot for to MGS_TPP\mod\chimeras 
+### InfDebug.lua
+vscodeMenu = Commands to generate files to support using vscode with a mgsv project.
+debug_WriteVscodeHintOnTitle = Runs WriteVscodeHint when loading has reached Title
+WriteVscodeHint = Writes GameDir/mod/vscode/vscode_hint-mod.lua,vscode_hint-base_game.lua , writes a hint files for vscode lua language server extension of mod lua files loaded.
+debug_WriteVarsOnSave = Runs WriteVars on IH save (which includes close IH menu)
+WriteVars = Writes vars, svars, gvars, mvars to GameDir/mod/vscode/, for manual perusal or use with vscode
+### InfDebugStuff.lua
+debugPrintMenu = Dump various things to log
+selectSpeechSoldier = Selects a soldier from Object list (see Objects menu) as a target for debug_CallVoice, debug_CallConversation
+debug_CallConversation = Requires a valid selectSpeechSoldier, selectSpeechSoldier2 of a nearby soldier
+### InfDemo.lua
+mbDemoSelection = Forces or Disables cutscenes that trigger under certain circumstances on returning to Mother Base
+forceDemoAllowAction = Prevents disabling of player actions during cutscene, but most cutscenes require the Disable cutscene camera mod from the IH files page.
+### InfEmblem.lua
+emblem_load = Load emblem from MGS_TPP\mod\emblems . After loading emblem you must go to the normal Customize emblem system and OK it for it to reapply it. It will also regenerate it next time game is started.
+emblem_save = Save emblem to MGS_TPP\mod\emblems
+### InfEneFovaIvars.lua
+customSoldierTypeFREE = Override the soldier type of enemy soldiers in Free Roam.
+New soldier types can be added via the bodyInfo addon system.
+customSoldierTypeMISSION = WARNING: Unique soldiers in the mission are likely to either be the default body from the selected custom soldier, or have visual issues if there isn't one.
+customSoldierTypeMB_ALL = New body types can be added via the bodyInfo addon system.
+customSoldierTypeFemaleMB_ALL = New body types can be added via the bodyInfo addon system.
+### InfEnemyPhase.lua
+phaseMenu = Adjust minimum and maximum alert phase for enemy Command Posts
+phaseUpdate = The Minimum, Maximum, and Don't downgrade phase settings are applied on at every update tick according to the Phase update rate and random variation settings
+minPhase = PHASE_SNEAK - not alert, PHASE_CAUTION - alert, PHASE_EVASION - one step down from combat alert, PHASE_ALERT - combat alert
+maxPhase = PHASE_SNEAK - not alert, PHASE_CAUTION - alert, PHASE_EVASION - one step down from combat alert, PHASE_ALERT - combat alert
+phaseUpdateRate = Rate that the CPs phase is adjusted to the minimum and maxium settings.
+phaseUpdateRange = Random variation of update rate
+phase_modification_enabled = Phase modifications enabled
+soldierAlertOnHeavyVehicleDamage = Does not require phase modifications setting to be enabled. The enemy reactions to heavy vehicle attack in the default game are lacking, you can kill someone and they'll act as if it's an unsourced attack. This option changes phase of soldiers command post on damaging the soldier. Setting it to ALERT recommended.
+printPhaseChanges = Displays when phase changes.
+### InfEquip.lua
+customEquipMenu = Allow soldiers to have equipment from other locations/types, including DD equipment usually only used on FOB. Soldiers are assigned a random weapon of the type the prep system assigns them, so you'll see more weapon variation
+itemDropChance = Chance soldier will drop an item when eliminated.
+putEquipOnTrucks = Puts a random piece of equipment on the back of patrol trucks.
+soldierEquipGrade_MIN = A grade will be chosen between MIN and MAX at mission start. Note: Equip grade 3 is the minimum grade that has all types of weapons.
+allowUndevelopedDDEquip = Whether to limit the selection to equipment you have developed or allow all equipment. Restriction does not apply to Enemies using DD weapons.
+weaponTableStrength = The game weapon tables have Normal and Strong lists that the Enemy prep system will pick from, this setting allows you to select either, or combine them.
+weaponTableDD = Add the DD weapons table that's usually used for FOB, the following grade and developed settings control how this table is built
+weaponTableGlobalFREE = Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.
+weaponTableGlobalMISSION = Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.
+weaponTableGlobalMB_ALL = Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.
+### InfFovaIvars.lua
+playerType = Change main player type. WARNING: Ocelot and Quiet player types have side effect when used due to trying to work around them being restricted to FOB. The Pause menu will be disabled and the game may hit an infinite load if you complete a mission while they are used. Use nexusmods.com/metalgearsolidvtpp/mods/518 by BobDoleOwndU to fix sound issues with using these player types.
+skipDevelopChecks = Allows items that haven't been developed to be selected.
+### InfFulton.lua
+fulton_autoFultonFREE = Extraction team will recover enemies you have neutralized after you've traveled some distance from them (usually to next command post), using the same success rate as manual fultoning. This lets you do low/no fulton runs without having to sacrifice the recruitment side of gameplay.
+fulton_recoverCritical = Requires Extraction team option enabled. Extraction team will recover critically shot soldiers (ie 'dead' soldiers). Depending on medical section success. This lets you play with more lethal weapons while still keeping up with the recruitment gameplay.
+fultonSuccessMenu = Adjust the success rate of fultoning
+fultonMbSupportScale = Scales the success bonus from mother base support section (which itself scales by section level). In the base game this is mostly used to counter weather penalty.
+fultonMbMedicalScale = Scales the success bonus from mother base medical section (which itself scales by section level). In the base game this used to counter injured target penalty
+disableFulton = Disables fulton at the player-action level
+fultonVariationRange = Subtracts the purcentage from fulton success in a periodic fashion.
+fultonVariationInvRate = Inverse rate (higher slower) of fulton variation cycle
+### InfGameEvent.lua
+gameEventChanceMB = Chance to randomly trigger an IH event on returning to MB. (See 'Trigger random IH event')
+gameEventChanceFREE = Chance to randomly trigger an IH event on starting Free roam. (See 'Trigger random IH event')
+gameevent_chanceHUNTED = Chance to start event Hunted on starting free roam. Hunted: Sets the enemy to combat alert every 15-45 seconds (this also sets the player spotted position right on you), and also disables heli landing zones in a 2k radius from your start position, so you'll have to travel if you want to 'get out'. 
+gameevent_chanceCRASHLAND = Chance to start event Crashland on starting free roam. Crashland: Starts you on foot in at a random start point and randomly selects OSP options - cleared primary, secondary, back weapons, items, support items.
+gameevent_chanceLOST_COMS = Chance to start event Lost-coms on starting free roam. Disables most mother base support menus and disables all heli landing zones except from main bases/towns. 
+gameevent_chanceTRAINING = Chance to randomly trigger DD Training wargame on returning to MB.
+gameevent_chanceINVASION = Chance to randomly trigger an Invasion event on returning to MB.
+gameevent_chanceZOMBIE_DD = Chance to randomly trigger DD Infection outbreak on returning to MB.
+gameevent_chanceZOMBIE_OBLITERATION = Chance to randomly trigger Zombie Obliteration (non DD) on returning to MB.
+eventsMenu = [[Events are temporary combinations of IH settings for free roam and mother base.  
+Free roam events (can stack):  
+Crashland: Starts you on foot in at a random start point and randomly selects OSP options - cleared primary, secondary, back weapons, items, support items.  
+Lost-coms: Disables most mother base support menus and disables all heli landing zones except from main bases/towns.  
+Hunted: Sets the enemy to combat alert every 15-45 seconds (this also sets the player spotted position right on you), and also disables heli landing zones in a 2k radius from your start position, so you'll have to travel if you want to 'get out'.  
+MB events (only one active):  
+DD Training wargame,  
+Soviet attack,  
+Rogue Coyote attack,  
+XOF attack,  
+DD Infection outbreak,  
+Zombie Obliteration (non DD)  ]]
+mbWarGamesProfile = Profiles that sets many of the wargames event settings, but just the underlying categories, see 'MB event random trigger chance' actually themed/flavorful versions
+### InfHelicopter.lua
+setLandingZoneWaitHeightTop = Set the height at which the heli hovers in wait mode (not landing mode).
+defaultHeliDoorOpenTime = Time from mission start to you opening the door to sit on the side. You can set this lower or 0 to do it immediately, or longer to ride the heli in first person. Press [STANCE] to manually open the door.
+disablePullOutHeli = Prevents heli from leaving when you jump on-board, so you can use the gun from a stationary position, or just change your mind and jump out again. Press [STANCE] while in the heli to get it to pull-out again (or use menu). NOTE: Disable pull-out will prevent the mother base helitaxi selection menu, press [STANCE] to re-enable or use the mod menu.
+requestHeliLzToLastMarkerAlt = Sends Support heli to Landing Zone closest to the last placed user marker while riding it.
+forceExitHeliAlt = Lets you exit the helicopter while riding it, mind the fall.
+disableHeliAttack = Stops support heli from engaging targets.
+### InfHeliSpace.lua
+heliSpace_forceSelect = Mostly a debugging feature, but also lets you overide what helispace is loaded in case you have a favorite helispace addon.
+heliSpace_loadOnSelectLandPoint = [[When choosing the landing zone for a mission the helispace for that mission will be loaded before entering mission prep.
+ADDON will only load helispace if theres a helispace addon defined for that mission or location.
+ALL will load the base game helispaces for location 
+(there is actually a base game helispace for each major location, it's just not normally noticable since all the spaces inside helispace block off the view of the terrain)]]
+heliSpaceSettingsMenu = [[Settings for helispace (ACC), including helispace addon settings. 
+Helispace is the mission that loads that has the title, ACC, weapon and vehicle customisation space and mission prep space.
+IH also has an addon system that lets new helispaces be added.
+What helispace to load is usually done on initial startup of game and when returning to ACC from mission, but also choose landing zone when the option is on.
+Helispace and mission addons define what helispace is wanted for what mission or location and will be chosen.
+]]
+missionPrepFlagsMenu = Only affects the mission-prep screen, not the in-mission equivalents.
+heliSpace_SkipMissionPreparetion = Go straight to mission, skipping the mission prep screen.
+heliSpace_NoBuddyMenuFromMissionPreparetion = Prevents selection of buddies during mission prep.
+heliSpace_NoVehicleMenuFromMissionPreparetion = WARNING: Selecting a vehicle if the mission does not have player vehicle support means there will be no vehicle recovered on mission exit (effecively losing the vehicle you attempted to deploy).
+heliSpace_DisableSelectSortieTimeFromMissionPreparetion = Only allows ASAP at mission prep
+### InfHero.lua
+setDemon = Adds 999999 points to demon score
+removeDemon = Subtracts 999999 points from demon score
+hero_dontSubtractHeroPoints = Actions that usually subtract hero points don't.
+hero_dontAddOgrePoints = Actions that usually add demon points don't.
+hero_heroPointsSubstractOgrePoints = Actions that add hero points subtract the same amount of demon points
+### InfInterrogation.lua
+enableInfInterrogation = Adds some interrogations to soldiers: Travel plan of foot patrol, Location of wild card soldier, Location of walker gear. Inter CP quest: Sets up pairs of soldiers in different cps, interrogating one will give CP of other, interrogating him will give a reward of unprocessed resources (around a couple of containers worth) or a skull soldier/parasite on the next extraction (reaching checkpoint etc)
+### InfLang.lua
+titleAbortToHeliSpace = Pressing Continue will continue to ACC instead of mission.
+simple_help = [[Navigate menu: Arrow keys or Dpad.  
+Activate or advance setting: Press Right key or Dpad or double-click option.  
+  ]]
+generalHelpItem = [[General Help:  
+Press F2 to toggle mouse cursor.  
+Navigate menu: Arrow keys or Dpad.  
+Activate or advance setting: Press Right key or Dpad or double-click option in menu.  
+Search for settings: Click on the setting text below the menu list, type what you want and press Enter.  
+Change a numerical setting: Click on the setting value below the menu list, type what you want and press Enter.  
+Menu item type symbols:  
+`>` Sub-menu  
+`>>` Command  
+`>]` Command that closes menu when done  
+`<>` Option that applies change when setting selectected/cycled to  
+`>!` Option that has an action activated by pressing [ACTION]  
+Some settings apply when selected or just set the value when the a feature is triggered by another command or during mission load.  
+See ReadMe or Features and Options for more info.  
+]]
+debugMode = Switches on logging messages to ih_log.txt (at the cost of longer load times) and enables the announce-log during loading.
+startOffline = Start the game in offline mode, this also removes the connect option from the pause menu.
+enableQuickMenu = Shortcut key combinations to activate IH features. See Infinite Heaven readme or InfQuickMenuDefs.lua in mod folder.
+debugFlow = Logs some script execution flow, requires Debug IH mode to be on.
+debugMessages = Logs game message system, requires Debug IH mode to be on. ALL (same as pre r262 'On') logs all messages sent, RECIEVED only logs those that have modules subscribed to the message.
+debugMessagesVerbose = Verbosely logs unknown messages. Disable to improve performance with logging and add-ons that use custom messages that don't register to InfLookup.
+skipLogos = Stops the konami/kjp/fox/nvidia logos from showing.
+selectProfile = [[Selects a profile from MGS_TPP\mod\profiles folder. Press the [ACTION] button to apply the settings of the selected profile.]]
+resetSelectedProfile = Sets the options described in the selected profile to their default setting.
+saveToProfile = [[Saves current IH settings to UserSaved profile at MGS_TPP\profiles\UserSaved.lua.]]
+enableIHExt = IHExt is a windows program that acts as an gui overlay if MGSV is running in Windowed Borderless.
+menu_enableHelp = Shows help text for some options.
+menu_disableToggleMenuHold = Disables the legacy hold [EVADE] to open menu, the two button menu combo [ZOOM_CHANGE] + [DASH] will still work.
+menu_enableCursorOnMenuOpen = Automatically enable mouse cursor when IHMenu opens. The cursor can also be seperately toggled with F2
+sys_increaseMemoryAlloc = Experimental: Increses the memory values for various allocation variables/functions
+showStyleEditor = Toggles the IMGui Style Editor to load, change and save the style for IHHook IMGUI.
+systemMenuMission = See IH system menu while in ACC for full options.
+dEBUG_RandomizeAllIvars = WARNING: Sets all settings across all of IH to a random value, which may include WIP, commented out or abandoned options. May also include  Back up your save before using this. This is used as debug coverage to see if anything breaks and not intended for general use.
+dEBUG_SetIvarsToNonDefault = WARNING: Sets all settings across all of IH to a non default value. Back up your save before using this. This is used as debug coverage to see if anything breaks.
+### InfMainTppIvars.lua
+playerRestrictionsMenu = Settings to customize the game challenge, including subsistence and OSP.
+disableLzs = Disables Assault Landing Zones (those usually in the center of a base that the support heli will circle before landing), or all LZs but Assault LZs
+disableHeadMarkers = Disables markers above soldiers and objects
+disableWorldMarkers = Disables objective and placed markers
+disableXrayMarkers = Disables the 'X-ray' effect of marked soldiers. Note: Buddies that mark still cause the effect.
+disableSupportMenuMenu = Disables mission support menus in iDroid
+ospMenu = Allows you to enter a mission with primary, secondary, back weapons set to none, individually settable. Separate from subsistence mode (but subsistence uses it). LEGACY You should set equip none via mission prep instead.
+fovaModMenu = Form Variation support for player models (requires model swap to support it), the fova system is how the game shows and hides sub-models.
+changeCpTypeMISSION = Changes Command Post Type, which controls the language spoken by CP and HQ.
+WARNING: Will break subtitles.
+WARNING: some CP types don't have responses for certain soldier call-ins for different languages.
+changeCpSubTypeFREE = Randomizes the CP subtype - PF types in middle Affrica, urban vs general camo types in Afghanistan
+changeCpSubTypeMISSION = Randomizes the CP subtype - PF types in middle Affrica, urban vs general camo types in Afghanistan
+mbPrioritizeFemale = By default the game tries to assign a minimum of 2 females per cluster from the females assigned to the clusters section, All available and Half will select females first when trying to populate a MB section, None will prevent any females from showing on mother base
+markersMenu = Toggles for marking in main view. Does not effect marking on iDroid map
+mbEnableBuddies = Does not clear D-Horse and D-Walker if set from deploy screen and returning to mother base, they may however spawn inside building geometry, use the call menu to have them respawn near. Also allows buddies on the Zoo platform, now you can take D-Dog or D-Horse to visit some animals.
+quietMoveToLastMarker = Sets a position similar to the Quiet attack positions, but can be nearly anywhere. Quiet will still abort from that position if it's too close to enemies.
+randomizeMineTypes = Randomizes the types of mines within a minfield from the default anti-personel mine to gas, anti-tank, electromagnetic. While the placing the mines may not be ideal for the minetype, it does enable OSP of items that would be impossible to get otherwise.
+additionalMineFields = In the game many bases have several mine fields but by default only one is enabled at a time, this option lets you enable all of them. Still relies on enemy prep level to be high enough for minefields to be enabled.
+disableSpySearch = Stops the Intel teams enemy spotting audio notification and indication on the idroid map.
+disableHerbSearch = Stops the Intel teams plant spotting audio notification and indication on the idroid map. Since the variable is only read once on game startup this setting requires a game restart before it will activate/deactivate.
+quietRadioMode = Changes the music track of the radio played in Quiets cell on the medical platform in mother base.
+dontOverrideFreeLoadout = Prevents equipment and weapons being reset when going between free-roam and missions.
+mbqfEnableSoldiers = Normally game the Quarantine platform soldiers are disabled once you capture Skulls. This option re-enables them.
+mbEnableLethalActions = Enables lethal weapons and actions on Mother Base. You will still get a game over if you kill staff.
+customizeMenu = Options for saving/loading to items in the idroid Customize menu
+### InfMBAssets.lua
+mbShowHuey = Shows Huey in BattleGear hangar and in cutscenes even before he's arrived or after he's left story-wise.
+### InfMBGimmick.lua
+enableFultonAlarmsMB = Enables anti fulton theft alarms on containers and AA guns. Only partially working, will only trigger alarm once.
+enableIRSensorsMB = Enable IR sensor gates. Only partially working, will only trigger alarm once, and will only show one or no beam.
+### InfMBStaff.lua
+addPlayerStaff = Add the last sortie selected DD member to the Mother Base priority staff list to have them appear on MB
+removePlayerStaff = Removes the last sortie selected DD member to the Mother Base priority staff list
+addMarkerStaff = Adds the most recently marked staff member to the MB priority list
+removeMarkerStaff = Removes the most recently marked staff member from the MB priority list
+clearPriorityStaff = Clears MB staff priority list entirely
+mbIncreaseStaffSaluteReactions = Adds additional reactions from MB staff when they salute you.
+### InfMBVisit.lua
+revengeDecayOnLongMbVisit = Spend a number of game days (break out that cigar) during a mother base visit and enemy prep levels will decrease on leaving. Currently reduces after 3 days (stacking), reduces the same as chicken hat 
+mbMoraleBoosts = Gives a staff-wide morale boost on having a number of soldiers salute (most of a cluster), visiting a number of clusters (with at least one salute on each), or staying in base a number of game days (break out that cigar). Must leave the base via heli for it to apply.
+### InfMissionQuest.lua
+missionQuestMenu = Change settings related to side ops in story missions.
+enableMissionQuest = Enable side ops in missions using a hand-picked selection of side ops in specific story missions.
+forceEnableMissionAllQuest = WARNING: The side ops enabled with this option can cause instability or simply won't be clearable. Enables all side ops to be included in all story missions when using the 'Enable side ops in missions' setting.
+### InfMotion.lua
+motionsMenu = Play different animations on player. A motion group may contain several related animations (usually lead-in, idle, lead-out)
+motionGroupIndex = Press [ACTION] to play the selected animation.
+motionGaniIndex = Press [ACTION] to play the selected animation.
+motionHold = Holds motion, requires stop motion to stop.
+motionRepeat = Repeat motion at end, some animations don't support this.
+motionWarpToOrig = Since some animations move player position through geometry this may help to recover
+stopMotion = Use to stop motions with motion hold or motion repeat.
+playCurrentMotionCommand = Closes menu and plays current selected motion.
+### InfNPC.lua
+mbAdditionalNpcs = Adds different NPCs standing around mother base, including ground crew, researchers and Miller.
+### InfNPCHeli.lua
+attackHeliPatrolsMB = Spawns some npc attack helis that roam around mother base.
+supportHeliPatrolsMB = Spawns some npc support helis that roam around mother base.
+attackHeliPatrolsFREE = Allows multiple enemy helicopters that travel between larger CPs. Due to limitations their current position will not be saved/restored so may 'dissapear/appear' on reload.
+attackHeliFovaFREE = Combined appearance and health
+### InfNPCOcelot.lua
+mbEnableOcelot = Enables Ocelot to roam the command platform.
+mbOcelotRailMode = Makes Ocelot observe Mother Base from a railing on the command platform. Start will have him appear there since the start of your visit, and Leave will have him appear when you take off by helicopter.
+mbOcelotRailVoice = Makes Ocelot greet you when approached while he's on a railing.
+### InfObjects.lua
+objectsMenu = For adding game object names in the game to a Objects List, and writing/loading them to files.
+addMarkerObjects = Adds current marked game object names to objects list, objects list can be written to file with Write Objects List command.
+writeObjects = Writes Objects List to file in MGS_TPP\mod\
+loadObjectNames = Loads objects list from file in MGS_TPP\mod\
+clearObjects = Clears Objects List
+addObjectLookupList = Lets you cycle through a number of lookup lists IH uses and add all items from it to the main object list.
+### InfPositions.lua
+positionsMenu = For adding positions in the game to a Positions List, and writing/loading them to files.
+addPosition = Add current player or freecam position to Positions List, positions list can be written to file with Write Positons List command.
+addMarkerPositions = Adds current user markers to positions list, positions list can be written to file with Write Positons List command.
+writePositions = Writes Positions List to files in MGS_TPP\mod\
+clearPositions = Clears Positions List
+loadPositions = Loads positions from MGS_TPP\mod\positions.txt
+selectListPosition = Selects a position from positions list, mostly just used to browse positions at the moment.
+### InfProgression.lua
+mbCollectionRepop = Regenerates plants on Zoo platform and diamonds on Mother base over time.
+repopAARadars = Number of mission completes before destroyed Anti Air Radars are rebuilt.
+mbForceBattleGearDevelopLevel = Changes the build state of BattleGear in it's hangar, 0 is use the regular story progression.
+unlockPlayableAvatar = Unlock avatar before mission 46
+unlockWeaponCustomization = Unlock without having to complete legendary gunsmith missions
+returnQuiet = Instantly return Quiet, runs same code as the Reunion mission 11 replay.
+disableVolunteers = Force disable volunteers joining Mother Base on mission completion.
+### InfPuppy.lua
+mbEnablePuppy = Note: Requires you to actually get and complete the base game ddog puppy sequence.
+### InfQuestIvars.lua
+rerollQuestSelection = Note: You may not see any change unless you use 'Selection for Area mode' set to Random. Many of the other IH sideop options allready run this after you change them.
+quest_forceQuestNumber = WARNING: This allows opening a sideop outside of normal progression. Unlocks the sideop with the quest number that shows in the UI. Since the sideops shown in the UI are limited, try 'Show on UI mode' and other filtering settings to show other sideops.
+quest_forceOpen = Lets you force sideops open sideops before the usual progression.
+quest_forceRepop = Lets you force story and one-time sideops to be replayable.
+quest_updateRepopMode = [[Lets you choose the behaviour of how repeatable sideops are repopulated. The update is run for the sideop area of a sideop you just finished, or for all areas when changing many of the IH sideops options or rerolling sideops.  
+The default 'None left' will only repopulate sideops when there are no other uncompleted sideops, and all other repeatable sideops have been completed.  
+'Allways' will refresh repeatable sideops every time the update is called.  
+Best use with Select for Area mode set to Random.]]
+quest_setIsOnceToRepop = Lets you force story and one-time sideops to be replayable.
+quest_selectForArea = [[Sideops are broken into areas to stop overlap, this option lets you control the choice which repop sideop will be selected to be Active for the area.  
+'Random Addon' will prioritize Addon sideops first.  
+All selection is still prioritized by uncompleted story sideops, then other uncompleted sideops, then repop sideops selected by this option.]]
+sideOpsCategoryMenu = Per category selection of which sidops can be Active.
+showOnUiMenu = [[Settings for what sideops to show and how they should be sorted depedending on various parameters for sideops on the idroid sideops list.  
+The vanilla behavior just shows current Active and Cleared sideops, in index order, which lets you see past progression/completion,  
+Though since uncleared sideops do have priority, one will be selected for Active.  
+So if there's multiple uncleared for an area they will not be shown, which gives you less of an idea of future progression.  
+These option give you individual control for showing sideops depending on their conditions.  
+For a given sideop multiple of the underlying conditions may be true at one time and either depend on your progress through the game, or from other IH settings.  
+There is however a limit of 192 entries for the sideop list (there's 157 sideops in the base game), which some settings might push over if you have addon sideops, in which case some Cleared entries be randomly dropped from the list.  
+See the notes for each option for more info.  
+Sorting:  
+Sorting will proceed through all flags that have a sorting setting (not set to None). So sort is in respect to the option above it.  
+None: Will not apply any specific sort, so will just be in index order, but may be moved around if other flags sort it.  
+The other settings, Top, Bottom or Ascending, Descending depending on the flag type, will sort as the settings suggest, but in relation to the prior flags.  
+Since the final sort is by sideop index (the number on the left of the entry in the sideop list) you can use that to see where the list sections from one sorted flag type to the next.  
+]]
+quest_uiShow_Active = Default is Show. Sideops that are Active are the ones actually currently in play and start when you arrive in the sideop area. Independent of Cleared. You normally wouldn't set this setting to Hide.
+quest_uiShow_Cleared = Default is Show. Quests that have been completed.
+questuiShow_Uncleared = Quests that have not been completed.
+quest_uiShow_Activable = Only shows those sideops in the selection for being Activated (which includes Active). Usually the best setting to show what sideops are being considered depending on all the underlying conditions and IH settings.
+quest_uiShow_Open = Will try and show all Open sideops, which is usually every sideop as soon as they are introduced through game progression. Most likely to hit the UI limit entries when a lot of addon sideops are installed.
+quest_uiSort_category = The base game sideops are more or less ordered by category already, however addon sideops are added to the end, this sorts by a similar order but puts Story sideops first.
+quest_uiSort_questAreaX = Each main location of the game (Afgh, Africa) is sectioned into about 8 sideops areas to stop overlap and manage loading. You can look at the sideop index to clarify where the list goes from one area to the next (the numbers within an area will be increasing, then be lower for the first sideop in another area). You may want to use in combination with Sort by Location.
+debugQuestsMenu = WARNING: don't use these unless you know exactly what they do.
+### InfReinforce.lua
+forceSuperReinforce = In the normal game vehicle reinforcments through this system is only used for two missions, this enables it for more. Only heli will appear in certain outposts.
+enableSoldiersWithVehicleReinforce = Allows an extra set of reinforce soldiers with all vehicle reinforce types instead of just Wheeled Armored Vehicles.
+enableHeliReinforce = Since the enemy heli reinforce feature re-uses the sideops heli, enabling this will disable sideops that have a heli in them so that the reinforce can use it.
+overrideReinforceColoring = Override the coloring type of the reinforcement helicopter or vehicle. Vanilla only uses None or Black.
+unloadReinforceOnFinish = Despawn eliminated reinforcement vehicles so they can be spawned again later in the same session.
+### InfResources.lua
+enableResourceScale = Enables the resource scale options that scale the amount of resources when gathered (material case resources, containers, diamonds, plants)
+### InfRevengeIvars.lua
+revengeMenu = Ways to modify the Enemy preparedness system that equips the enemy in response to your actions.
+revengeCustomMenu = Lets you set the individual values that go into an enemy prep configuration (does not use the enemy prep levels), a random value between MIN and MAX for each setting is chosen on mission start. The order of items in the menu is generally order the equipment is allocated to each soldier in a CP.
+revengeModeFREE = Enemy prep levels - the normal games enemy prep levels, Custom prep - uses all the settings in the Custom prep menu, Prep levels + Custom overrides - overrides the Enemy prep levels config with any Custom prep settings that aren't set to their default setting.
+revengeBlockForMissionCount = The number of missions the enemy dispatch/resupply with unlock after your last successful dispatch mission for that type.
+disableMissionsWeaponRestriction = Missions 2, 12, 13, 16, 26, 31 normally prevent the application of shields, missiles, shotguns and MGs to the general CP enemy prep (though some may have custom enemy prep).
+disableNoStealthCombatRevengeMission = By default enemy prep only changes in response to actual missions, this option allows enemy prep changes to be applied after leaving Free roam (but not via abort)
+resetRevenge = Resets enemy prep levels to 0
+weaponStrengthCustomMenu = Whether to deploy the stronger weapon class for the weapon type
+enableMgVsShotgunVariation = In the default game the enemy prep config chooses randomly either MG or Shotguns which is applied for all CPs in the whole mission. This setting allows mixed MGs and Shotguns (but still with the enemy prep total) and also applies them per CP.
+allowMissileWeaponsCombo = In the default game soldiers with missiles only have SMGs, this allows them to have MGs, shotguns or assault rifles assigned to them.
+randomizeSmallCpPowers = Adds limits and some randomisation to small cp/lrrps enemy prep application
+disableConvertArmorToShield = Where heavy armor is disabled (free roam by default) the normal game converts armor to shields in addition to the normal shield application, this often leads to it feeling like there's just too many.
+balanceHeadGear = Adjusts application percentages of the normally mutally exclusive options of heavy armor and the different headgear pieces, not nessesary if Allow helmet and NVG or Gas mask combo option is on
+reinforceCount_MIN = Number of reinforcement calls a CP has.
+reinforceCount_MAX = Number of reinforcement calls a CP has.
+revengeIgnoreBlocked_MIN = Ignores the current results of the Combat Deployment/Dispatch/'cut off the supply' missions that affect enemy prep.
+STEALTH_MIN = Adjusts enemy soldiers notice,cure,reflex and speed ablilities.
+COMBAT_MIN = Adjusts enemy soldiers shot,grenade,reload,hp and speed abilities.
+### InfRoutes.lua
+routesMenu = For adding route names in the game to a Routes List, and writing/loading them to files.
+writeRoutes = Writes Routes List to file in MGS_TPP\mod\
+loadRouteNames = Loads routes list from file in MGS_TPP\mod\
+clearRoutes = Clears Routes List
+### InfRouteSet.lua
+routeSetMenu = Options to randomize what routes soldiers use in a Command Post.
+routeset_randomizeRouteSetsFREE = Enables all following options. Also randomizes current routeSet on mission load/reload. Requires randomize group priority or group routes to be on.
+routeset_randomizeRouteSetsMISSION = Enables all following options. Also randomizes current routeSet on mission load/reload. WARNING: may mess up scripted mission routes.
+routeset_randomizeOnShiftChange = Randomize current routeSet on morning and night shift changes.
+routeset_randomizeOnPhaseChange = Randomize current routeSet when enemy phase changes in any way, Sneak, Caution, Alert, Evasion. Up or down.
+routeset_randomizePriority = Each routeSet for a CP has a number of groups of routes, this will change the order the groups are picked from.
+routeset_randomizeGroups = Each routeSet for a CP has a number of groups of routes, this will change the order within the group.
+randomizeCurrentRouteSetCmd = Randomize current routeset right now. (Use the command in-mission).
+### InfShootingPractice.lua
+quest_enableShootingPracticeRetry = Does not hide the starting point when Shooting Practice starts or finishes, and allows you to cancel while in progress and start again.
+quest_setShootingPracticeCautionTimeToBestTime = Sets the caution time/time when the timer turns red to the current best time (rounded up to the second) so you have a clearer idea when going for best time.
+### InfSoldier.lua
+enableWildCardFreeRoam = Changes a few soldiers throughout the CPs to have unique models and high end weapons.
+enableLrrpFreeRoam = Foot patrols will travel between random CPs and will cross the field to get there.
+mbNpcRouteChange = Soldiers will periodically move between platforms (only within the same cluster).
+mbAdditionalSoldiers = Increases soldiers on platforms from 4 soldiers to 9.
+### InfSoldierParams.lua
+soldierParamsProfile = [[Turn this on to enable the life, sight and hearing enemy param options, turn this off if you have another mod that modifies Soldier2ParameterTables.lua (ie Hardcore mod).",
+      "Any of the following option only apply on map load or checkpoint restart.]]
+soldierHealthScale = 0% will kill off all enemies
+soldierSightDistScale = A rough scale over all the soldier sight distances, except for night sight distance, use the command 'Print sight param table (look in iDroid Log>All tab)' to see exact values.
+### InfTimeScale.lua
+highSpeedCameraToggle = Lets you manually toggle Time scale mode that's usually used for Reflex/CQC.
+speedCamContinueTime = The time in seconds of the TSM
+speedCamWorldTimeScale = Time scale of the world, including soldiers/vehicles during TSM
+speedCamPlayerTimeScale = Time scale of the player during TSM
+speedCamNoDustEffect = Does not apply the dust and blur effect while TSM is active.
+clockTimeScale = Changes the time scale of the day/night/weather system. Does not change the speed of soldiers like the cigar does. Lower for closer to real time, higher for faster.
+### InfUserMarker.lua
+### InfVehicle.lua
+vehiclePatrolProfile = Replaces the patrolling trucks in free roam with other vehicles, picked randomly from enabled types.
+### InfWalkerGear.lua
+enableWalkerGearsFREE = Adds a Walker gear to each main base.
+### InfWarp.lua
+warpPlayerUpdate = Essentially no-clip mode (for those that remember what that means). It teleports your player a small distance each update of which warp direction button you press or hold. Will move you through walls/geometry. The menu navigation/dpad/arrow keys will warp you in that direction, [STANCE] will warp you down and [CALL] will warp you up.
+### InfWeather.lua
+weather_requestTag = A collection of sky, lighting settings bundled under a 'tag' name in the locations weatherParameters file. Only applies when you press activate (not persitant over sessions). Game may reset or change it at different points.
+weather_requestTagInterpTime = Interpolation time between the prior tag and the one requested.
+restoreDefaultSkyParameters = Stops the IH sky parameters from being applied.
+weather_skyParameterSetSkyScale = Scale of main clouds overhead
+weather_skyParameterAddOffsetY = Height of horizon clouds
+weather_skyParameterSetScrollSpeedRate = Scrolling speed of horizon clouds
+### InfZooSoldier.lua
+mbZooEnableSoldiers = Adds soldiers to the Animal Conservation Platform.

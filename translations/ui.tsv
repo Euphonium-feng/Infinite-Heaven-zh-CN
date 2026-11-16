@@ -1,0 +1,87 @@
+# file	key	kind	original	translation
+InfLang.lua	titleAbortToHeliSpace	eng	Abort to ACC	中止并返回 ACC
+InfLang.lua	will_abort_to_acc	eng	Will abort to ACC	将中止并返回 ACC
+InfLang.lua	menu_open_help	eng	(Press Up/Down,Left/Right to navigate menu)	（按上下键、左右键浏览菜单）
+InfLang.lua	menuOffItem	eng	Turn off menu	关闭菜单
+InfLang.lua	setting_defaults	eng	Setting options for current menu to defaults...	正在将当前菜单选项恢复为默认值……
+InfLang.lua	setting_default	eng	Setting to default..	正在恢复默认值……
+InfLang.lua	setting_minimum	eng	Setting to minimum..	正在设为最小值……
+InfLang.lua	resetSettingsItem	eng	Reset current menu	重置当前菜单
+InfLang.lua	setting_disallowed	eng	is currently disallowed	当前不允许使用
+InfLang.lua	goBackItem	eng	Menu Back	返回
+InfLang.lua	menu_off	eng	Menu Off	菜单关闭
+InfLang.lua	safeSpaceMenu	eng	In-ACC menu	空中指挥中心菜单
+InfLang.lua	inMissionMenu	eng	In-mission menu	任务中菜单
+InfLang.lua	showLangCode	eng	Show game language code	显示游戏语言代码
+InfLang.lua	language_code	eng	Language code	语言代码
+InfLang.lua	showPosition	eng	Show position	显示位置
+InfLang.lua	langOverride	eng	Mod Menu translation override	Mod 菜单翻译覆盖
+InfLang.lua	setting_all_defaults	eng	Setting all settings to default...	正在将所有设置恢复为默认值……
+InfLang.lua	resetAllSettingsItem	eng	Reset all IH settings	重置所有 IH 设置
+InfLang.lua	showMissionCode	eng	Show missionCode	显示任务代码
+InfLang.lua	startOffline	eng	Start offline	离线启动
+InfLang.lua	debugInMissionMenu	eng	Debug stuff menu	调试菜单
+InfLang.lua	menu_keys	eng	Hold [SWITCH_ZOOM] then press [DASH] to open menu	按住 [切换视角] 再按 [冲刺] 打开菜单
+InfLang.lua	done	eng	Done	完成
+InfLang.lua	min	eng	min	最小
+InfLang.lua	max	eng	max	最大
+InfLang.lua	no_marker_found	eng	No marker found	未找到标记
+InfLang.lua	debugMode	eng	Debug IH mode	调试 IH 模式
+InfLang.lua	debugMenu	eng	Debug menu	调试菜单
+InfLang.lua	selectProfile	eng	Select profile	选择配置
+InfLang.lua	applySelectedProfile	eng	Apply profile	应用配置
+InfLang.lua	resetSelectedProfile	eng	Set profile options to game defaults	将配置选项设为游戏默认值
+InfLang.lua	no_profiles_installed	eng	No profiles installed	未安装配置
+InfLang.lua	applying_profile	eng	Applying profile	正在应用配置
+InfLang.lua	viewProfile	eng	Apply and view profile	应用并查看配置
+InfLang.lua	revertProfile	eng	Revert profile and return	还原配置并返回
+InfLang.lua	saveToProfile	eng	Save to UserSaved profile	保存到 UserSaved 配置
+InfLang.lua	fob_weapon_change	eng	Cannot use Equip none on FOB	FOB 中不能使用“不装备”
+InfLang.lua	enableQuickMenu	eng	Enable Quick Menu	启用快捷菜单
+InfLang.lua	systemMenu	eng	IH system menu	IH 系统菜单
+InfLang.lua	skipLogos	eng	Skip startup logos	跳过启动标志
+InfLang.lua	ihMissionsPercentageCount	eng	Include addon missions in completion percentage	将追加任务计入完成度
+InfLang.lua	loadAddonMission	eng	Load addon mission	加载追加任务
+InfLang.lua	enableIHExt	eng	Enable IHExt	启用 IHExt
+InfLang.lua	takeFocus	eng	Give IHExt focus	将焦点交给 IHExt
+InfLang.lua	menu_enableHelp	eng	Enable help text	启用帮助文本
+InfLang.lua	menu_disableToggleMenuHold	eng	Disable hold menu toggle	禁用长按打开菜单
+InfLang.lua	menu_enableCursorOnMenuOpen	eng	Enable mouse cursor on menu open	打开菜单时启用鼠标指针
+InfLang.lua	loadExternalModules	eng	Reload IH modules	重新加载 IH 模块
+InfLang.lua	sys_increaseMemoryAlloc	eng	Increase memory allocation	增加内存分配
+InfLang.lua	searchMenu	eng	Search menu	搜索菜单
+InfLang.lua	searchItem	eng	Search	搜索
+InfLang.lua	goBackTopItem	eng	Back to main menu	返回主菜单
+InfLang.lua	list_empty	eng	list is empty	列表为空
+InfLang.lua	exited_sideop_area	eng	Exited sideop area	已离开支线任务区域
+InfLang.lua	type_to_search	eng	<Type and Enter to search>	<输入内容后按回车搜索>
+InfLang.lua	inDemoMenu	eng	In-cutscene menu	过场动画中菜单
+InfLang.lua	demo_cannot_restart_while_paused	eng	Cannot restart cutscene while it is paused	暂停时无法重新开始过场动画
+InfLang.lua	generalHelpItem	eng	General Help	通用帮助
+InfLang.lua	general_help_cmd	eng	See MGS_TPP/mod/docs/ for documentation	请查看 MGS_TPP/mod/docs/ 中的文档
+InfLang.lua	showStyleEditor	eng	UI Style Editor	界面样式编辑器
+InfLang.lua	systemMenuMission	eng	IH system menu	IH 系统菜单
+InfLang.lua	requires_ihhook	eng	Requires IHHook to function	需要 IHHook 才能使用
+InfLang.lua	command_for_in_mission	eng	Use this command in-mission	请在任务中使用此命令
+InfLang.lua	objectListsMenu	eng	Object lists menu	对象列表菜单
+InfLang.lua	titleAbortToHeliSpace	help	Pressing Continue will continue to ACC instead of mission.	按“继续”将返回空中指挥中心，而不是进入任务。
+InfLang.lua	simple_help	help	Navigate menu: Arrow keys or Dpad.	浏览菜单：方向键或十字键。
+InfLang.lua	debugMode	help	Switches on logging messages to ih_log.txt (at the cost of longer load times) and enables the announce-log during loading.	开启日志输出到 ih_log.txt（会增加加载时间），并在加载期间启用公告日志。
+InfLang.lua	startOffline	help	Start the game in offline mode, this also removes the connect option from the pause menu.	以离线模式启动游戏，并从暂停菜单移除连接选项。
+InfLang.lua	enableQuickMenu	help	Shortcut key combinations to activate IH features. See Infinite Heaven readme or InfQuickMenuDefs.lua in mod folder.	使用快捷键组合启用 IH 功能。详见 Infinite Heaven 说明或 mod 文件夹中的 InfQuickMenuDefs.lua。
+InfLang.lua	debugFlow	help	Logs some script execution flow, requires Debug IH mode to be on.	记录部分脚本执行流程，需要开启调试 IH 模式。
+InfLang.lua	debugMessages	help	Logs game message system, requires Debug IH mode to be on. ALL (same as pre r262 'On') logs all messages sent, RECIEVED only logs those that have modules subscribed to the message.	记录游戏消息系统，需要开启调试 IH 模式。ALL（等同于 r262 之前的 On）记录所有发送消息，RECEIVED 只记录有模块订阅的消息。
+InfLang.lua	debugMessagesVerbose	help	Verbosely logs unknown messages. Disable to improve performance with logging and add-ons that use custom messages that don't register to InfLookup.	详细记录未知消息。若使用未注册到 InfLookup 的自定义消息，建议关闭以改善性能。
+InfLang.lua	skipLogos	help	Stops the konami/kjp/fox/nvidia logos from showing.	跳过 Konami/KJP/Fox/NVIDIA 标志。
+InfLang.lua	selectProfile	help	Selects a profile from MGS_TPP\mod\profiles folder. Press the [ACTION] button to apply the settings of the selected profile.	从 MGS_TPP\mod\profiles 选择配置，按 [操作] 应用所选配置。
+InfLang.lua	resetSelectedProfile	help	Sets the options described in the selected profile to their default setting.	将所选配置中列出的选项恢复为默认值。
+InfLang.lua	saveToProfile	help	Saves current IH settings to UserSaved profile at MGS_TPP\profiles\UserSaved.lua.	将当前 IH 设置保存到 MGS_TPP\profiles\UserSaved.lua。
+InfLang.lua	enableIHExt	help	IHExt is a windows program that acts as an gui overlay if MGSV is running in Windowed Borderless.	IHExt 是一个 Windows 程序；游戏以无边框窗口运行时，它会作为界面覆盖层显示。
+InfLang.lua	menu_enableHelp	help	Shows help text for some options.	显示部分选项的帮助文本。
+InfLang.lua	menu_disableToggleMenuHold	help	Disables the legacy hold [EVADE] to open menu, the two button menu combo [ZOOM_CHANGE] + [DASH] will still work.	禁用旧式长按 [闪避] 打开菜单；双键组合 [切换视角] + [冲刺] 仍可用。
+InfLang.lua	menu_enableCursorOnMenuOpen	help	Automatically enable mouse cursor when IHMenu opens. The cursor can also be seperately toggled with F2	IHMenu 打开时自动启用鼠标指针，也可用 F2 单独切换。
+InfLang.lua	sys_increaseMemoryAlloc	help	Experimental: Increses the memory values for various allocation variables/functions	实验性：提高多个分配变量/函数的内存值。
+InfLang.lua	showStyleEditor	help	Toggles the IMGui Style Editor to load, change and save the style for IHHook IMGUI.	切换 IMGui 样式编辑器，可加载、修改并保存 IHHook IMGUI 样式。
+InfLang.lua	systemMenuMission	help	See IH system menu while in ACC for full options.	完整选项请查看空中指挥中心内的 IH 系统菜单。
+InfLang.lua	dEBUG_RandomizeAllIvars	help	WARNING: Sets all settings across all of IH to a random value, which may include WIP, commented out or abandoned options. May also include  Back up your save before using this. This is used as debug coverage to see if anything breaks and not intended for general use.	警告：将 IH 的全部设置改为随机值，可能包含开发中、已注释或废弃选项。使用前请备份存档。此功能仅用于调试覆盖，不建议日常使用。
+InfLang.lua	dEBUG_SetIvarsToNonDefault	help	WARNING: Sets all settings across all of IH to a non default value. Back up your save before using this. This is used as debug coverage to see if anything breaks.	警告：将 IH 的全部设置改为非默认值。使用前请备份存档。此功能仅用于调试覆盖。

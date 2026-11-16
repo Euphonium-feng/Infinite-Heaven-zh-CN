@@ -1,0 +1,121 @@
+{
+  "InfBossTppBossQuiet2.lua": {
+    "eng": {
+      "this.ivarNames.enable": "BossQuiet2 启用"
+    }
+  },
+  "InfBossTppParasite2.lua": {
+    "eng": {
+      "this.ivarNames.enable": "Parasite2 启用"
+    }
+  },
+  "InfBossTppVolgin2.lua": {
+    "eng": {
+      "this.ivarNames.enable": "Volgin2 启用"
+    }
+  },
+  "InfLang.lua": {
+    "eng": {
+      "titleAbortToHeliSpace": "中止并返回 ACC",
+      "will_abort_to_acc": "将中止并返回 ACC",
+      "menu_open_help": "（按上下键、左右键浏览菜单）",
+      "menuOffItem": "关闭菜单",
+      "setting_defaults": "正在将当前菜单选项恢复为默认值……",
+      "setting_default": "正在恢复默认值……",
+      "setting_minimum": "正在设为最小值……",
+      "resetSettingsItem": "重置当前菜单",
+      "setting_disallowed": "当前不允许使用",
+      "goBackItem": "返回",
+      "menu_off": "菜单关闭",
+      "set_switch": ["关闭", "开启"],
+      "set_do": [">", ">"],
+      "safeSpaceMenu": "空中指挥中心菜单",
+      "inMissionMenu": "任务中菜单",
+      "showLangCode": "显示游戏语言代码",
+      "language_code": "语言代码",
+      "showPosition": "显示位置",
+      "langOverride": "Mod 菜单翻译覆盖",
+      "langOverrideSettings": ["关闭", "中文覆盖日文"],
+      "setting_all_defaults": "正在将所有设置恢复为默认值……",
+      "resetAllSettingsItem": "重置所有 IH 设置",
+      "showMissionCode": "显示任务代码",
+      "startOffline": "离线启动",
+      "debugInMissionMenu": "调试菜单",
+      "menu_keys": "按住 [切换视角] 再按 [冲刺] 打开菜单",
+      "done": "完成",
+      "min": "最小",
+      "max": "最大",
+      "no_marker_found": "未找到标记",
+      "debugMode": "调试 IH 模式",
+      "debugMenu": "调试菜单",
+      "set_default_off_on": ["默认", "关闭", "开启"],
+      "selectProfile": "选择配置",
+      "applySelectedProfile": "应用配置",
+      "resetSelectedProfile": "将配置选项设为游戏默认值",
+      "no_profiles_installed": "未安装配置",
+      "applying_profile": "正在应用配置",
+      "viewProfile": "应用并查看配置",
+      "revertProfile": "还原配置并返回",
+      "saveToProfile": "保存到 UserSaved 配置",
+      "fob_weapon_change": "FOB 中不能使用“不装备”",
+      "enableQuickMenu": "启用快捷菜单",
+      "systemMenu": "IH 系统菜单",
+      "skipLogos": "跳过启动标志",
+      "ihMissionsPercentageCount": "将追加任务计入完成度",
+      "loadAddonMission": "加载追加任务",
+      "enableIHExt": "启用 IHExt",
+      "takeFocus": "将焦点交给 IHExt",
+      "ihext_not_installed_settings": ["未安装", "未安装"],
+      "menu_enableHelp": "启用帮助文本",
+      "menu_disableToggleMenuHold": "禁用长按打开菜单",
+      "menu_enableCursorOnMenuOpen": "打开菜单时启用鼠标指针",
+      "loadExternalModules": "重新加载 IH 模块",
+      "sys_increaseMemoryAlloc": "增加内存分配",
+      "searchMenu": "搜索菜单",
+      "searchItem": "搜索",
+      "goBackTopItem": "返回主菜单",
+      "list_empty": "列表为空",
+      "exited_sideop_area": "已离开支线任务区域",
+      "type_to_search": "<输入内容后按回车搜索>",
+      "inDemoMenu": "过场动画中菜单",
+      "demo_cannot_restart_while_paused": "暂停时无法重新开始过场动画",
+      "missionModes": {
+        "FREE": "自由漫游",
+        "MISSION": "主线任务",
+        "MB": "母基地",
+        "MB_ALL": "母基地"
+      },
+      "generalHelpItem": "通用帮助",
+      "general_help_cmd": "请查看 MGS_TPP/mod/docs/ 中的文档",
+      "showStyleEditor": "界面样式编辑器",
+      "systemMenuMission": "IH 系统菜单",
+      "requires_ihhook": "需要 IHHook 才能使用",
+      "command_for_in_mission": "请在任务中使用此命令",
+      "objectListsMenu": "对象列表菜单"
+    },
+    "help": {
+      "titleAbortToHeliSpace": "按“继续”将返回空中指挥中心，而不是进入任务。",
+      "simple_help": "浏览菜单：方向键或十字键。\n激活或切换设置：按右键、十字键或双击选项。\n",
+      "generalHelpItem": "通用帮助：\n按 F2 切换鼠标指针。\n浏览菜单：方向键或十字键。\n激活或切换设置：按右键、十字键或双击菜单选项。\n搜索设置：点击菜单列表下方的设置文本，输入后按回车。\n修改数值设置：点击菜单列表下方的设置值，输入后按回车。\n菜单标记：\n`>` 子菜单\n`>>` 命令\n`>]` 执行后关闭菜单的命令\n`<>` 切换设置时立即生效的选项\n`>!` 按 [操作] 执行动作的选项\n部分设置只在被选中时生效，或要等触发其他命令、任务加载时才应用。\n详情请参阅 ReadMe 或 Features and Options。\n",
+      "debugMode": "开启日志输出到 ih_log.txt（会增加加载时间），并在加载期间启用公告日志。",
+      "startOffline": "以离线模式启动游戏，并从暂停菜单移除连接选项。",
+      "enableQuickMenu": "使用快捷键组合启用 IH 功能。详见 Infinite Heaven 说明或 mod 文件夹中的 InfQuickMenuDefs.lua。",
+      "debugFlow": "记录部分脚本执行流程，需要开启调试 IH 模式。",
+      "debugMessages": "记录游戏消息系统，需要开启调试 IH 模式。ALL（等同于 r262 之前的 On）记录所有发送消息，RECEIVED 只记录有模块订阅的消息。",
+      "debugMessagesVerbose": "详细记录未知消息。若使用未注册到 InfLookup 的自定义消息，建议关闭以改善性能。",
+      "skipLogos": "跳过 Konami/KJP/Fox/NVIDIA 标志。",
+      "selectProfile": "从 MGS_TPP\\mod\\profiles 选择配置，按 [操作] 应用所选配置。",
+      "resetSelectedProfile": "将所选配置中列出的选项恢复为默认值。",
+      "saveToProfile": "将当前 IH 设置保存到 MGS_TPP\\profiles\\UserSaved.lua。",
+      "enableIHExt": "IHExt 是一个 Windows 程序；游戏以无边框窗口运行时，它会作为界面覆盖层显示。",
+      "menu_enableHelp": "显示部分选项的帮助文本。",
+      "menu_disableToggleMenuHold": "禁用旧式长按 [闪避] 打开菜单；双键组合 [切换视角] + [冲刺] 仍可用。",
+      "menu_enableCursorOnMenuOpen": "IHMenu 打开时自动启用鼠标指针，也可用 F2 单独切换。",
+      "sys_increaseMemoryAlloc": "实验性：提高多个分配变量/函数的内存值。",
+      "showStyleEditor": "切换 IMGui 样式编辑器，可加载、修改并保存 IHHook IMGUI 样式。",
+      "systemMenuMission": "完整选项请查看空中指挥中心内的 IH 系统菜单。",
+      "dEBUG_RandomizeAllIvars": "警告：将 IH 的全部设置改为随机值，可能包含开发中、已注释或废弃选项。使用前请备份存档。此功能仅用于调试覆盖，不建议日常使用。",
+      "dEBUG_SetIvarsToNonDefault": "警告：将 IH 的全部设置改为非默认值。使用前请备份存档。此功能仅用于调试覆盖。"
+    }
+  }
+}

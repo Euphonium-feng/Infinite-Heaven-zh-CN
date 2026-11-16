@@ -1,0 +1,58 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Lua parser
+        run: npm ci
+
+      - name: Prepare upstream sources
+        shell: pwsh
+        run: .\tools\prepare-vendor.ps1
+
+      - name: Validate translation tables
+        run: node scripts/validate.js
+
+      - name: Build IHHook
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $msbuild = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -find "MSBuild\**\Bin\MSBuild.exe" | Select-Object -First 1
+          if (-not $msbuild) { throw "MSBuild not found" }
+          & $msbuild "vendor\ihhook\IHHook.sln" /m /p:Configuration=Release /p:Platform=x64
+          if ($LASTEXITCODE -ne 0) { throw "IHHook build failed" }
+
+      - name: Locate IHHook DLL
+        id: dll
+        shell: pwsh
+        run: |
+          $dll = Get-ChildItem -Path "vendor\ihhook" -Recurse -Filter "IHHook.dll" | Select-Object -First 1
+          if (-not $dll) { throw "IHHook.dll not found" }
+          "path=$($dll.FullName)" >> $env:GITHUB_OUTPUT
+
+      - name: Package installers
+        shell: pwsh
+        run: |
+          .\tools\package.ps1 -IhhookDll "${{ steps.dll.outputs.path }}" | Tee-Object -FilePath artifacts\manifest.json
+          if ($LASTEXITCODE -ne 0) { throw "Packaging failed" }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: infinite-heaven-zh-CN
+          path: artifacts/*.mgsv
+          if-no-files-found: error

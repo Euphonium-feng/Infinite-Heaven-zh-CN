@@ -1,0 +1,5711 @@
+{
+  "summary": {
+    "files": 57,
+    "eng": 718,
+    "help": 309
+  },
+  "modules": {
+    "InfAnimal.lua": {
+      "eng": [
+        {
+          "key": "mbEnableBirds",
+          "value": "Enable Birds",
+          "line": null
+        }
+      ],
+      "help": []
+    },
+    "InfAutoDoc.lua": {
+      "eng": [
+        {
+          "key": "runAutoDoc",
+          "value": "Run AutoDoc",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "runAutoDoc",
+          "value": "AutoDoc creates the Features and Options txt and html in docs folder, and profiles/All_Options_Example based on the current menus and options, including any added by other mod IH modules. It will overwrite any existing files.",
+          "line": null
+        }
+      ]
+    },
+    "InfAvatar.lua": {
+      "eng": [
+        {
+          "key": "avatar_load",
+          "value": "Load avatar",
+          "line": null
+        },
+        {
+          "key": "avatar_save",
+          "value": "Save avatar",
+          "line": null
+        },
+        {
+          "key": "must_be_in_helispace",
+          "value": "Must be in ACC",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "avatar_load",
+          "value": "Load avatar from MGS_TPP\\mod\\avatars",
+          "line": null
+        },
+        {
+          "key": "avatar_save",
+          "value": "Save avatar to MGS_TPP\\mod\\avatars",
+          "line": null
+        }
+      ]
+    },
+    "InfBossEvent.lua": {
+      "eng": [
+        {
+          "key": "bossEventMenu",
+          "value": "Boss event menu",
+          "line": null
+        },
+        {
+          "key": "bossEvent_enableFREE",
+          "value": "Enable Boss attacks in Free roam",
+          "line": null
+        },
+        {
+          "key": "bossEvent_attackCountdownPeriod_MIN",
+          "value": "Event attack min (minutes)",
+          "line": null
+        },
+        {
+          "key": "bossEvent_attackCountdownPeriod_MAX",
+          "value": "Event attack max (minutes)",
+          "line": null
+        },
+        {
+          "key": "bossEvent_weather",
+          "value": "Weather on boss attack",
+          "line": null
+        },
+        {
+          "key": "bossEvent_weatherSettings",
+          "value": [
+            "None",
+            "Use Boss param",
+            "Random"
+          ],
+          "line": null
+        },
+        {
+          "key": "bossEvent_repeatEvents",
+          "value": "Repeat events",
+          "line": null
+        },
+        {
+          "key": "bossEvent_timeOut",
+          "value": "Timeout (seconds)",
+          "line": null
+        },
+        {
+          "key": "bossEvent_escapeDistance",
+          "value": "Escape distance (meters)",
+          "line": null
+        },
+        {
+          "key": "bossEvent_combinedAttacks",
+          "value": "Combined attacks",
+          "line": null
+        },
+        {
+          "key": "bossEvent_minBossCount",
+          "value": "Min boss count",
+          "line": null
+        },
+        {
+          "key": "bossEvent_maxBossCount",
+          "value": "Max boss count",
+          "line": null
+        },
+        {
+          "key": "bossEvent_enableMB_ALL",
+          "value": "Enable Boss attacks on MB",
+          "line": null
+        },
+        {
+          "key": "bossEvent_quarantine",
+          "value": "Enable Quarantine boss attack",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "bossEventMenu",
+          "value": "[[The Boss Event system manages random attacks from different boss types and their subTypes.\r\nThe system will choose a subType for each bossType for the event.\r\n(*multiple boss types may cause crashes depending on what other game features are loaded).\r\nTppParasite2 has ARMOR and MIST Skull subTypes.\r\nTppBossQuiet2 has CAMO Skull.]]",
+          "line": null
+        },
+        {
+          "key": "bossEvent_repeatEvents",
+          "value": "When a boss event ends the countdown to another will start.",
+          "line": null
+        },
+        {
+          "key": "bossEvent_combinedAttacks",
+          "value": "[[WARNING: This may be unstable depending on what other IH features are loaded.\r\nMultiple boss types can be chosen for an attack. \r\nThough a boss type may randomly not be chosen. \r\nThe normal selection of one sub type per boss type will be chosen.\r\nFACTION = Only those of the same faction in the addon info file will be in the selection (see MGS_TPP\\mod\\bosses)]]",
+          "line": null
+        },
+        {
+          "key": "bossEvent_timeOut",
+          "value": "[[\"When an even is active the player can 'escape' the event after the Timeout period, if further away from the last player focus point (not visualized, it's different from the alert point on map) than Escape distance. \r\nDamage to and from bosses will reset the timeout and focus point.]]",
+          "line": null
+        },
+        {
+          "key": "bossEvent_escapeDistance",
+          "value": "[[\"When an even is active the player can 'escape' the event after the Timeout period, if further away from the last player focus point (not visualized, it's different from the alert point on map) than Escape distance. \r\nDamage to and from bosses will reset the timeout and focus point.]]",
+          "line": null
+        },
+        {
+          "key": "bossEvent_minBossCount",
+          "value": "The number of bosses for a particular type is chosen between a random min,max. Min 0 means theres a chance of that subType not being selected.",
+          "line": null
+        },
+        {
+          "key": "bossEvent_maxBossCount",
+          "value": "Whether to use the maximum number of bosses defined by the boss subType, or a random amount up to max. Note: Only really applies to TppBossQuiet2 as the rest have hard coded counts.",
+          "line": null
+        },
+        {
+          "key": "bossEvent_enableFREE",
+          "value": "Skulls attack at a random time (in minutes) between Skull attack min and Skull attack max settings.",
+          "line": null
+        },
+        {
+          "key": "bossEvent_msfRate",
+          "value": "Percentage chance a zombified soldier will have 'lost MSF' behavior",
+          "line": null
+        },
+        {
+          "key": "bossEvent_enableMB_ALL",
+          "value": "Skulls attack at a random time (in minutes) between Skull attack min and Skull attack max settings.",
+          "line": null
+        },
+        {
+          "key": "bossEvent_quarantine",
+          "value": "Trigger boss attacks at Quarantine Platform by consecutively damaging them inside the cages 45 times.",
+          "line": null
+        }
+      ]
+    },
+    "InfBossTppBossQuiet2.lua": {
+      "eng": [
+        {
+          "key": "bossMenuName",
+          "value": null,
+          "line": null
+        },
+        {
+          "key": "MemberExpression.enable",
+          "value": null,
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "bossMenuName",
+          "value": "In the base game TppBossQuiet2 is used for the both Quiet and 'Camo' Sniper Parasite Skull units.",
+          "line": null
+        }
+      ]
+    },
+    "InfBossTppParasite2.lua": {
+      "eng": [
+        {
+          "key": "bossMenuName",
+          "value": null,
+          "line": null
+        },
+        {
+          "key": "MemberExpression.enable",
+          "value": null,
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "bossMenuName",
+          "value": "In the base game TppParasite2 is used for the Armor and Mist Parasite Skull units.",
+          "line": null
+        }
+      ]
+    },
+    "InfBossTppVolgin2.lua": {
+      "eng": [
+        {
+          "key": "bossMenuName",
+          "value": null,
+          "line": null
+        },
+        {
+          "key": "MemberExpression.enable",
+          "value": null,
+          "line": null
+        }
+      ],
+      "help": []
+    },
+    "InfBuddy.lua": {
+      "eng": [
+        {
+          "key": "no_buddy_set",
+          "value": "No buddy set",
+          "line": null
+        },
+        {
+          "key": "current_buddy_not",
+          "value": "Current buddy is not ",
+          "line": null
+        },
+        {
+          "key": "not_developed",
+          "value": " has not been developed",
+          "line": null
+        },
+        {
+          "key": "allready_set",
+          "value": " is allready set",
+          "line": null
+        },
+        {
+          "key": "changing_to",
+          "value": "Changing to ",
+          "line": null
+        },
+        {
+          "key": "buddy_quiet",
+          "value": "Quiet",
+          "line": null
+        },
+        {
+          "key": "buddy_horse",
+          "value": "D-Horse",
+          "line": null
+        },
+        {
+          "key": "buddy_dog",
+          "value": "D-Dog",
+          "line": null
+        },
+        {
+          "key": "buddy_walkergear",
+          "value": "D-Walker",
+          "line": null
+        },
+        {
+          "key": "buddyChangeEquipVar",
+          "value": "Buddy Equipment",
+          "line": null
+        },
+        {
+          "key": "buddyMenu",
+          "value": "Buddy menu",
+          "line": null
+        },
+        {
+          "key": "none_defined",
+          "value": "None defined",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "buddyChangeEquipVar",
+          "value": "Buddy equiment is changed to selected setting when [ACTION] is pressed.",
+          "line": null
+        }
+      ]
+    },
+    "InfCamHook.lua": {
+      "eng": [
+        {
+          "key": "camhookMenu",
+          "value": "Cam - Player FOV hook menu",
+          "line": null
+        },
+        {
+          "key": "camhook_enable",
+          "value": "Enable Player Cam hook",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_NORMAL",
+          "value": "FocalLength Normal",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_AIMING",
+          "value": "FocalLength Aiming",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_HIDING",
+          "value": "FocalLength Hiding",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_CQC",
+          "value": "FocalLength CQC",
+          "line": null
+        },
+        {
+          "key": "camhook_ApplyFOV",
+          "value": "Apply FOV",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "camhookMenu",
+          "value": "Uses IHHook to adjust the player camera focal length.\n Same method as the FOV mod d3d11.dll",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_NORMAL",
+          "value": "Only updates after changing cam mode.\nFocal lengths between modes not equivalent (some other factor being applied)\nLower focal length = wider FOV,\nHigher focal length = lower FOV",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_AIMING",
+          "value": "Only updates after changing cam mode.\nFocal lengths between modes not equivalent (some other factor being applied)\nLower focal length = wider FOV,\nHigher focal length = lower FOV",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_HIDING",
+          "value": "Only updates after changing cam mode.\nFocal lengths between modes not equivalent (some other factor being applied)\nLower focal length = wider FOV,\nHigher focal length = lower FOV",
+          "line": null
+        },
+        {
+          "key": "camhook_focalLength_CQC",
+          "value": "Only updates after changing cam mode.\nFocal lengths between modes not equivalent (some other factor being applied)\nLower focal length = wider FOV,\nHigher focal length = lower FOV",
+          "line": null
+        },
+        {
+          "key": "camhook_ApplyFOV",
+          "value": "Applies FOV(degrees) proportionally to the different cam mode focal length options.",
+          "line": null
+        }
+      ]
+    },
+    "InfCamera.lua": {
+      "eng": [
+        {
+          "key": "adjustCameraUpdate",
+          "value": "Adjust-cam [Mode]",
+          "line": null
+        },
+        {
+          "key": "cam_mode_on",
+          "value": "Adjust-cam mode on",
+          "line": null
+        },
+        {
+          "key": "cam_mode_off",
+          "value": "Adjust-cam mode off",
+          "line": null
+        },
+        {
+          "key": "moveScale",
+          "value": "Cam move speed scale",
+          "line": null
+        },
+        {
+          "key": "cameraMode",
+          "value": "AroundCam mode",
+          "line": null
+        },
+        {
+          "key": "cameraModeSettings",
+          "value": [
+            "Off",
+            "Free cam"
+          ],
+          "line": null
+        },
+        {
+          "key": "cam_aroundcamMenu",
+          "value": "Cam - AroundCam - FreeCam - menu",
+          "line": null
+        },
+        {
+          "key": "focal_length_mode",
+          "value": "Focal length mode",
+          "line": null
+        },
+        {
+          "key": "aperture_mode",
+          "value": "Aperture mode",
+          "line": null
+        },
+        {
+          "key": "focus_distance_mode",
+          "value": "Focus distance mode",
+          "line": null
+        },
+        {
+          "key": "vertical_mode",
+          "value": "Vertical mode",
+          "line": null
+        },
+        {
+          "key": "speed_mode",
+          "value": "Speed mode",
+          "line": null
+        },
+        {
+          "key": "reset_mode",
+          "value": "Reset mode",
+          "line": null
+        },
+        {
+          "key": "resetCameraSettings",
+          "value": "Set cam to near player",
+          "line": null
+        },
+        {
+          "key": "other_control_active",
+          "value": "Another control mode is active",
+          "line": null
+        },
+        {
+          "key": "cannot_edit_default_cam",
+          "value": "Cannot adjust Camera mode Default",
+          "line": null
+        },
+        {
+          "key": "distance_mode",
+          "value": "Distance mode",
+          "line": null
+        },
+        {
+          "key": "disableCamText",
+          "value": "Disable Adjust-cam text",
+          "line": null
+        },
+        {
+          "key": "resetCameraToPlayerPos",
+          "value": "Reset camera position to player",
+          "line": null
+        },
+        {
+          "key": "warpToCamPos",
+          "value": "Warp body to FreeCam position",
+          "line": null
+        },
+        {
+          "key": "showFreeCamPosition",
+          "value": "Show freecam position",
+          "line": null
+        },
+        {
+          "key": "freecam_non_adjust",
+          "value": "Static cam mode",
+          "line": null
+        },
+        {
+          "key": "setStageBlockPositionToFreeCam",
+          "value": "Set stage position to camera",
+          "line": null
+        },
+        {
+          "key": "updateStageBlockLoadPositionToCameraPosition",
+          "value": "Update stage position with camera",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "cam_aroundMenu",
+          "value": "Lets you move a detached camera, use the main movement stick/keys in combination with other keys/buttons to adjust camera settings, including Zoom, aperture, focus distance.",
+          "line": null
+        },
+        {
+          "key": "adjustCameraUpdate",
+          "value": "[[Turning this on sets AroundCam mode to Free cam, and lets you use keys/buttons to adjust the options.\r\n  Move cam with normal move keys   \r\n  \r\n  [DASH] (Shift or Left stick click) to move up  \r\n  [SWITCH_ZOOM](Middle mouse or Right stick click) to move down  \r\n  \r\n  Hold the following and move left stick up/down to increase/decrease the settings:  \r\n  \r\n  [FIRE] - Zoom/focal length   \r\n  [RELOAD] - Aperture (DOF)  \r\n  [STANCE] - Focus distance (DOF)   \r\n  [ACTION] - Cam move speed  \r\n  [AIM] - Camera orbit distance  \r\n  \r\n  Or hold [BINOCULARS] and press the above to reset that setting.  \r\n  \r\n  Hold [BINOCULARS] and press [DASH] to move free cam position to the player position]]",
+          "line": null
+        },
+        {
+          "key": "cameraMode",
+          "value": "Lets you turn on freecam, if Adjust-cam mode is off ",
+          "line": null
+        },
+        {
+          "key": "moveScale",
+          "value": "Movement speed scale when in Adjust-cam mode",
+          "line": null
+        },
+        {
+          "key": "setStageBlockPositionToFreeCam",
+          "value": "Sets the map loading position to the free cam position.",
+          "line": null
+        },
+        {
+          "key": "updateStageBlockLoadPositionToCameraPosition",
+          "value": "Sets the map loading position to the free cam position as it moves. Warning: As the LOD changes away from player position your player may fall through the terrain.",
+          "line": null
+        },
+        {
+          "key": "disableCamText",
+          "value": "Disables Adjust-cams repeating announce log of the current 'hold button to adjust' settings.",
+          "line": null
+        }
+      ]
+    },
+    "InfCameraPlayCam.lua": {
+      "eng": [
+        {
+          "key": "playCamMenu",
+          "value": "Cam - PlayCam menu",
+          "line": null
+        },
+        {
+          "key": "playCameraNonAnimation",
+          "value": "Start PlayCam",
+          "line": null
+        },
+        {
+          "key": "stopPlayCamera",
+          "value": "Stop PlayCam",
+          "line": null
+        },
+        {
+          "key": "cam_selectListObject",
+          "value": "Camera target",
+          "line": null
+        },
+        {
+          "key": "cam_focalLength",
+          "value": "Focal length",
+          "line": null
+        },
+        {
+          "key": "cam_focusDistance",
+          "value": "Focus distance",
+          "line": null
+        },
+        {
+          "key": "cam_aperture",
+          "value": "Apeture",
+          "line": null
+        },
+        {
+          "key": "cam_isFollowPos",
+          "value": "Follow Position",
+          "line": null
+        },
+        {
+          "key": "cam_isFollowRot",
+          "value": "Follow Rotation",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetX",
+          "value": "Target offset X",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetY",
+          "value": "Target offset Y",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetZ",
+          "value": "Target offset Z",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosX",
+          "value": "Position offset X",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosY",
+          "value": "Position offset Y",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosZ",
+          "value": "Position offset Z",
+          "line": null
+        },
+        {
+          "key": "cam_followTime",
+          "value": "Follow time",
+          "line": null
+        },
+        {
+          "key": "cam_followDelayTime",
+          "value": "Follow delay time",
+          "line": null
+        },
+        {
+          "key": "cam_timeToSleep",
+          "value": "Time till end",
+          "line": null
+        },
+        {
+          "key": "cam_fitOnCamera",
+          "value": "Fit on camera",
+          "line": null
+        },
+        {
+          "key": "cam_timeToStartToFitCamera",
+          "value": "Fit start time",
+          "line": null
+        },
+        {
+          "key": "cam_fitCameraInterpTime",
+          "value": "Fit interp time",
+          "line": null
+        },
+        {
+          "key": "cam_diffFocalLengthToReFitCamera",
+          "value": "Fit diff focal length",
+          "line": null
+        },
+        {
+          "key": "cam_callSeOfCameraInterp",
+          "value": "Call Se of Camera Interp",
+          "line": null
+        },
+        {
+          "key": "cam_useLastSelectedIndex",
+          "value": "Use last selected index",
+          "line": null
+        },
+        {
+          "key": "cam_isCollisionCheck",
+          "value": "Collision check",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "playCamMenu",
+          "value": "An alternate camera than the one used by freecam. WARNING: is sometimes unstable and may crash the game.",
+          "line": null
+        },
+        {
+          "key": "playCameraNonAnimation",
+          "value": "Starts PlayCam with current settings. Changing any setting also automatically starts the PlayCam.",
+          "line": null
+        },
+        {
+          "key": "cam_selectListObject",
+          "value": "Selects game object for camerat to target. You can add more game objects via the Objects menu in the main Mission menu.",
+          "line": null
+        },
+        {
+          "key": "cam_focalLength",
+          "value": "DOF variable",
+          "line": null
+        },
+        {
+          "key": "cam_focusDistance",
+          "value": "DOF variable",
+          "line": null
+        },
+        {
+          "key": "cam_aperture",
+          "value": "DOF variable",
+          "line": null
+        },
+        {
+          "key": "cam_isFollowPos",
+          "value": "Follows position of Camera target. Overrides Follow Rotation.",
+          "line": null
+        },
+        {
+          "key": "cam_isFollowRot",
+          "value": "Follows rotation of Camera target.",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetX",
+          "value": "Adjusts X axis of camera target",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetY",
+          "value": "Adjusts Y axis of camera target",
+          "line": null
+        },
+        {
+          "key": "cam_offsetTargetZ",
+          "value": "Adjusts Z axis of camera target",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosX",
+          "value": "Adjusts X axis of camera position",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosY",
+          "value": "Adjusts Y axis of camera position",
+          "line": null
+        },
+        {
+          "key": "cam_offsetPosZ",
+          "value": "Adjusts Z axis of camera position",
+          "line": null
+        },
+        {
+          "key": "cam_followTime",
+          "value": "Time in seconds before camera follow turns off. See Follow Position and Follow Rotation.",
+          "line": null
+        },
+        {
+          "key": "cam_followDelayTime",
+          "value": "Delay before camera follows. Acts more like interpolation time than one-off. See Follow Position and Follow Rotation.",
+          "line": null
+        },
+        {
+          "key": "cam_timeToSleep",
+          "value": "Time in seconds before PlayCam turns off. Set to high number if you don't want it to end.",
+          "line": null
+        },
+        {
+          "key": "cam_fitOnCamera",
+          "value": "Unknown",
+          "line": null
+        },
+        {
+          "key": "cam_timeToStartToFitCamera",
+          "value": "For Fit on camera.",
+          "line": null
+        },
+        {
+          "key": "cam_fitCameraInterpTime",
+          "value": "Interpolation time for Fit on camera.",
+          "line": null
+        },
+        {
+          "key": "cam_diffFocalLengthToReFitCamera",
+          "value": "Fit diff focal length",
+          "line": null
+        },
+        {
+          "key": "cam_callSeOfCameraInterp",
+          "value": "Unknown",
+          "line": null
+        },
+        {
+          "key": "cam_useLastSelectedIndex",
+          "value": "Unknown",
+          "line": null
+        },
+        {
+          "key": "cam_isCollisionCheck",
+          "value": "Checks between camera and target and moves camera in if there is something in the way.",
+          "line": null
+        }
+      ]
+    },
+    "InfChimera.lua": {
+      "eng": [
+        {
+          "key": "chimera_weaponCategory",
+          "value": "Weapon category",
+          "line": null
+        },
+        {
+          "key": "chimera_loadSlot1",
+          "value": "Load to slot 1",
+          "line": null
+        },
+        {
+          "key": "chimera_loadSlot2",
+          "value": "Load to slot 2",
+          "line": null
+        },
+        {
+          "key": "chimera_loadSlot3",
+          "value": "Load to slot 3",
+          "line": null
+        },
+        {
+          "key": "chimera_saveSlot1",
+          "value": "Save from slot 1",
+          "line": null
+        },
+        {
+          "key": "chimera_saveSlot2",
+          "value": "Save from slot 2",
+          "line": null
+        },
+        {
+          "key": "chimera_saveSlot3",
+          "value": "Save from slot 3",
+          "line": null
+        },
+        {
+          "key": "chimera_clearSlot",
+          "value": "Clear slot",
+          "line": null
+        },
+        {
+          "key": "chimeraMenu",
+          "value": "Chimera menu",
+          "line": null
+        },
+        {
+          "key": "chimera_loaded_slot",
+          "value": "Loaded to slot ",
+          "line": null
+        },
+        {
+          "key": "chimera_saved_slot",
+          "value": "Saved from slot ",
+          "line": null
+        },
+        {
+          "key": "chimera_cleared_slot",
+          "value": "Cleared slot ",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "chimeraMenu",
+          "value": "Chimera is MGSVs weapon cusomization system, this menu lets you save/load from the Customize > Weapons idroid menu",
+          "line": null
+        },
+        {
+          "key": "chimera_weaponCategory",
+          "value": "Changes which weapon category the slots refer to.",
+          "line": null
+        },
+        {
+          "key": "chimera_loadSlot1",
+          "value": "Load chimera from MGS_TPP\\mod\\chimeras to specified slot",
+          "line": null
+        },
+        {
+          "key": "chimera_saveSlot1",
+          "value": "Save chimera of specified slot for to MGS_TPP\\mod\\chimeras ",
+          "line": null
+        }
+      ]
+    },
+    "InfDebug.lua": {
+      "eng": [
+        {
+          "key": "vscodeMenu",
+          "value": "Vscode menu",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "vscodeMenu",
+          "value": "Commands to generate files to support using vscode with a mgsv project.",
+          "line": null
+        },
+        {
+          "key": "debug_WriteVscodeHintOnTitle",
+          "value": "Runs WriteVscodeHint when loading has reached Title",
+          "line": null
+        },
+        {
+          "key": "WriteVscodeHint",
+          "value": "Writes GameDir/mod/vscode/vscode_hint-mod.lua,vscode_hint-base_game.lua , writes a hint files for vscode lua language server extension of mod lua files loaded.",
+          "line": null
+        },
+        {
+          "key": "debug_WriteVarsOnSave",
+          "value": "Runs WriteVars on IH save (which includes close IH menu)",
+          "line": null
+        },
+        {
+          "key": "WriteVars",
+          "value": "Writes vars, svars, gvars, mvars to GameDir/mod/vscode/, for manual perusal or use with vscode",
+          "line": null
+        }
+      ]
+    },
+    "InfDebugStuff.lua": {
+      "eng": [],
+      "help": [
+        {
+          "key": "debugPrintMenu",
+          "value": "Dump various things to log",
+          "line": null
+        },
+        {
+          "key": "selectSpeechSoldier",
+          "value": "Selects a soldier from Object list (see Objects menu) as a target for debug_CallVoice, debug_CallConversation",
+          "line": null
+        },
+        {
+          "key": "debug_CallConversation",
+          "value": "Requires a valid selectSpeechSoldier, selectSpeechSoldier2 of a nearby soldier",
+          "line": null
+        }
+      ]
+    },
+    "InfDemo.lua": {
+      "eng": [
+        {
+          "key": "demosMenu",
+          "value": "Cutscenes menu",
+          "line": null
+        },
+        {
+          "key": "mbDemoSelection",
+          "value": "MB cutscene play mode",
+          "line": null
+        },
+        {
+          "key": "mbDemoSelectionSettings",
+          "value": [
+            "Default",
+            "Play selected",
+            "Cutscenes disabled"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbSelectedDemo",
+          "value": "Select MB cutscene (REQ: Play selected)",
+          "line": null
+        },
+        {
+          "key": "mbDemoOverrideTime",
+          "value": "Override time",
+          "line": null
+        },
+        {
+          "key": "mbDemoOverrideTimeSettings",
+          "value": [
+            "Cutscene default",
+            "Current",
+            "Custom"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbDemoHour",
+          "value": "Hour",
+          "line": null
+        },
+        {
+          "key": "mbDemoMinute",
+          "value": "Minute",
+          "line": null
+        },
+        {
+          "key": "mbDemoOverrideWeather",
+          "value": "Override weather",
+          "line": null
+        },
+        {
+          "key": "mbDemoOverrideWeatherSettings",
+          "value": [
+            "Cutscene default",
+            "Current",
+            "Sunny",
+            "Cloudy",
+            "Rainy",
+            "Sandstorm",
+            "Foggy",
+            "Pouring"
+          ],
+          "line": null
+        },
+        {
+          "key": "useSoldierForDemos",
+          "value": "Use selected soldier in all cutscenes and missions",
+          "line": null
+        },
+        {
+          "key": "forceDemoAllowAction",
+          "value": "Force allow actions",
+          "line": null
+        },
+        {
+          "key": "mbDontDemoDisableBuddy",
+          "value": "Don't disable buddy after mb cutscene",
+          "line": null
+        },
+        {
+          "key": "restartDemo",
+          "value": "Restart cutscene",
+          "line": null
+        },
+        {
+          "key": "pauseDemo",
+          "value": "Pause cutscene",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbDemoSelection",
+          "value": "Forces or Disables cutscenes that trigger under certain circumstances on returning to Mother Base",
+          "line": null
+        },
+        {
+          "key": "forceDemoAllowAction",
+          "value": "Prevents disabling of player actions during cutscene, but most cutscenes require the Disable cutscene camera mod from the IH files page.",
+          "line": null
+        }
+      ]
+    },
+    "InfEmblem.lua": {
+      "eng": [
+        {
+          "key": "emblem_load",
+          "value": "Load emblem",
+          "line": null
+        },
+        {
+          "key": "emblem_save",
+          "value": "Save emblem",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "emblem_load",
+          "value": "Load emblem from MGS_TPP\\mod\\emblems . After loading emblem you must go to the normal Customize emblem system and OK it for it to reapply it. It will also regenerate it next time game is started.",
+          "line": null
+        },
+        {
+          "key": "emblem_save",
+          "value": "Save emblem to MGS_TPP\\mod\\emblems",
+          "line": null
+        }
+      ]
+    },
+    "InfEneFovaIvars.lua": {
+      "eng": [
+        {
+          "key": "mbDDHeadGear",
+          "value": "DD Head gear",
+          "line": null
+        },
+        {
+          "key": "mbDDHeadGearSettings",
+          "value": [
+            "Off",
+            "Current prep"
+          ],
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeFREE",
+          "value": "Custom soldier type in Free roam",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeMISSION",
+          "value": "Custom soldier type in Missions",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeMB_ALL",
+          "value": "Custom DD type in MB",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeFemaleMB_ALL",
+          "value": "Custom DD female type in MB",
+          "line": null
+        },
+        {
+          "key": "setting_only_for_dd",
+          "value": "This setting is only for DD soldiers",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "customSoldierTypeFREE",
+          "value": "Override the soldier type of enemy soldiers in Free Roam.\nNew soldier types can be added via the bodyInfo addon system.",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeMISSION",
+          "value": "WARNING: Unique soldiers in the mission are likely to either be the default body from the selected custom soldier, or have visual issues if there isn't one.",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeMB_ALL",
+          "value": "New body types can be added via the bodyInfo addon system.",
+          "line": null
+        },
+        {
+          "key": "customSoldierTypeFemaleMB_ALL",
+          "value": "New body types can be added via the bodyInfo addon system.",
+          "line": null
+        }
+      ]
+    },
+    "InfEnemyPhase.lua": {
+      "eng": [
+        {
+          "key": "phaseMenu",
+          "value": "Enemy phases menu",
+          "line": null
+        },
+        {
+          "key": "phaseUpdate",
+          "value": "Enable phase modifications",
+          "line": null
+        },
+        {
+          "key": "minPhase",
+          "value": "Minimum phase",
+          "line": null
+        },
+        {
+          "key": "maxPhase",
+          "value": "Maximum phase",
+          "line": null
+        },
+        {
+          "key": "keepPhase",
+          "value": "Don't downgrade phase",
+          "line": null
+        },
+        {
+          "key": "phaseUpdateRate",
+          "value": "Phase mod update rate (seconds)",
+          "line": null
+        },
+        {
+          "key": "phaseUpdateRange",
+          "value": "Phase mod random variation",
+          "line": null
+        },
+        {
+          "key": "printPhaseChanges",
+          "value": "Print phase changes",
+          "line": null
+        },
+        {
+          "key": "soldierAlertOnHeavyVehicleDamage",
+          "value": "Alert phase on vehicle attack",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "phaseMenu",
+          "value": "Adjust minimum and maximum alert phase for enemy Command Posts",
+          "line": null
+        },
+        {
+          "key": "phaseUpdate",
+          "value": "The Minimum, Maximum, and Don't downgrade phase settings are applied on at every update tick according to the Phase update rate and random variation settings",
+          "line": null
+        },
+        {
+          "key": "minPhase",
+          "value": "PHASE_SNEAK - not alert, PHASE_CAUTION - alert, PHASE_EVASION - one step down from combat alert, PHASE_ALERT - combat alert",
+          "line": null
+        },
+        {
+          "key": "maxPhase",
+          "value": "PHASE_SNEAK - not alert, PHASE_CAUTION - alert, PHASE_EVASION - one step down from combat alert, PHASE_ALERT - combat alert",
+          "line": null
+        },
+        {
+          "key": "phaseUpdateRate",
+          "value": "Rate that the CPs phase is adjusted to the minimum and maxium settings.",
+          "line": null
+        },
+        {
+          "key": "phaseUpdateRange",
+          "value": "Random variation of update rate",
+          "line": null
+        },
+        {
+          "key": "phase_modification_enabled",
+          "value": "Phase modifications enabled",
+          "line": null
+        },
+        {
+          "key": "soldierAlertOnHeavyVehicleDamage",
+          "value": "Does not require phase modifications setting to be enabled. The enemy reactions to heavy vehicle attack in the default game are lacking, you can kill someone and they'll act as if it's an unsourced attack. This option changes phase of soldiers command post on damaging the soldier. Setting it to ALERT recommended.",
+          "line": null
+        },
+        {
+          "key": "printPhaseChanges",
+          "value": "Displays when phase changes.",
+          "line": null
+        }
+      ]
+    },
+    "InfEquip.lua": {
+      "eng": [
+        {
+          "key": "mbSoldierEquipRange",
+          "value": "MB Equip Range Type (MB Prep mode FOB only)",
+          "line": null
+        },
+        {
+          "key": "mbSoldierEquipRangeSettings",
+          "value": [
+            "Short-range",
+            "Medium-range",
+            "Long-range",
+            "Random range"
+          ],
+          "line": null
+        },
+        {
+          "key": "customEquipMenu",
+          "value": "Custom soldier equip menu",
+          "line": null
+        },
+        {
+          "key": "soldierEquipGrade_MIN",
+          "value": "DD weapons grade MIN",
+          "line": null
+        },
+        {
+          "key": "soldierEquipGrade_MAX",
+          "value": "DD weapons grade MAX",
+          "line": null
+        },
+        {
+          "key": "allowUndevelopedDDEquip",
+          "value": "Allow undeveloped DD weapons",
+          "line": null
+        },
+        {
+          "key": "mbDDEquipNonLethal",
+          "value": "DD equipment non-lethal",
+          "line": null
+        },
+        {
+          "key": "itemDropChance",
+          "value": "Soldier item drop chance",
+          "line": null
+        },
+        {
+          "key": "putEquipOnTrucks",
+          "value": "Equipment on trucks",
+          "line": null
+        },
+        {
+          "key": "customWeaponTableFREE",
+          "value": "Enemy use custom weapon table in free roam",
+          "line": null
+        },
+        {
+          "key": "customWeaponTableMISSION",
+          "value": "Enemy use custom equip table in missions",
+          "line": null
+        },
+        {
+          "key": "customWeaponTableMB_ALL",
+          "value": "MB staff use custom equip table",
+          "line": null
+        },
+        {
+          "key": "weaponTableStrength",
+          "value": "Weapon stengths",
+          "line": null
+        },
+        {
+          "key": "weaponTableStrengthSettings",
+          "value": [
+            "NORMAL",
+            "STRONG",
+            "Combined"
+          ],
+          "line": null
+        },
+        {
+          "key": "weaponTableAfgh",
+          "value": "Include Soviet weapons",
+          "line": null
+        },
+        {
+          "key": "weaponTableMafr",
+          "value": "Include PF weapons",
+          "line": null
+        },
+        {
+          "key": "weaponTableSkull",
+          "value": "Include XOF weapons",
+          "line": null
+        },
+        {
+          "key": "weaponTableDD",
+          "value": "Include DD weapons",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalFREE",
+          "value": "Global soldier weapon table in FreeRoam",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalMISSION",
+          "value": "Global soldier weapon table in Missions",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalMB_ALL",
+          "value": "Global soldier weapon table in MB",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "customEquipMenu",
+          "value": "Allow soldiers to have equipment from other locations/types, including DD equipment usually only used on FOB. Soldiers are assigned a random weapon of the type the prep system assigns them, so you'll see more weapon variation",
+          "line": null
+        },
+        {
+          "key": "itemDropChance",
+          "value": "Chance soldier will drop an item when eliminated.",
+          "line": null
+        },
+        {
+          "key": "putEquipOnTrucks",
+          "value": "Puts a random piece of equipment on the back of patrol trucks.",
+          "line": null
+        },
+        {
+          "key": "soldierEquipGrade_MIN",
+          "value": "A grade will be chosen between MIN and MAX at mission start. Note: Equip grade 3 is the minimum grade that has all types of weapons.",
+          "line": null
+        },
+        {
+          "key": "allowUndevelopedDDEquip",
+          "value": "Whether to limit the selection to equipment you have developed or allow all equipment. Restriction does not apply to Enemies using DD weapons.",
+          "line": null
+        },
+        {
+          "key": "weaponTableStrength",
+          "value": "The game weapon tables have Normal and Strong lists that the Enemy prep system will pick from, this setting allows you to select either, or combine them.",
+          "line": null
+        },
+        {
+          "key": "weaponTableDD",
+          "value": "Add the DD weapons table that's usually used for FOB, the following grade and developed settings control how this table is built",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalFREE",
+          "value": "Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalMISSION",
+          "value": "Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.",
+          "line": null
+        },
+        {
+          "key": "weaponTableGlobalMB_ALL",
+          "value": "Base soldier weapon table, either the games default or an addon table. Combined soldier weapon table builds from this.",
+          "line": null
+        }
+      ]
+    },
+    "InfFovaIvars.lua": {
+      "eng": [
+        {
+          "key": "fovaModMenu",
+          "value": "Form Variation menu",
+          "line": null
+        },
+        {
+          "key": "no_fova_found",
+          "value": "No fova for model",
+          "line": null
+        },
+        {
+          "key": "enableFovaMod",
+          "value": "Use selected fova",
+          "line": null
+        },
+        {
+          "key": "fova_is_not_set",
+          "value": "Use fova is off, selected fova will not be applied on mission",
+          "line": null
+        },
+        {
+          "key": "disabled_fova",
+          "value": "Player model changed, disabling Use fova",
+          "line": null
+        },
+        {
+          "key": "change_model_to_reset_fova",
+          "value": "Model will reset on mission start, or mission prep character change",
+          "line": null
+        },
+        {
+          "key": "printBodyInfo",
+          "value": "Print current body info",
+          "line": null
+        },
+        {
+          "key": "playerType",
+          "value": "Player type",
+          "line": null
+        },
+        {
+          "key": "playerPartsType",
+          "value": "Suit type",
+          "line": null
+        },
+        {
+          "key": "playerCamoType",
+          "value": "Camo type",
+          "line": null
+        },
+        {
+          "key": "playerFaceEquipId",
+          "value": "Headgear",
+          "line": null
+        },
+        {
+          "key": "playerFaceId",
+          "value": "Face",
+          "line": null
+        },
+        {
+          "key": "skipDevelopChecks",
+          "value": "Skip developed checks",
+          "line": null
+        },
+        {
+          "key": "printFaceInfo",
+          "value": "Print face info",
+          "line": null
+        },
+        {
+          "key": "printCurrentAppearance",
+          "value": "Print appearance info",
+          "line": null
+        },
+        {
+          "key": "appearanceMenu",
+          "value": "Appearance menu",
+          "line": null
+        },
+        {
+          "key": "only_for_dd_soldier",
+          "value": "Only for DD soldiers",
+          "line": null
+        },
+        {
+          "key": "no_head_fovas",
+          "value": "No head fova mods found",
+          "line": null
+        },
+        {
+          "key": "playerFaceFilter",
+          "value": "Filter faces",
+          "line": null
+        },
+        {
+          "key": "playerFaceFilterSettings",
+          "value": [
+            "Show all",
+            "Headgear (cosmetic)",
+            "Unique",
+            "Head fova addons"
+          ],
+          "line": null
+        },
+        {
+          "key": "no_developed_camo",
+          "value": "No developed camos found for suit",
+          "line": null
+        },
+        {
+          "key": "fob_locked_warning",
+          "value": "WARNING: Pause menu disabled, may cause other issues",
+          "line": null
+        },
+        {
+          "key": "characterMenu",
+          "value": "Character Fova Menu",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "playerType",
+          "value": "Change main player type. WARNING: Ocelot and Quiet player types have side effect when used due to trying to work around them being restricted to FOB. The Pause menu will be disabled and the game may hit an infinite load if you complete a mission while they are used. Use nexusmods.com/metalgearsolidvtpp/mods/518 by BobDoleOwndU to fix sound issues with using these player types.",
+          "line": null
+        },
+        {
+          "key": "skipDevelopChecks",
+          "value": "Allows items that haven't been developed to be selected.",
+          "line": null
+        }
+      ]
+    },
+    "InfFulton.lua": {
+      "eng": [
+        {
+          "key": "autofulton_success",
+          "value": "[Extraction team] reached soldier",
+          "line": null
+        },
+        {
+          "key": "autofulton_fail",
+          "value": "[Extraction team] could not reach soldier",
+          "line": null
+        },
+        {
+          "key": "autofulton_phase_too_high",
+          "value": "[Extraction team] CP too high alert",
+          "line": null
+        },
+        {
+          "key": "fulton_autoFultonFREE",
+          "value": "Extraction team in Free Roam",
+          "line": null
+        },
+        {
+          "key": "fulton_autoFultonMISSION",
+          "value": "Extraction team in Missions",
+          "line": null
+        },
+        {
+          "key": "fulton_recoverCritical",
+          "value": "Extraction recover critical",
+          "line": null
+        },
+        {
+          "key": "fultonMenu",
+          "value": "Fulton menu",
+          "line": null
+        },
+        {
+          "key": "fultonSuccessMenu",
+          "value": "Fulton success menu",
+          "line": null
+        },
+        {
+          "key": "fultonMbSupportScale",
+          "value": "MB fulton support scale",
+          "line": null
+        },
+        {
+          "key": "fultonMbMedicalScale",
+          "value": "MB fulton medical scale",
+          "line": null
+        },
+        {
+          "key": "fultonDyingPenalty",
+          "value": "Target dying penalty",
+          "line": null
+        },
+        {
+          "key": "fultonSleepPenalty",
+          "value": "Target sleeping penalty",
+          "line": null
+        },
+        {
+          "key": "fultonHoldupPenalty",
+          "value": "Target holdup penalty",
+          "line": null
+        },
+        {
+          "key": "fulton_mb_support",
+          "value": "Current MB support bonus +",
+          "line": null
+        },
+        {
+          "key": "fulton_mb_medical",
+          "value": "Current MB medical bonus +",
+          "line": null
+        },
+        {
+          "key": "printFultonSuccessBonus",
+          "value": "Print mb fulton success bonus",
+          "line": null
+        },
+        {
+          "key": "fultonHostageHandling",
+          "value": "Hostage handling",
+          "line": null
+        },
+        {
+          "key": "fultonHostageHandlingSettings",
+          "value": [
+            "Default",
+            "Must extract (0%)"
+          ],
+          "line": null
+        },
+        {
+          "key": "fultonSoldierVariationRange",
+          "value": "Soldier fulton success variation",
+          "line": null
+        },
+        {
+          "key": "fultonVariationRange",
+          "value": "Fulton success variation",
+          "line": null
+        },
+        {
+          "key": "fultonVariationInvRate",
+          "value": "Fulton variation inv rate",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "fulton_autoFultonFREE",
+          "value": "Extraction team will recover enemies you have neutralized after you've traveled some distance from them (usually to next command post), using the same success rate as manual fultoning. This lets you do low/no fulton runs without having to sacrifice the recruitment side of gameplay.",
+          "line": null
+        },
+        {
+          "key": "fulton_recoverCritical",
+          "value": "Requires Extraction team option enabled. Extraction team will recover critically shot soldiers (ie 'dead' soldiers). Depending on medical section success. This lets you play with more lethal weapons while still keeping up with the recruitment gameplay.",
+          "line": null
+        },
+        {
+          "key": "fultonSuccessMenu",
+          "value": "Adjust the success rate of fultoning",
+          "line": null
+        },
+        {
+          "key": "fultonMbSupportScale",
+          "value": "Scales the success bonus from mother base support section (which itself scales by section level). In the base game this is mostly used to counter weather penalty.",
+          "line": null
+        },
+        {
+          "key": "fultonMbMedicalScale",
+          "value": "Scales the success bonus from mother base medical section (which itself scales by section level). In the base game this used to counter injured target penalty",
+          "line": null
+        },
+        {
+          "key": "disableFulton",
+          "value": "Disables fulton at the player-action level",
+          "line": null
+        },
+        {
+          "key": "fultonVariationRange",
+          "value": "Subtracts the purcentage from fulton success in a periodic fashion.",
+          "line": null
+        },
+        {
+          "key": "fultonVariationInvRate",
+          "value": "Inverse rate (higher slower) of fulton variation cycle",
+          "line": null
+        }
+      ]
+    },
+    "InfGameEvent.lua": {
+      "eng": [
+        {
+          "key": "eventsMenu",
+          "value": "Events menu",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceHUNTED",
+          "value": "Hunted event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceCRASHLAND",
+          "value": "Crashland event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceLOST_COMS",
+          "value": "Lost Coms event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceTRAINING",
+          "value": "DD Training wargame event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceINVASION",
+          "value": "Invasion event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceZOMBIE_DD",
+          "value": "DD Infection event chance",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceZOMBIE_OBLITERATION",
+          "value": "Zombie Obliteration event chance",
+          "line": null
+        },
+        {
+          "key": "event_announce",
+          "value": "Event: %s",
+          "line": null
+        },
+        {
+          "key": "event_forced",
+          "value": "Event will start on next MB visit or Free Roam",
+          "line": null
+        },
+        {
+          "key": "gameEventChanceMB",
+          "value": "MB event random trigger chance",
+          "line": null
+        },
+        {
+          "key": "gameEventChanceFREE",
+          "value": "Free roam event random trigger chance",
+          "line": null
+        },
+        {
+          "key": "events_mb",
+          "value": [
+            "DD Training wargame",
+            "Soviet attack",
+            "Rogue Coyote attack",
+            "XOF attack",
+            "Femme Fatales attack",
+            "DD Infection outbreak",
+            "Zombie Obliteration (non DD)"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbWargameFemales",
+          "value": "Women in Enemy Invasion mode",
+          "line": null
+        },
+        {
+          "key": "mbWarGamesProfile",
+          "value": "Mother Base War Games",
+          "line": null
+        },
+        {
+          "key": "mbWarGamesProfileSettings",
+          "value": [
+            "Off",
+            "DD Training",
+            "Enemy Invasion",
+            "DD Infection",
+            "Zombie Obliteration (non DD)"
+          ],
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "gameEventChanceMB",
+          "value": "Chance to randomly trigger an IH event on returning to MB. (See 'Trigger random IH event')",
+          "line": null
+        },
+        {
+          "key": "gameEventChanceFREE",
+          "value": "Chance to randomly trigger an IH event on starting Free roam. (See 'Trigger random IH event')",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceHUNTED",
+          "value": "Chance to start event Hunted on starting free roam. Hunted: Sets the enemy to combat alert every 15-45 seconds (this also sets the player spotted position right on you), and also disables heli landing zones in a 2k radius from your start position, so you'll have to travel if you want to 'get out'. ",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceCRASHLAND",
+          "value": "Chance to start event Crashland on starting free roam. Crashland: Starts you on foot in at a random start point and randomly selects OSP options - cleared primary, secondary, back weapons, items, support items.",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceLOST_COMS",
+          "value": "Chance to start event Lost-coms on starting free roam. Disables most mother base support menus and disables all heli landing zones except from main bases/towns. ",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceTRAINING",
+          "value": "Chance to randomly trigger DD Training wargame on returning to MB.",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceINVASION",
+          "value": "Chance to randomly trigger an Invasion event on returning to MB.",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceZOMBIE_DD",
+          "value": "Chance to randomly trigger DD Infection outbreak on returning to MB.",
+          "line": null
+        },
+        {
+          "key": "gameevent_chanceZOMBIE_OBLITERATION",
+          "value": "Chance to randomly trigger Zombie Obliteration (non DD) on returning to MB.",
+          "line": null
+        },
+        {
+          "key": "eventsMenu",
+          "value": "[[Events are temporary combinations of IH settings for free roam and mother base.  \r\nFree roam events (can stack):  \r\nCrashland: Starts you on foot in at a random start point and randomly selects OSP options - cleared primary, secondary, back weapons, items, support items.  \r\nLost-coms: Disables most mother base support menus and disables all heli landing zones except from main bases/towns.  \r\nHunted: Sets the enemy to combat alert every 15-45 seconds (this also sets the player spotted position right on you), and also disables heli landing zones in a 2k radius from your start position, so you'll have to travel if you want to 'get out'.  \r\nMB events (only one active):  \r\nDD Training wargame,  \r\nSoviet attack,  \r\nRogue Coyote attack,  \r\nXOF attack,  \r\nDD Infection outbreak,  \r\nZombie Obliteration (non DD)  ]]",
+          "line": null
+        },
+        {
+          "key": "mbWarGamesProfile",
+          "value": "Profiles that sets many of the wargames event settings, but just the underlying categories, see 'MB event random trigger chance' actually themed/flavorful versions",
+          "line": null
+        }
+      ]
+    },
+    "InfHeliSpace.lua": {
+      "eng": [
+        {
+          "key": "heliSpace_forceSelect",
+          "value": "Force select helispace",
+          "line": null
+        },
+        {
+          "key": "heliSpace_loadOnSelectLandPoint",
+          "value": "Load helispace on choose landing zone",
+          "line": null
+        },
+        {
+          "key": "heliSpaceSettingsMenu",
+          "value": "Helispace menu",
+          "line": null
+        },
+        {
+          "key": "missionPrepFlagsMenu",
+          "value": "Mission-prep features menu",
+          "line": null
+        },
+        {
+          "key": "heliSpace_SkipMissionPreparetion",
+          "value": "Skip mission prep",
+          "line": null
+        },
+        {
+          "key": "heliSpace_NoBuddyMenuFromMissionPreparetion",
+          "value": "Disable select-buddy",
+          "line": null
+        },
+        {
+          "key": "heliSpace_NoVehicleMenuFromMissionPreparetion",
+          "value": "Disable select-vehicle",
+          "line": null
+        },
+        {
+          "key": "heliSpace_DisableSelectSortieTimeFromMissionPreparetion",
+          "value": "Disable select-sortie time",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "heliSpace_forceSelect",
+          "value": "Mostly a debugging feature, but also lets you overide what helispace is loaded in case you have a favorite helispace addon.",
+          "line": null
+        },
+        {
+          "key": "heliSpace_loadOnSelectLandPoint",
+          "value": "[[When choosing the landing zone for a mission the helispace for that mission will be loaded before entering mission prep.\r\nADDON will only load helispace if theres a helispace addon defined for that mission or location.\r\nALL will load the base game helispaces for location \r\n(there is actually a base game helispace for each major location, it's just not normally noticable since all the spaces inside helispace block off the view of the terrain)]]",
+          "line": null
+        },
+        {
+          "key": "heliSpaceSettingsMenu",
+          "value": "[[Settings for helispace (ACC), including helispace addon settings. \r\nHelispace is the mission that loads that has the title, ACC, weapon and vehicle customisation space and mission prep space.\r\nIH also has an addon system that lets new helispaces be added.\r\nWhat helispace to load is usually done on initial startup of game and when returning to ACC from mission, but also choose landing zone when the option is on.\r\nHelispace and mission addons define what helispace is wanted for what mission or location and will be chosen.\r\n]]",
+          "line": null
+        },
+        {
+          "key": "missionPrepFlagsMenu",
+          "value": "Only affects the mission-prep screen, not the in-mission equivalents.",
+          "line": null
+        },
+        {
+          "key": "heliSpace_SkipMissionPreparetion",
+          "value": "Go straight to mission, skipping the mission prep screen.",
+          "line": null
+        },
+        {
+          "key": "heliSpace_NoBuddyMenuFromMissionPreparetion",
+          "value": "Prevents selection of buddies during mission prep.",
+          "line": null
+        },
+        {
+          "key": "heliSpace_NoVehicleMenuFromMissionPreparetion",
+          "value": "WARNING: Selecting a vehicle if the mission does not have player vehicle support means there will be no vehicle recovered on mission exit (effecively losing the vehicle you attempted to deploy).",
+          "line": null
+        },
+        {
+          "key": "heliSpace_DisableSelectSortieTimeFromMissionPreparetion",
+          "value": "Only allows ASAP at mission prep",
+          "line": null
+        }
+      ]
+    },
+    "InfHelicopter.lua": {
+      "eng": [
+        {
+          "key": "supportHeliMenu",
+          "value": "Support heli menu",
+          "line": null
+        },
+        {
+          "key": "setInvincibleHeli",
+          "value": "Set heli invincible",
+          "line": null
+        },
+        {
+          "key": "disablePullOutHeli",
+          "value": "Disable pull-out",
+          "line": null
+        },
+        {
+          "key": "setLandingZoneWaitHeightTop",
+          "value": "Set LZ wait height",
+          "line": null
+        },
+        {
+          "key": "defaultHeliDoorOpenTime",
+          "value": "Mission start time till open door",
+          "line": null
+        },
+        {
+          "key": "setSearchLightForcedHeli",
+          "value": "Force searchlight",
+          "line": null
+        },
+        {
+          "key": "set_disable",
+          "value": [
+            "On",
+            "Off"
+          ],
+          "line": null
+        },
+        {
+          "key": "heli_pulling_out",
+          "value": "Pulling out in 5",
+          "line": null
+        },
+        {
+          "key": "heli_hold_pulling_out",
+          "value": "Holding",
+          "line": null
+        },
+        {
+          "key": "order_recieved",
+          "value": "Order recieved",
+          "line": null
+        },
+        {
+          "key": "must_be_in_helicopter",
+          "value": "Must be in helicopter",
+          "line": null
+        },
+        {
+          "key": "cannot_use_at_mission_start",
+          "value": "Cannot use during mission start",
+          "line": null
+        },
+        {
+          "key": "requestHeliLzToLastMarker",
+          "value": "Support heli to latest marker",
+          "line": null
+        },
+        {
+          "key": "requestHeliLzToLastMarkerAlt",
+          "value": "Support heli to marker",
+          "line": null
+        },
+        {
+          "key": "no_lz_found",
+          "value": "No landing zone found",
+          "line": null
+        },
+        {
+          "key": "forceExitHeli",
+          "value": "Force exit helicopter",
+          "line": null
+        },
+        {
+          "key": "forceExitHeliAlt",
+          "value": "Force exit helicopter",
+          "line": null
+        },
+        {
+          "key": "not_in_heli",
+          "value": "You are not in the helicopter",
+          "line": null
+        },
+        {
+          "key": "not_for_location",
+          "value": "This command is not enabled for this location",
+          "line": null
+        },
+        {
+          "key": "already_heading_to_lz",
+          "value": "Already heading to that lz",
+          "line": null
+        },
+        {
+          "key": "heading_to_lz",
+          "value": "Heading to lz",
+          "line": null
+        },
+        {
+          "key": "disableHeliAttack",
+          "value": "Disable support heli attack",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "setLandingZoneWaitHeightTop",
+          "value": "Set the height at which the heli hovers in wait mode (not landing mode).",
+          "line": null
+        },
+        {
+          "key": "defaultHeliDoorOpenTime",
+          "value": "Time from mission start to you opening the door to sit on the side. You can set this lower or 0 to do it immediately, or longer to ride the heli in first person. Press [STANCE] to manually open the door.",
+          "line": null
+        },
+        {
+          "key": "disablePullOutHeli",
+          "value": "Prevents heli from leaving when you jump on-board, so you can use the gun from a stationary position, or just change your mind and jump out again. Press [STANCE] while in the heli to get it to pull-out again (or use menu). NOTE: Disable pull-out will prevent the mother base helitaxi selection menu, press [STANCE] to re-enable or use the mod menu.",
+          "line": null
+        },
+        {
+          "key": "requestHeliLzToLastMarkerAlt",
+          "value": "Sends Support heli to Landing Zone closest to the last placed user marker while riding it.",
+          "line": null
+        },
+        {
+          "key": "forceExitHeliAlt",
+          "value": "Lets you exit the helicopter while riding it, mind the fall.",
+          "line": null
+        },
+        {
+          "key": "disableHeliAttack",
+          "value": "Stops support heli from engaging targets.",
+          "line": null
+        }
+      ]
+    },
+    "InfHero.lua": {
+      "eng": [
+        {
+          "key": "ogrePointChange",
+          "value": "Set demon snake",
+          "line": null
+        },
+        {
+          "key": "ogrePointChangeSettings",
+          "value": [
+            "Default",
+            "Normal",
+            "Demon"
+          ],
+          "line": null
+        },
+        {
+          "key": "setDemon",
+          "value": "Add demon points",
+          "line": null
+        },
+        {
+          "key": "set_demon",
+          "value": " demon points subtracted, visual will refresh on mission start or retry command.",
+          "line": null
+        },
+        {
+          "key": "removeDemon",
+          "value": "Subtract demon points",
+          "line": null
+        },
+        {
+          "key": "removed_demon",
+          "value": " demon points subtracted, visual should refresh on mission start or retry command.",
+          "line": null
+        },
+        {
+          "key": "hero_dontSubtractHeroPoints",
+          "value": "Don't subtract hero points",
+          "line": null
+        },
+        {
+          "key": "hero_dontAddOgrePoints",
+          "value": "Don't add demon points",
+          "line": null
+        },
+        {
+          "key": "hero_heroPointsSubstractOgrePoints",
+          "value": "Hero points subtract demon points",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "setDemon",
+          "value": "Adds 999999 points to demon score",
+          "line": null
+        },
+        {
+          "key": "removeDemon",
+          "value": "Subtracts 999999 points from demon score",
+          "line": null
+        },
+        {
+          "key": "hero_dontSubtractHeroPoints",
+          "value": "Actions that usually subtract hero points don't.",
+          "line": null
+        },
+        {
+          "key": "hero_dontAddOgrePoints",
+          "value": "Actions that usually add demon points don't.",
+          "line": null
+        },
+        {
+          "key": "hero_heroPointsSubstractOgrePoints",
+          "value": "Actions that add hero points subtract the same amount of demon points",
+          "line": null
+        }
+      ]
+    },
+    "InfInterrogation.lua": {
+      "eng": [
+        {
+          "key": "enableInfInterrogation",
+          "value": "IH interrogation in free roam",
+          "line": null
+        },
+        {
+          "key": "interrogate_lrrp",
+          "value": "[Intel] the soldier indicates a LRRP is traveling between %s and %s",
+          "line": null
+        },
+        {
+          "key": "interrogate_lrrp_walker",
+          "value": "[Intel] the soldier indicates a Walker Gear was traveling between %s and %s",
+          "line": null
+        },
+        {
+          "key": "interrogate_walker",
+          "value": "[Intel] the soldier indicates there was a Walker Gear assigned to %s",
+          "line": null
+        },
+        {
+          "key": "interrogate_wildcard",
+          "value": "[Intel] the soldier indicates there was a mercenary assigned to %s",
+          "line": null
+        },
+        {
+          "key": "interrogate_heli",
+          "value": "[Intel] the soldier indicates an attack heli is travelling to %s",
+          "line": null
+        },
+        {
+          "key": "intercp_comrade_location",
+          "value": "[Intel] the soldier indicates their comrade assigned to %s has stashed some things",
+          "line": null
+        },
+        {
+          "key": "intercp_complete",
+          "value": "[Intel] the soldier has given us the location of their stash",
+          "line": null
+        },
+        {
+          "key": "intercp_repeat",
+          "value": "[Intel] the soldier is just repeating himself",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "enableInfInterrogation",
+          "value": "Adds some interrogations to soldiers: Travel plan of foot patrol, Location of wild card soldier, Location of walker gear. Inter CP quest: Sets up pairs of soldiers in different cps, interrogating one will give CP of other, interrogating him will give a reward of unprocessed resources (around a couple of containers worth) or a skull soldier/parasite on the next extraction (reaching checkpoint etc)",
+          "line": null
+        }
+      ]
+    },
+    "InfLang.lua": {
+      "eng": [
+        {
+          "key": "test",
+          "value": "Ativações Советский ФОНАРЬ 你还不错  munición 侵入者をCQCにより無力化 ",
+          "line": null
+        },
+        {
+          "key": "titleAbortToHeliSpace",
+          "value": "Abort to ACC",
+          "line": null
+        },
+        {
+          "key": "will_abort_to_acc",
+          "value": "Will abort to ACC",
+          "line": null
+        },
+        {
+          "key": "menu_open_help",
+          "value": "(Press Up/Down,Left/Right to navigate menu)",
+          "line": null
+        },
+        {
+          "key": "menuOffItem",
+          "value": "Turn off menu",
+          "line": null
+        },
+        {
+          "key": "setting_defaults",
+          "value": "Setting options for current menu to defaults...",
+          "line": null
+        },
+        {
+          "key": "setting_default",
+          "value": "Setting to default..",
+          "line": null
+        },
+        {
+          "key": "setting_minimum",
+          "value": "Setting to minimum..",
+          "line": null
+        },
+        {
+          "key": "resetSettingsItem",
+          "value": "Reset current menu",
+          "line": null
+        },
+        {
+          "key": "setting_disallowed",
+          "value": "is currently disallowed",
+          "line": null
+        },
+        {
+          "key": "goBackItem",
+          "value": "Menu Back",
+          "line": null
+        },
+        {
+          "key": "menu_off",
+          "value": "Menu Off",
+          "line": null
+        },
+        {
+          "key": "set_switch",
+          "value": [
+            "Off",
+            "On"
+          ],
+          "line": null
+        },
+        {
+          "key": "set_do",
+          "value": [
+            ">",
+            ">"
+          ],
+          "line": null
+        },
+        {
+          "key": "safeSpaceMenu",
+          "value": "In-ACC menu",
+          "line": null
+        },
+        {
+          "key": "inMissionMenu",
+          "value": "In-mission menu",
+          "line": null
+        },
+        {
+          "key": "showLangCode",
+          "value": "Show game language code",
+          "line": null
+        },
+        {
+          "key": "language_code",
+          "value": "Language code",
+          "line": null
+        },
+        {
+          "key": "showPosition",
+          "value": "Show position",
+          "line": null
+        },
+        {
+          "key": "langOverride",
+          "value": "Mod Menu translation override",
+          "line": null
+        },
+        {
+          "key": "langOverrideSettings",
+          "value": [
+            "Off",
+            "Chinese override Japanese"
+          ],
+          "line": null
+        },
+        {
+          "key": "setting_all_defaults",
+          "value": "Setting all settings to default...",
+          "line": null
+        },
+        {
+          "key": "resetAllSettingsItem",
+          "value": "Reset all IH settings",
+          "line": null
+        },
+        {
+          "key": "showMissionCode",
+          "value": "Show missionCode",
+          "line": null
+        },
+        {
+          "key": "startOffline",
+          "value": "Start offline",
+          "line": null
+        },
+        {
+          "key": "debugInMissionMenu",
+          "value": "Debug stuff menu",
+          "line": null
+        },
+        {
+          "key": "menu_keys",
+          "value": "Hold [SWITCH_ZOOM] then press [DASH] to open menu",
+          "line": null
+        },
+        {
+          "key": "done",
+          "value": "Done",
+          "line": null
+        },
+        {
+          "key": "min",
+          "value": "min",
+          "line": null
+        },
+        {
+          "key": "max",
+          "value": "max",
+          "line": null
+        },
+        {
+          "key": "no_marker_found",
+          "value": "No marker found",
+          "line": null
+        },
+        {
+          "key": "debugMode",
+          "value": "Debug IH mode",
+          "line": null
+        },
+        {
+          "key": "debugMenu",
+          "value": "Debug menu",
+          "line": null
+        },
+        {
+          "key": "set_default_off_on",
+          "value": [
+            "Default",
+            "Off",
+            "On"
+          ],
+          "line": null
+        },
+        {
+          "key": "selectProfile",
+          "value": "Select profile",
+          "line": null
+        },
+        {
+          "key": "applySelectedProfile",
+          "value": "Apply profile",
+          "line": null
+        },
+        {
+          "key": "resetSelectedProfile",
+          "value": "Set profile options to game defaults",
+          "line": null
+        },
+        {
+          "key": "no_profiles_installed",
+          "value": "No profiles installed",
+          "line": null
+        },
+        {
+          "key": "applying_profile",
+          "value": "Applying profile",
+          "line": null
+        },
+        {
+          "key": "viewProfile",
+          "value": "Apply and view profile",
+          "line": null
+        },
+        {
+          "key": "revertProfile",
+          "value": "Revert profile and return",
+          "line": null
+        },
+        {
+          "key": "saveToProfile",
+          "value": "Save to UserSaved profile",
+          "line": null
+        },
+        {
+          "key": "fob_weapon_change",
+          "value": "Cannot use Equip none on FOB",
+          "line": null
+        },
+        {
+          "key": "enableQuickMenu",
+          "value": "Enable Quick Menu",
+          "line": null
+        },
+        {
+          "key": "systemMenu",
+          "value": "IH system menu",
+          "line": null
+        },
+        {
+          "key": "skipLogos",
+          "value": "Skip startup logos",
+          "line": null
+        },
+        {
+          "key": "ihMissionsPercentageCount",
+          "value": "Include addon missions in completion percentage",
+          "line": null
+        },
+        {
+          "key": "loadAddonMission",
+          "value": "Load addon mission",
+          "line": null
+        },
+        {
+          "key": "enableIHExt",
+          "value": "Enable IHExt",
+          "line": null
+        },
+        {
+          "key": "takeFocus",
+          "value": "Give IHExt focus",
+          "line": null
+        },
+        {
+          "key": "ihext_not_installed_settings",
+          "value": [
+            "Not installed",
+            "Not installed"
+          ],
+          "line": null
+        },
+        {
+          "key": "menu_enableHelp",
+          "value": "Enable help text",
+          "line": null
+        },
+        {
+          "key": "menu_disableToggleMenuHold",
+          "value": "Disable hold menu toggle",
+          "line": null
+        },
+        {
+          "key": "menu_enableCursorOnMenuOpen",
+          "value": "Enable mouse cursor on menu open",
+          "line": null
+        },
+        {
+          "key": "loadExternalModules",
+          "value": "Reload IH modules",
+          "line": null
+        },
+        {
+          "key": "sys_increaseMemoryAlloc",
+          "value": "Increase memory allocation",
+          "line": null
+        },
+        {
+          "key": "searchMenu",
+          "value": "Search menu",
+          "line": null
+        },
+        {
+          "key": "searchItem",
+          "value": "Search",
+          "line": null
+        },
+        {
+          "key": "goBackTopItem",
+          "value": "Back to main menu",
+          "line": null
+        },
+        {
+          "key": "list_empty",
+          "value": "list is empty",
+          "line": null
+        },
+        {
+          "key": "exited_sideop_area",
+          "value": "Exited sideop area",
+          "line": null
+        },
+        {
+          "key": "type_to_search",
+          "value": "<Type and Enter to search>",
+          "line": null
+        },
+        {
+          "key": "inDemoMenu",
+          "value": "In-cutscene menu",
+          "line": null
+        },
+        {
+          "key": "demo_cannot_restart_while_paused",
+          "value": "Cannot restart cutscene while it is paused",
+          "line": null
+        },
+        {
+          "key": "missionModes",
+          "value": [
+            "Free Roam",
+            "Story Mission",
+            "MB",
+            "MB"
+          ],
+          "line": null
+        },
+        {
+          "key": "generalHelpItem",
+          "value": "General Help",
+          "line": null
+        },
+        {
+          "key": "general_help_cmd",
+          "value": "See MGS_TPP/mod/docs/ for documentation",
+          "line": null
+        },
+        {
+          "key": "showStyleEditor",
+          "value": "UI Style Editor",
+          "line": null
+        },
+        {
+          "key": "systemMenuMission",
+          "value": "IH system menu",
+          "line": null
+        },
+        {
+          "key": "requires_ihhook",
+          "value": "Requires IHHook to function",
+          "line": null
+        },
+        {
+          "key": "command_for_in_mission",
+          "value": "Use this command in-mission",
+          "line": null
+        },
+        {
+          "key": "objectListsMenu",
+          "value": "Object lists menu",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "titleAbortToHeliSpace",
+          "value": "Pressing Continue will continue to ACC instead of mission.",
+          "line": null
+        },
+        {
+          "key": "simple_help",
+          "value": "[[Navigate menu: Arrow keys or Dpad.  \r\nActivate or advance setting: Press Right key or Dpad or double-click option.  \r\n  ]]",
+          "line": null
+        },
+        {
+          "key": "generalHelpItem",
+          "value": "[[General Help:  \r\nPress F2 to toggle mouse cursor.  \r\nNavigate menu: Arrow keys or Dpad.  \r\nActivate or advance setting: Press Right key or Dpad or double-click option in menu.  \r\nSearch for settings: Click on the setting text below the menu list, type what you want and press Enter.  \r\nChange a numerical setting: Click on the setting value below the menu list, type what you want and press Enter.  \r\nMenu item type symbols:  \r\n`>` Sub-menu  \r\n`>>` Command  \r\n`>]` Command that closes menu when done  \r\n`<>` Option that applies change when setting selectected/cycled to  \r\n`>!` Option that has an action activated by pressing [ACTION]  \r\nSome settings apply when selected or just set the value when the a feature is triggered by another command or during mission load.  \r\nSee ReadMe or Features and Options for more info.  \r\n]]",
+          "line": null
+        },
+        {
+          "key": "debugMode",
+          "value": "Switches on logging messages to ih_log.txt (at the cost of longer load times) and enables the announce-log during loading.",
+          "line": null
+        },
+        {
+          "key": "startOffline",
+          "value": "Start the game in offline mode, this also removes the connect option from the pause menu.",
+          "line": null
+        },
+        {
+          "key": "enableQuickMenu",
+          "value": "Shortcut key combinations to activate IH features. See Infinite Heaven readme or InfQuickMenuDefs.lua in mod folder.",
+          "line": null
+        },
+        {
+          "key": "debugFlow",
+          "value": "Logs some script execution flow, requires Debug IH mode to be on.",
+          "line": null
+        },
+        {
+          "key": "debugMessages",
+          "value": "Logs game message system, requires Debug IH mode to be on. ALL (same as pre r262 'On') logs all messages sent, RECIEVED only logs those that have modules subscribed to the message.",
+          "line": null
+        },
+        {
+          "key": "debugMessagesVerbose",
+          "value": "Verbosely logs unknown messages. Disable to improve performance with logging and add-ons that use custom messages that don't register to InfLookup.",
+          "line": null
+        },
+        {
+          "key": "skipLogos",
+          "value": "Stops the konami/kjp/fox/nvidia logos from showing.",
+          "line": null
+        },
+        {
+          "key": "selectProfile",
+          "value": "[[Selects a profile from MGS_TPP\\mod\\profiles folder. Press the [ACTION] button to apply the settings of the selected profile.]]",
+          "line": null
+        },
+        {
+          "key": "resetSelectedProfile",
+          "value": "Sets the options described in the selected profile to their default setting.",
+          "line": null
+        },
+        {
+          "key": "saveToProfile",
+          "value": "[[Saves current IH settings to UserSaved profile at MGS_TPP\\profiles\\UserSaved.lua.]]",
+          "line": null
+        },
+        {
+          "key": "enableIHExt",
+          "value": "IHExt is a windows program that acts as an gui overlay if MGSV is running in Windowed Borderless.",
+          "line": null
+        },
+        {
+          "key": "menu_enableHelp",
+          "value": "Shows help text for some options.",
+          "line": null
+        },
+        {
+          "key": "menu_disableToggleMenuHold",
+          "value": "Disables the legacy hold [EVADE] to open menu, the two button menu combo [ZOOM_CHANGE] + [DASH] will still work.",
+          "line": null
+        },
+        {
+          "key": "menu_enableCursorOnMenuOpen",
+          "value": "Automatically enable mouse cursor when IHMenu opens. The cursor can also be seperately toggled with F2",
+          "line": null
+        },
+        {
+          "key": "sys_increaseMemoryAlloc",
+          "value": "Experimental: Increses the memory values for various allocation variables/functions",
+          "line": null
+        },
+        {
+          "key": "showStyleEditor",
+          "value": "Toggles the IMGui Style Editor to load, change and save the style for IHHook IMGUI.",
+          "line": null
+        },
+        {
+          "key": "systemMenuMission",
+          "value": "See IH system menu while in ACC for full options.",
+          "line": null
+        },
+        {
+          "key": "dEBUG_RandomizeAllIvars",
+          "value": "WARNING: Sets all settings across all of IH to a random value, which may include WIP, commented out or abandoned options. May also include  Back up your save before using this. This is used as debug coverage to see if anything breaks and not intended for general use.",
+          "line": null
+        },
+        {
+          "key": "dEBUG_SetIvarsToNonDefault",
+          "value": "WARNING: Sets all settings across all of IH to a non default value. Back up your save before using this. This is used as debug coverage to see if anything breaks.",
+          "line": null
+        }
+      ]
+    },
+    "InfMBAssets.lua": {
+      "eng": [
+        {
+          "key": "motherBaseShowAssetsMenu",
+          "value": "Show assets menu",
+          "line": null
+        },
+        {
+          "key": "mbShowBigBossPosters",
+          "value": "Show Big Boss posters",
+          "line": null
+        },
+        {
+          "key": "mbShowQuietCellSigns",
+          "value": "Show quiet cell signs",
+          "line": null
+        },
+        {
+          "key": "mbShowMbEliminationMonument",
+          "value": "Show nuke elimination monument",
+          "line": null
+        },
+        {
+          "key": "mbShowSahelan",
+          "value": "Show Sahelanthropus",
+          "line": null
+        },
+        {
+          "key": "mbShowEli",
+          "value": "Show Eli",
+          "line": null
+        },
+        {
+          "key": "mbShowCodeTalker",
+          "value": "Show Code Talker",
+          "line": null
+        },
+        {
+          "key": "mbUnlockGoalDoors",
+          "value": "Unlock goal doors",
+          "line": null
+        },
+        {
+          "key": "mbOceanMenu",
+          "value": "MB Ocean menu",
+          "line": null
+        },
+        {
+          "key": "motherBaseShowCharactersMenu",
+          "value": "Show characters menu",
+          "line": null
+        },
+        {
+          "key": "mbShowShips",
+          "value": "Show ships",
+          "line": null
+        },
+        {
+          "key": "mbShowHuey",
+          "value": "Show Huey",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbShowHuey",
+          "value": "Shows Huey in BattleGear hangar and in cutscenes even before he's arrived or after he's left story-wise.",
+          "line": null
+        }
+      ]
+    },
+    "InfMBGimmick.lua": {
+      "eng": [
+        {
+          "key": "enableFultonAlarmsMB",
+          "value": "Enable asset alarms",
+          "line": null
+        },
+        {
+          "key": "enableIRSensorsMB",
+          "value": "Enable IR sensors",
+          "line": null
+        },
+        {
+          "key": "hideContainersMB",
+          "value": "Hide containers",
+          "line": null
+        },
+        {
+          "key": "hideAACannonsMB",
+          "value": "Hide AA cannons",
+          "line": null
+        },
+        {
+          "key": "hideAAGatlingsMB",
+          "value": "Hide AA gatlings",
+          "line": null
+        },
+        {
+          "key": "hideTurretMgsMB",
+          "value": "Hide turret machineguns",
+          "line": null
+        },
+        {
+          "key": "hideMortarsMB",
+          "value": "Hide mortars",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "enableFultonAlarmsMB",
+          "value": "Enables anti fulton theft alarms on containers and AA guns. Only partially working, will only trigger alarm once.",
+          "line": null
+        },
+        {
+          "key": "enableIRSensorsMB",
+          "value": "Enable IR sensor gates. Only partially working, will only trigger alarm once, and will only show one or no beam.",
+          "line": null
+        }
+      ]
+    },
+    "InfMBStaff.lua": {
+      "eng": [
+        {
+          "key": "mbStaffMenu",
+          "value": "Staff menu",
+          "line": null
+        },
+        {
+          "key": "mbStaffInMissionMenu",
+          "value": "Staff menu",
+          "line": null
+        },
+        {
+          "key": "addPlayerStaff",
+          "value": "Add player staff to MB priority",
+          "line": null
+        },
+        {
+          "key": "removePlayerStaff",
+          "value": "Remove player staff to MB priority",
+          "line": null
+        },
+        {
+          "key": "addMarkerStaff",
+          "value": "Add marked staff to MB priority",
+          "line": null
+        },
+        {
+          "key": "removeMarkerStaff",
+          "value": "Remove marked staff from MB priority",
+          "line": null
+        },
+        {
+          "key": "clearPriorityStaff",
+          "value": "Clear MB staff priority list",
+          "line": null
+        },
+        {
+          "key": "please_select_dd",
+          "value": "Player staff id is 0, please select a DD character from sortie character selection",
+          "line": null
+        },
+        {
+          "key": "staff_id_not_exist",
+          "value": "Staff id %s was not in priority staff list",
+          "line": null
+        },
+        {
+          "key": "staff_id_exists",
+          "value": "Staff id %s was already in priority staff list",
+          "line": null
+        },
+        {
+          "key": "add_staff_id",
+          "value": "Adding staff id %s to priority on MB",
+          "line": null
+        },
+        {
+          "key": "removing_staff_id",
+          "value": "Removing staff id %s from priority on MB",
+          "line": null
+        },
+        {
+          "key": "staff_clear",
+          "value": "Priority staff cleared",
+          "line": null
+        },
+        {
+          "key": "only_on_mb",
+          "value": "This command can only be used on MB",
+          "line": null
+        },
+        {
+          "key": "soldier_not_marked",
+          "value": "No marked soldier found",
+          "line": null
+        },
+        {
+          "key": "mbIncreaseStaffSaluteReactions",
+          "value": "Add more salute reactions",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "addPlayerStaff",
+          "value": "Add the last sortie selected DD member to the Mother Base priority staff list to have them appear on MB",
+          "line": null
+        },
+        {
+          "key": "removePlayerStaff",
+          "value": "Removes the last sortie selected DD member to the Mother Base priority staff list",
+          "line": null
+        },
+        {
+          "key": "addMarkerStaff",
+          "value": "Adds the most recently marked staff member to the MB priority list",
+          "line": null
+        },
+        {
+          "key": "removeMarkerStaff",
+          "value": "Removes the most recently marked staff member from the MB priority list",
+          "line": null
+        },
+        {
+          "key": "clearPriorityStaff",
+          "value": "Clears MB staff priority list entirely",
+          "line": null
+        },
+        {
+          "key": "mbIncreaseStaffSaluteReactions",
+          "value": "Adds additional reactions from MB staff when they salute you.",
+          "line": null
+        }
+      ]
+    },
+    "InfMBVisit.lua": {
+      "eng": [
+        {
+          "key": "mbMoraleBoosts",
+          "value": "Staff-wide morale boost for good visit",
+          "line": null
+        },
+        {
+          "key": "mb_morale_visit_noticed",
+          "value": "Word has spread of your visit",
+          "line": null
+        },
+        {
+          "key": "mb_morale_boosted",
+          "value": "Staff-wide morale has improved due to your visit",
+          "line": null
+        },
+        {
+          "key": "revengeDecayOnLongMbVisit",
+          "value": "Enemy prep decrease on long MB visit",
+          "line": null
+        },
+        {
+          "key": "mb_visit_revenge_decay",
+          "value": "Enemy prep has decreased during your absence from the field",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "revengeDecayOnLongMbVisit",
+          "value": "Spend a number of game days (break out that cigar) during a mother base visit and enemy prep levels will decrease on leaving. Currently reduces after 3 days (stacking), reduces the same as chicken hat ",
+          "line": null
+        },
+        {
+          "key": "mbMoraleBoosts",
+          "value": "Gives a staff-wide morale boost on having a number of soldiers salute (most of a cluster), visiting a number of clusters (with at least one salute on each), or staying in base a number of game days (break out that cigar). Must leave the base via heli for it to apply.",
+          "line": null
+        }
+      ]
+    },
+    "InfMainTppIvars.lua": {
+      "eng": [
+        {
+          "key": "miscInMissionMenu",
+          "value": "Misc menu",
+          "line": null
+        },
+        {
+          "key": "motherBaseMenu",
+          "value": "Mother Base menu",
+          "line": null
+        },
+        {
+          "key": "playerHealthScale",
+          "value": "Player life scale",
+          "line": null
+        },
+        {
+          "key": "forceSoldierSubType",
+          "value": "Force enemy CP sub type",
+          "line": null
+        },
+        {
+          "key": "primaryWeaponOsp",
+          "value": "Primary weapon OSP",
+          "line": null
+        },
+        {
+          "key": "secondaryWeaponOsp",
+          "value": "Secondary weapon OSP",
+          "line": null
+        },
+        {
+          "key": "tertiaryWeaponOsp",
+          "value": "Back Weapon OSP",
+          "line": null
+        },
+        {
+          "key": "weaponOspSettings",
+          "value": [
+            "Use selected weapon",
+            "Clear weapon"
+          ],
+          "line": null
+        },
+        {
+          "key": "playerRestrictionsMenu",
+          "value": "Player restrictions menu",
+          "line": null
+        },
+        {
+          "key": "disableHeadMarkers",
+          "value": "Disable head markers",
+          "line": null
+        },
+        {
+          "key": "disableFulton",
+          "value": "Disable fulton action",
+          "line": null
+        },
+        {
+          "key": "clearItems",
+          "value": "Items OSP",
+          "line": null
+        },
+        {
+          "key": "clearSupportItems",
+          "value": "Support items OSP",
+          "line": null
+        },
+        {
+          "key": "setSubsistenceSuit",
+          "value": "Force subsistence suit (Olive Drab, no headgear)",
+          "line": null
+        },
+        {
+          "key": "setDefaultHand",
+          "value": "Set hand type to default",
+          "line": null
+        },
+        {
+          "key": "handLevelMenu",
+          "value": "Hand abilities levels menu",
+          "line": null
+        },
+        {
+          "key": "fultonLevelMenu",
+          "value": "Fulton levels menu",
+          "line": null
+        },
+        {
+          "key": "ospMenu",
+          "value": "OSP menu",
+          "line": null
+        },
+        {
+          "key": "disableSupportMenuMenu",
+          "value": "Disable mission support-menus menu",
+          "line": null
+        },
+        {
+          "key": "disableMenuDrop",
+          "value": "Disable Supply drop support-menu",
+          "line": null
+        },
+        {
+          "key": "disableMenuBuddy",
+          "value": "Disable Buddies support-menu",
+          "line": null
+        },
+        {
+          "key": "disableMenuAttack",
+          "value": "Disable Attack support-menu",
+          "line": null
+        },
+        {
+          "key": "disableMenuHeliAttack",
+          "value": "Disable Heli attack support-menu",
+          "line": null
+        },
+        {
+          "key": "disableSupportMenu",
+          "value": "Disable Support-menu",
+          "line": null
+        },
+        {
+          "key": "itemLevelFulton",
+          "value": "Fulton Level",
+          "line": null
+        },
+        {
+          "key": "itemLevelFultonSettings",
+          "value": [
+            "Don't override",
+            "Grade 1",
+            "Grade 2",
+            "Grade 3",
+            "Grade 4"
+          ],
+          "line": null
+        },
+        {
+          "key": "itemLevelWormhole",
+          "value": "Wormhole Level",
+          "line": null
+        },
+        {
+          "key": "itemLevelWormholeSettings",
+          "value": [
+            "Don't override",
+            "Disable",
+            "Enable"
+          ],
+          "line": null
+        },
+        {
+          "key": "handLevelSonar",
+          "value": "Sonar level",
+          "line": null
+        },
+        {
+          "key": "handLevelPhysical",
+          "value": "Mobility level",
+          "line": null
+        },
+        {
+          "key": "handLevelPrecision",
+          "value": "Precision level",
+          "line": null
+        },
+        {
+          "key": "handLevelMedical",
+          "value": "Medical level",
+          "line": null
+        },
+        {
+          "key": "handLevelSettings",
+          "value": [
+            "Don't override",
+            "Disable",
+            "Grade 1",
+            "Grade 2",
+            "Grade 3",
+            "Grade 4"
+          ],
+          "line": null
+        },
+        {
+          "key": "showMbEquipGrade",
+          "value": "Show MB equip grade",
+          "line": null
+        },
+        {
+          "key": "disableLzs",
+          "value": "Disable landing zones",
+          "line": null
+        },
+        {
+          "key": "disableLzsSettings",
+          "value": [
+            "Off",
+            "Assault",
+            "Regular"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbEnableBuddies",
+          "value": "Enable all buddies",
+          "line": null
+        },
+        {
+          "key": "abortMenuItemControl",
+          "value": "Disable abort mission from pause menu",
+          "line": null
+        },
+        {
+          "key": "telopMode",
+          "value": "Disable mission intro credits",
+          "line": null
+        },
+        {
+          "key": "unlockWeaponCustomization",
+          "value": "Unlock weapon customization",
+          "line": null
+        },
+        {
+          "key": "allready_unlocked",
+          "value": "Allready unlocked",
+          "line": null
+        },
+        {
+          "key": "disableXrayMarkers",
+          "value": "Disable Xray marking",
+          "line": null
+        },
+        {
+          "key": "quietRadioMode",
+          "value": "Quiets MB radio track",
+          "line": null
+        },
+        {
+          "key": "playerSettingsMenu",
+          "value": "Player settings menu",
+          "line": null
+        },
+        {
+          "key": "changeCpTypeMISSION",
+          "value": "Force CP type in Missions",
+          "line": null
+        },
+        {
+          "key": "changeCpTypeFREE",
+          "value": "Force CP type in Free Roam",
+          "line": null
+        },
+        {
+          "key": "changeCpTypeMB_ALL",
+          "value": "Force CP type in MB",
+          "line": null
+        },
+        {
+          "key": "changeCpTypeSettingsNames",
+          "value": [
+            "Default",
+            "Soviet",
+            "American",
+            "Afrikaans"
+          ],
+          "line": null
+        },
+        {
+          "key": "changeCpSubTypeFREE",
+          "value": "Random CP subtype in free roam",
+          "line": null
+        },
+        {
+          "key": "changeCpSubTypeMISSION",
+          "value": "Random CP subtype in missions",
+          "line": null
+        },
+        {
+          "key": "disableRetry",
+          "value": "Disable retry on mission fail",
+          "line": null
+        },
+        {
+          "key": "gameOverOnDiscovery",
+          "value": "Game over on combat alert",
+          "line": null
+        },
+        {
+          "key": "mbPrioritizeFemale",
+          "value": "Female staff selection",
+          "line": null
+        },
+        {
+          "key": "mbPrioritizeFemaleSettings",
+          "value": [
+            "Default",
+            "None",
+            "All available",
+            "Half"
+          ],
+          "line": null
+        },
+        {
+          "key": "enemyPatrolMenu",
+          "value": "Patrols and deployments menu",
+          "line": null
+        },
+        {
+          "key": "disableWorldMarkers",
+          "value": "Disable world markers",
+          "line": null
+        },
+        {
+          "key": "playerRestrictionsInMissionMenu",
+          "value": "Player restrictions menu",
+          "line": null
+        },
+        {
+          "key": "markersMenu",
+          "value": "Marking display menu",
+          "line": null
+        },
+        {
+          "key": "startOnFootFREE",
+          "value": "Start free roam on foot",
+          "line": null
+        },
+        {
+          "key": "startOnFootMISSION",
+          "value": "Start missions on foot",
+          "line": null
+        },
+        {
+          "key": "startOnFootMB_ALL",
+          "value": "Start Mother base on foot",
+          "line": null
+        },
+        {
+          "key": "onFootSettingsNames",
+          "value": [
+            "Off",
+            "All but assault LZs",
+            "All LZs"
+          ],
+          "line": null
+        },
+        {
+          "key": "quietMoveToLastMarker",
+          "value": "Quiet move to last marker",
+          "line": null
+        },
+        {
+          "key": "buddy_not_quiet",
+          "value": "Current buddy is not Quiet",
+          "line": null
+        },
+        {
+          "key": "cpAlertOnVehicleFulton",
+          "value": "CP alert on vehicle fulton",
+          "line": null
+        },
+        {
+          "key": "disableSpySearch",
+          "value": "Disable Intel team enemy spotting",
+          "line": null
+        },
+        {
+          "key": "disableHerbSearch",
+          "value": "Disable Intel team herb spotting (requires game restart)",
+          "line": null
+        },
+        {
+          "key": "restart_required",
+          "value": " will apply on next game restart",
+          "line": null
+        },
+        {
+          "key": "cant_find_quiet",
+          "value": "Can't find Quiet",
+          "line": null
+        },
+        {
+          "key": "randomizeMineTypes",
+          "value": "Randomize minefield mine types",
+          "line": null
+        },
+        {
+          "key": "additionalMineFields",
+          "value": "Enable additional minefields",
+          "line": null
+        },
+        {
+          "key": "dontOverrideFreeLoadout",
+          "value": "Keep equipment Free<>Mission",
+          "line": null
+        },
+        {
+          "key": "mbqfEnableSoldiers",
+          "value": "Force enable Quarantine platform soldiers",
+          "line": null
+        },
+        {
+          "key": "mbEnableLethalActions",
+          "value": "Allow lethal actions",
+          "line": null
+        },
+        {
+          "key": "disableOutOfBoundsChecks",
+          "value": "Disable out of bounds checks",
+          "line": null
+        },
+        {
+          "key": "disableKillChildSoldierGameOver",
+          "value": "Disable game over on killing child soldier",
+          "line": null
+        },
+        {
+          "key": "disableGameOver",
+          "value": "Disable game over",
+          "line": null
+        },
+        {
+          "key": "itemLevelSettings",
+          "value": [
+            "Don't override",
+            "Grade 1",
+            "Grade 2",
+            "Grade 3",
+            "Grade 4"
+          ],
+          "line": null
+        },
+        {
+          "key": "itemLevelMenu",
+          "value": "Item level menu",
+          "line": null
+        },
+        {
+          "key": "itemLevelIntScope",
+          "value": "Int-Scope level",
+          "line": null
+        },
+        {
+          "key": "itemLevelIDroid",
+          "value": "IDroid level",
+          "line": null
+        },
+        {
+          "key": "dropCurrentEquip",
+          "value": "Drop current equip",
+          "line": null
+        },
+        {
+          "key": "markersInMissionMenu",
+          "value": "Markers menu",
+          "line": null
+        },
+        {
+          "key": "customizeMenu",
+          "value": "Customize menu",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "playerRestrictionsMenu",
+          "value": "Settings to customize the game challenge, including subsistence and OSP.",
+          "line": null
+        },
+        {
+          "key": "disableLzs",
+          "value": "Disables Assault Landing Zones (those usually in the center of a base that the support heli will circle before landing), or all LZs but Assault LZs",
+          "line": null
+        },
+        {
+          "key": "disableHeadMarkers",
+          "value": "Disables markers above soldiers and objects",
+          "line": null
+        },
+        {
+          "key": "disableWorldMarkers",
+          "value": "Disables objective and placed markers",
+          "line": null
+        },
+        {
+          "key": "disableXrayMarkers",
+          "value": "Disables the 'X-ray' effect of marked soldiers. Note: Buddies that mark still cause the effect.",
+          "line": null
+        },
+        {
+          "key": "disableSupportMenuMenu",
+          "value": "Disables mission support menus in iDroid",
+          "line": null
+        },
+        {
+          "key": "ospMenu",
+          "value": "Allows you to enter a mission with primary, secondary, back weapons set to none, individually settable. Separate from subsistence mode (but subsistence uses it). LEGACY You should set equip none via mission prep instead.",
+          "line": null
+        },
+        {
+          "key": "fovaModMenu",
+          "value": "Form Variation support for player models (requires model swap to support it), the fova system is how the game shows and hides sub-models.",
+          "line": null
+        },
+        {
+          "key": "changeCpTypeMISSION",
+          "value": "Changes Command Post Type, which controls the language spoken by CP and HQ.\nWARNING: Will break subtitles.\nWARNING: some CP types don't have responses for certain soldier call-ins for different languages.",
+          "line": null
+        },
+        {
+          "key": "changeCpSubTypeFREE",
+          "value": "Randomizes the CP subtype - PF types in middle Affrica, urban vs general camo types in Afghanistan",
+          "line": null
+        },
+        {
+          "key": "changeCpSubTypeMISSION",
+          "value": "Randomizes the CP subtype - PF types in middle Affrica, urban vs general camo types in Afghanistan",
+          "line": null
+        },
+        {
+          "key": "mbPrioritizeFemale",
+          "value": "By default the game tries to assign a minimum of 2 females per cluster from the females assigned to the clusters section, All available and Half will select females first when trying to populate a MB section, None will prevent any females from showing on mother base",
+          "line": null
+        },
+        {
+          "key": "markersMenu",
+          "value": "Toggles for marking in main view. Does not effect marking on iDroid map",
+          "line": null
+        },
+        {
+          "key": "mbEnableBuddies",
+          "value": "Does not clear D-Horse and D-Walker if set from deploy screen and returning to mother base, they may however spawn inside building geometry, use the call menu to have them respawn near. Also allows buddies on the Zoo platform, now you can take D-Dog or D-Horse to visit some animals.",
+          "line": null
+        },
+        {
+          "key": "quietMoveToLastMarker",
+          "value": "Sets a position similar to the Quiet attack positions, but can be nearly anywhere. Quiet will still abort from that position if it's too close to enemies.",
+          "line": null
+        },
+        {
+          "key": "randomizeMineTypes",
+          "value": "Randomizes the types of mines within a minfield from the default anti-personel mine to gas, anti-tank, electromagnetic. While the placing the mines may not be ideal for the minetype, it does enable OSP of items that would be impossible to get otherwise.",
+          "line": null
+        },
+        {
+          "key": "additionalMineFields",
+          "value": "In the game many bases have several mine fields but by default only one is enabled at a time, this option lets you enable all of them. Still relies on enemy prep level to be high enough for minefields to be enabled.",
+          "line": null
+        },
+        {
+          "key": "disableSpySearch",
+          "value": "Stops the Intel teams enemy spotting audio notification and indication on the idroid map.",
+          "line": null
+        },
+        {
+          "key": "disableHerbSearch",
+          "value": "Stops the Intel teams plant spotting audio notification and indication on the idroid map. Since the variable is only read once on game startup this setting requires a game restart before it will activate/deactivate.",
+          "line": null
+        },
+        {
+          "key": "quietRadioMode",
+          "value": "Changes the music track of the radio played in Quiets cell on the medical platform in mother base.",
+          "line": null
+        },
+        {
+          "key": "dontOverrideFreeLoadout",
+          "value": "Prevents equipment and weapons being reset when going between free-roam and missions.",
+          "line": null
+        },
+        {
+          "key": "mbqfEnableSoldiers",
+          "value": "Normally game the Quarantine platform soldiers are disabled once you capture Skulls. This option re-enables them.",
+          "line": null
+        },
+        {
+          "key": "mbEnableLethalActions",
+          "value": "Enables lethal weapons and actions on Mother Base. You will still get a game over if you kill staff.",
+          "line": null
+        },
+        {
+          "key": "customizeMenu",
+          "value": "Options for saving/loading to items in the idroid Customize menu",
+          "line": null
+        }
+      ]
+    },
+    "InfMissionQuest.lua": {
+      "eng": [
+        {
+          "key": "missionQuestMenu",
+          "value": "Side ops in missions menu",
+          "line": null
+        },
+        {
+          "key": "enableMissionQuest",
+          "value": "Enable side ops in missions",
+          "line": null
+        },
+        {
+          "key": "forceEnableMissionAllQuest",
+          "value": "Force use all side ops in missions",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "missionQuestMenu",
+          "value": "Change settings related to side ops in story missions.",
+          "line": null
+        },
+        {
+          "key": "enableMissionQuest",
+          "value": "Enable side ops in missions using a hand-picked selection of side ops in specific story missions.",
+          "line": null
+        },
+        {
+          "key": "forceEnableMissionAllQuest",
+          "value": "WARNING: The side ops enabled with this option can cause instability or simply won't be clearable. Enables all side ops to be included in all story missions when using the 'Enable side ops in missions' setting.",
+          "line": null
+        }
+      ]
+    },
+    "InfMotion.lua": {
+      "eng": [
+        {
+          "key": "motionsMenu",
+          "value": "Motions menu",
+          "line": null
+        },
+        {
+          "key": "motionGroupIndex",
+          "value": "Motion group",
+          "line": null
+        },
+        {
+          "key": "motionGaniIndex",
+          "value": "Motion number",
+          "line": null
+        },
+        {
+          "key": "motionHold",
+          "value": "Hold motion",
+          "line": null
+        },
+        {
+          "key": "motionRepeat",
+          "value": "Repeat motion",
+          "line": null
+        },
+        {
+          "key": "motionCloseMenuOnPlay",
+          "value": "Close menu on Playing motion",
+          "line": null
+        },
+        {
+          "key": "motionPrintOnPlay",
+          "value": "Print motion name on play",
+          "line": null
+        },
+        {
+          "key": "motionWarpToOrig",
+          "value": "Warp to original position after play",
+          "line": null
+        },
+        {
+          "key": "stopMotion",
+          "value": "Stop motion",
+          "line": null
+        },
+        {
+          "key": "playCurrentMotionCommand",
+          "value": "Play motion",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "motionsMenu",
+          "value": "Play different animations on player. A motion group may contain several related animations (usually lead-in, idle, lead-out)",
+          "line": null
+        },
+        {
+          "key": "motionGroupIndex",
+          "value": "Press [ACTION] to play the selected animation.",
+          "line": null
+        },
+        {
+          "key": "motionGaniIndex",
+          "value": "Press [ACTION] to play the selected animation.",
+          "line": null
+        },
+        {
+          "key": "motionHold",
+          "value": "Holds motion, requires stop motion to stop.",
+          "line": null
+        },
+        {
+          "key": "motionRepeat",
+          "value": "Repeat motion at end, some animations don't support this.",
+          "line": null
+        },
+        {
+          "key": "motionWarpToOrig",
+          "value": "Since some animations move player position through geometry this may help to recover",
+          "line": null
+        },
+        {
+          "key": "stopMotion",
+          "value": "Use to stop motions with motion hold or motion repeat.",
+          "line": null
+        },
+        {
+          "key": "playCurrentMotionCommand",
+          "value": "Closes menu and plays current selected motion.",
+          "line": null
+        }
+      ]
+    },
+    "InfNPC.lua": {
+      "eng": [
+        {
+          "key": "mbAdditionalNpcs",
+          "value": "Additional NPCs",
+          "line": null
+        },
+        {
+          "key": "mbAdditionalNpcsMenu",
+          "value": "Additional NPCs menu",
+          "line": null
+        },
+        {
+          "key": "mbNpc_NURSE_3_FEMALE",
+          "value": "Female nurse",
+          "line": null
+        },
+        {
+          "key": "mbNpc_DOCTOR_0",
+          "value": "Male doctor",
+          "line": null
+        },
+        {
+          "key": "mbNpc_DDS_RESEARCHER",
+          "value": "Male researcher",
+          "line": null
+        },
+        {
+          "key": "mbNpc_DDS_RESEARCHER_FEMALE",
+          "value": "Female researcher",
+          "line": null
+        },
+        {
+          "key": "mbNpc_DDS_GROUNDCREW",
+          "value": "Male groundcrew",
+          "line": null
+        },
+        {
+          "key": "mbNpc_CHILD_0",
+          "value": "Children",
+          "line": null
+        },
+        {
+          "key": "mbNpc_KAZ",
+          "value": "Kaz Miller",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbAdditionalNpcs",
+          "value": "Adds different NPCs standing around mother base, including ground crew, researchers and Miller.",
+          "line": null
+        }
+      ]
+    },
+    "InfNPCHeli.lua": {
+      "eng": [
+        {
+          "key": "attackHeliTypeFREE",
+          "value": "Attack heli type in FreeRoam",
+          "line": null
+        },
+        {
+          "key": "attackHeliTypeMB",
+          "value": "Attack heli type in MB",
+          "line": null
+        },
+        {
+          "key": "attackHeliTypeSettings",
+          "value": [
+            "HP-48 Krokodil",
+            "UTH-66 Blackfoot"
+          ],
+          "line": null
+        },
+        {
+          "key": "attackHeliFovaFREE",
+          "value": "Attack heli class in FreeRoam",
+          "line": null
+        },
+        {
+          "key": "attackHeliFovaMB",
+          "value": "Attack heli class in MB",
+          "line": null
+        },
+        {
+          "key": "attackHeliFovaSettingsSBH",
+          "value": [
+            "Default",
+            "Black",
+            "Red",
+            "All one random type",
+            "Each heli random type",
+            "Enemy prep"
+          ],
+          "line": null
+        },
+        {
+          "key": "attackHeliFovaSettingsUTH",
+          "value": [
+            "uth_v00",
+            "uth_v02",
+            "uth_v03",
+            "All one random type",
+            "Each heli random type",
+            "Enemy prep"
+          ],
+          "line": null
+        },
+        {
+          "key": "attackHeliPatrolsFREE",
+          "value": "Attack heli patrols in free roam",
+          "line": null
+        },
+        {
+          "key": "attackHeliPatrolsMB",
+          "value": "Attack heli patrols in MB",
+          "line": null
+        },
+        {
+          "key": "supportHeliPatrolsMB",
+          "value": "NPC support heli patrols in MB",
+          "line": null
+        },
+        {
+          "key": "attackHeliPatrolsSettings",
+          "value": [
+            "No helis",
+            "1 heli",
+            "2 helis",
+            "3 helis",
+            "4 helis",
+            "Enemy prep"
+          ],
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "attackHeliPatrolsMB",
+          "value": "Spawns some npc attack helis that roam around mother base.",
+          "line": null
+        },
+        {
+          "key": "supportHeliPatrolsMB",
+          "value": "Spawns some npc support helis that roam around mother base.",
+          "line": null
+        },
+        {
+          "key": "attackHeliPatrolsFREE",
+          "value": "Allows multiple enemy helicopters that travel between larger CPs. Due to limitations their current position will not be saved/restored so may 'dissapear/appear' on reload.",
+          "line": null
+        },
+        {
+          "key": "attackHeliFovaFREE",
+          "value": "Combined appearance and health",
+          "line": null
+        }
+      ]
+    },
+    "InfNPCOcelot.lua": {
+      "eng": [
+        {
+          "key": "mbEnableOcelot",
+          "value": "Enable Ocelot",
+          "line": null
+        },
+        {
+          "key": "mbOcelotRailMode",
+          "value": "Ocelot Railing Mode",
+          "line": null
+        },
+        {
+          "key": "mbOcelotRailModeSettingNames",
+          "value": [
+            "Off",
+            "Start",
+            "Leave"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbOcelotRailVoice",
+          "value": "Ocelot Railing Voice",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbEnableOcelot",
+          "value": "Enables Ocelot to roam the command platform.",
+          "line": null
+        },
+        {
+          "key": "mbOcelotRailMode",
+          "value": "Makes Ocelot observe Mother Base from a railing on the command platform. Start will have him appear there since the start of your visit, and Leave will have him appear when you take off by helicopter.",
+          "line": null
+        },
+        {
+          "key": "mbOcelotRailVoice",
+          "value": "Makes Ocelot greet you when approached while he's on a railing.",
+          "line": null
+        }
+      ]
+    },
+    "InfObjects.lua": {
+      "eng": [
+        {
+          "key": "objectsMenu",
+          "value": "Objects menu",
+          "line": null
+        },
+        {
+          "key": "addMarkerObjects",
+          "value": "Add marked objects to list",
+          "line": null
+        },
+        {
+          "key": "writeObjects",
+          "value": "Write Objects List",
+          "line": null
+        },
+        {
+          "key": "loadObjectNames",
+          "value": "Load Objects List",
+          "line": null
+        },
+        {
+          "key": "clearObjects",
+          "value": "Clear Objects List",
+          "line": null
+        },
+        {
+          "key": "selectListObject",
+          "value": "Browse object list",
+          "line": null
+        },
+        {
+          "key": "addObjectLookupList",
+          "value": "Add lookup list",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "objectsMenu",
+          "value": "For adding game object names in the game to a Objects List, and writing/loading them to files.",
+          "line": null
+        },
+        {
+          "key": "addMarkerObjects",
+          "value": "Adds current marked game object names to objects list, objects list can be written to file with Write Objects List command.",
+          "line": null
+        },
+        {
+          "key": "writeObjects",
+          "value": "Writes Objects List to file in MGS_TPP\\mod\\",
+          "line": null
+        },
+        {
+          "key": "loadObjectNames",
+          "value": "Loads objects list from file in MGS_TPP\\mod\\",
+          "line": null
+        },
+        {
+          "key": "clearObjects",
+          "value": "Clears Objects List",
+          "line": null
+        },
+        {
+          "key": "addObjectLookupList",
+          "value": "Lets you cycle through a number of lookup lists IH uses and add all items from it to the main object list.",
+          "line": null
+        }
+      ]
+    },
+    "InfPositions.lua": {
+      "eng": [
+        {
+          "key": "positionsMenu",
+          "value": "Positions menu",
+          "line": null
+        },
+        {
+          "key": "addPosition",
+          "value": "Add current position to Positions List",
+          "line": null
+        },
+        {
+          "key": "addMarkerPositions",
+          "value": "Add markers to Positions List",
+          "line": null
+        },
+        {
+          "key": "writePositions",
+          "value": "Write Positions List",
+          "line": null
+        },
+        {
+          "key": "clearPositions",
+          "value": "Clear Positions List",
+          "line": null
+        },
+        {
+          "key": "loadPositions",
+          "value": "Load positions from file",
+          "line": null
+        },
+        {
+          "key": "selectListPosition",
+          "value": "Select position",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "positionsMenu",
+          "value": "For adding positions in the game to a Positions List, and writing/loading them to files.",
+          "line": null
+        },
+        {
+          "key": "addPosition",
+          "value": "Add current player or freecam position to Positions List, positions list can be written to file with Write Positons List command.",
+          "line": null
+        },
+        {
+          "key": "addMarkerPositions",
+          "value": "Adds current user markers to positions list, positions list can be written to file with Write Positons List command.",
+          "line": null
+        },
+        {
+          "key": "writePositions",
+          "value": "Writes Positions List to files in MGS_TPP\\mod\\",
+          "line": null
+        },
+        {
+          "key": "clearPositions",
+          "value": "Clears Positions List",
+          "line": null
+        },
+        {
+          "key": "loadPositions",
+          "value": "Loads positions from MGS_TPP\\mod\\positions.txt",
+          "line": null
+        },
+        {
+          "key": "selectListPosition",
+          "value": "Selects a position from positions list, mostly just used to browse positions at the moment.",
+          "line": null
+        }
+      ]
+    },
+    "InfProgression.lua": {
+      "eng": [
+        {
+          "key": "progressionMenu",
+          "value": "Progression menu",
+          "line": null
+        },
+        {
+          "key": "repopulateRadioTapes",
+          "value": "Repopulate music tape radios",
+          "line": null
+        },
+        {
+          "key": "mbCollectionRepop",
+          "value": "Repopulate MB plants and diamonds",
+          "line": null
+        },
+        {
+          "key": "repopAARadars",
+          "value": "Repopulate AA Radars",
+          "line": null
+        },
+        {
+          "key": "mbForceBattleGearDevelopLevel",
+          "value": "Force BattleGear built level",
+          "line": null
+        },
+        {
+          "key": "resetPaz",
+          "value": "Reset Paz state to beginning",
+          "line": null
+        },
+        {
+          "key": "paz_reset",
+          "value": "Paz reset",
+          "line": null
+        },
+        {
+          "key": "unlockPlayableAvatar",
+          "value": "Unlock playable avatar",
+          "line": null
+        },
+        {
+          "key": "returnQuiet",
+          "value": "Return Quiet after mission 45",
+          "line": null
+        },
+        {
+          "key": "quiet_already_returned",
+          "value": "Quiet has already returned.",
+          "line": null
+        },
+        {
+          "key": "quiet_return",
+          "value": "Quiet has returned.",
+          "line": null
+        },
+        {
+          "key": "unlockDLC",
+          "value": "Unlock DLC",
+          "line": null
+        },
+        {
+          "key": "aaradar_reset",
+          "value": "[Intel] an AA Radar has been replaced in the field",
+          "line": null
+        },
+        {
+          "key": "disableVolunteers",
+          "value": "Disable volunteers",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbCollectionRepop",
+          "value": "Regenerates plants on Zoo platform and diamonds on Mother base over time.",
+          "line": null
+        },
+        {
+          "key": "repopAARadars",
+          "value": "Number of mission completes before destroyed Anti Air Radars are rebuilt.",
+          "line": null
+        },
+        {
+          "key": "mbForceBattleGearDevelopLevel",
+          "value": "Changes the build state of BattleGear in it's hangar, 0 is use the regular story progression.",
+          "line": null
+        },
+        {
+          "key": "unlockPlayableAvatar",
+          "value": "Unlock avatar before mission 46",
+          "line": null
+        },
+        {
+          "key": "unlockWeaponCustomization",
+          "value": "Unlock without having to complete legendary gunsmith missions",
+          "line": null
+        },
+        {
+          "key": "returnQuiet",
+          "value": "Instantly return Quiet, runs same code as the Reunion mission 11 replay.",
+          "line": null
+        },
+        {
+          "key": "disableVolunteers",
+          "value": "Force disable volunteers joining Mother Base on mission completion.",
+          "line": null
+        }
+      ]
+    },
+    "InfPuppy.lua": {
+      "eng": [
+        {
+          "key": "mbEnablePuppy",
+          "value": "Puppy DDog",
+          "line": null
+        },
+        {
+          "key": "mbEnablePuppySettings",
+          "value": [
+            "Off",
+            "Missing eye",
+            "Normal eyes"
+          ],
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbEnablePuppy",
+          "value": "Note: Requires you to actually get and complete the base game ddog puppy sequence.",
+          "line": null
+        }
+      ]
+    },
+    "InfQuestIvars.lua": {
+      "eng": [
+        {
+          "key": "sideOpsMenu",
+          "value": "Side ops menu",
+          "line": null
+        },
+        {
+          "key": "quest_forceOpen",
+          "value": "Force Open",
+          "line": null
+        },
+        {
+          "key": "quest_forceRepop",
+          "value": "Force Repop",
+          "line": null
+        },
+        {
+          "key": "quest_updateRepopMode",
+          "value": "Repop mode",
+          "line": null
+        },
+        {
+          "key": "quest_updateRepopModeSettingNames",
+          "value": [
+            "On none left",
+            "Allways"
+          ],
+          "line": null
+        },
+        {
+          "key": "quest_setIsOnceToRepop",
+          "value": "Repop one-time sideops",
+          "line": null
+        },
+        {
+          "key": "quest_forceQuestNumber",
+          "value": "Force specific sideop #",
+          "line": null
+        },
+        {
+          "key": "sideOpsCategoryMenu",
+          "value": "Sideops category selection menu",
+          "line": null
+        },
+        {
+          "key": "quest_category_NO_CATEGORY",
+          "value": "No category assigned",
+          "line": null
+        },
+        {
+          "key": "quest_category_STORY",
+          "value": "Story/unique",
+          "line": null
+        },
+        {
+          "key": "quest_category_EXTRACT_INTERPRETER",
+          "value": "Extract interpreter",
+          "line": null
+        },
+        {
+          "key": "quest_category_BLUEPRINT",
+          "value": "Secure blueprint",
+          "line": null
+        },
+        {
+          "key": "quest_category_EXTRACT_HIGHLY_SKILLED",
+          "value": "Extract highly-skilled soldier",
+          "line": null
+        },
+        {
+          "key": "quest_category_PRISONER",
+          "value": "Prisoner extraction",
+          "line": null
+        },
+        {
+          "key": "quest_category_CAPTURE_ANIMAL",
+          "value": "Capture animals",
+          "line": null
+        },
+        {
+          "key": "quest_category_WANDERING_SOLDIER",
+          "value": "Extract wandering Mother Base soldier",
+          "line": null
+        },
+        {
+          "key": "quest_category_DDOG_PRISONER",
+          "value": "Unlucky Dog",
+          "line": null
+        },
+        {
+          "key": "quest_category_ELIMINATE_HEAVY_INFANTRY",
+          "value": "Eliminate heavy infantry",
+          "line": null
+        },
+        {
+          "key": "quest_category_MINE_CLEARING",
+          "value": "Mine clearing",
+          "line": null
+        },
+        {
+          "key": "quest_category_ELIMINATE_ARMOR_VEHICLE",
+          "value": "Eliminate the armored vehicle unit",
+          "line": null
+        },
+        {
+          "key": "quest_category_EXTRACT_GUNSMITH",
+          "value": "Extract the Legendary Gunsmith",
+          "line": null
+        },
+        {
+          "key": "quest_category_ELIMINATE_TANK_UNIT",
+          "value": "Eliminate tank unit",
+          "line": null
+        },
+        {
+          "key": "quest_category_ELIMINATE_PUPPETS",
+          "value": "Eliminate wandering puppets",
+          "line": null
+        },
+        {
+          "key": "quest_category_TARGET_PRACTICE",
+          "value": "Target practice",
+          "line": null
+        },
+        {
+          "key": "quest_categorySettings",
+          "value": [
+            "All",
+            "None",
+            "Addon only"
+          ],
+          "line": null
+        },
+        {
+          "key": "quest_selectForArea",
+          "value": "Selection for Area mode",
+          "line": null
+        },
+        {
+          "key": "quest_selectForAreaSettings",
+          "value": [
+            "First found (default)",
+            "Random",
+            "Random Addon"
+          ],
+          "line": null
+        },
+        {
+          "key": "quest_addonsCountForCompletion",
+          "value": "Include add-on sideops in completion percentage",
+          "line": null
+        },
+        {
+          "key": "rerollQuestSelection",
+          "value": "Reroll sideops selection",
+          "line": null
+        },
+        {
+          "key": "showOnUiMenu",
+          "value": "Show on UI menu",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Active",
+          "value": "Show Active",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Cleared",
+          "value": "Show Cleared",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Uncleared",
+          "value": "Show Uncleared",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Activable",
+          "value": "Show Activable",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Open",
+          "value": "Show Open",
+          "line": null
+        },
+        {
+          "key": "quest_uiShowSettings",
+          "value": [
+            "Hide",
+            "Show"
+          ],
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_Active",
+          "value": "Sort Active",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_Cleared",
+          "value": "Sort Cleared",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_Uncleared",
+          "value": "Sort Uncleared",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_Activable",
+          "value": "Sort Activable",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_Open",
+          "value": "Sort Open",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_category",
+          "value": "Sort by Category",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_locationId",
+          "value": "Sort by Location",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_questAreaX",
+          "value": "Sort by sideop area",
+          "line": null
+        },
+        {
+          "key": "quest_uiSortSettings",
+          "value": [
+            "None",
+            "Ascending",
+            "Descending"
+          ],
+          "line": null
+        },
+        {
+          "key": "quest_uiSortBoolSettings",
+          "value": [
+            "None",
+            "Top",
+            "Bottom"
+          ],
+          "line": null
+        },
+        {
+          "key": "forceAllQuestOpenFlagFalse",
+          "value": "Set questOpenFlag array to false",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "rerollQuestSelection",
+          "value": "Note: You may not see any change unless you use 'Selection for Area mode' set to Random. Many of the other IH sideop options allready run this after you change them.",
+          "line": null
+        },
+        {
+          "key": "quest_forceQuestNumber",
+          "value": "WARNING: This allows opening a sideop outside of normal progression. Unlocks the sideop with the quest number that shows in the UI. Since the sideops shown in the UI are limited, try 'Show on UI mode' and other filtering settings to show other sideops.",
+          "line": null
+        },
+        {
+          "key": "quest_forceOpen",
+          "value": "Lets you force sideops open sideops before the usual progression.",
+          "line": null
+        },
+        {
+          "key": "quest_forceRepop",
+          "value": "Lets you force story and one-time sideops to be replayable.",
+          "line": null
+        },
+        {
+          "key": "quest_updateRepopMode",
+          "value": "[[Lets you choose the behaviour of how repeatable sideops are repopulated. The update is run for the sideop area of a sideop you just finished, or for all areas when changing many of the IH sideops options or rerolling sideops.  \r\nThe default 'None left' will only repopulate sideops when there are no other uncompleted sideops, and all other repeatable sideops have been completed.  \r\n'Allways' will refresh repeatable sideops every time the update is called.  \r\nBest use with Select for Area mode set to Random.]]",
+          "line": null
+        },
+        {
+          "key": "quest_setIsOnceToRepop",
+          "value": "Lets you force story and one-time sideops to be replayable.",
+          "line": null
+        },
+        {
+          "key": "quest_selectForArea",
+          "value": "[[Sideops are broken into areas to stop overlap, this option lets you control the choice which repop sideop will be selected to be Active for the area.  \r\n'Random Addon' will prioritize Addon sideops first.  \r\nAll selection is still prioritized by uncompleted story sideops, then other uncompleted sideops, then repop sideops selected by this option.]]",
+          "line": null
+        },
+        {
+          "key": "sideOpsCategoryMenu",
+          "value": "Per category selection of which sidops can be Active.",
+          "line": null
+        },
+        {
+          "key": "showOnUiMenu",
+          "value": "[[Settings for what sideops to show and how they should be sorted depedending on various parameters for sideops on the idroid sideops list.  \r\nThe vanilla behavior just shows current Active and Cleared sideops, in index order, which lets you see past progression/completion,  \r\nThough since uncleared sideops do have priority, one will be selected for Active.  \r\nSo if there's multiple uncleared for an area they will not be shown, which gives you less of an idea of future progression.  \r\nThese option give you individual control for showing sideops depending on their conditions.  \r\nFor a given sideop multiple of the underlying conditions may be true at one time and either depend on your progress through the game, or from other IH settings.  \r\nThere is however a limit of 192 entries for the sideop list (there's 157 sideops in the base game), which some settings might push over if you have addon sideops, in which case some Cleared entries be randomly dropped from the list.  \r\nSee the notes for each option for more info.  \r\nSorting:  \r\nSorting will proceed through all flags that have a sorting setting (not set to None). So sort is in respect to the option above it.  \r\nNone: Will not apply any specific sort, so will just be in index order, but may be moved around if other flags sort it.  \r\nThe other settings, Top, Bottom or Ascending, Descending depending on the flag type, will sort as the settings suggest, but in relation to the prior flags.  \r\nSince the final sort is by sideop index (the number on the left of the entry in the sideop list) you can use that to see where the list sections from one sorted flag type to the next.  \r\n]]",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Active",
+          "value": "Default is Show. Sideops that are Active are the ones actually currently in play and start when you arrive in the sideop area. Independent of Cleared. You normally wouldn't set this setting to Hide.",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Cleared",
+          "value": "Default is Show. Quests that have been completed.",
+          "line": null
+        },
+        {
+          "key": "questuiShow_Uncleared",
+          "value": "Quests that have not been completed.",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Activable",
+          "value": "Only shows those sideops in the selection for being Activated (which includes Active). Usually the best setting to show what sideops are being considered depending on all the underlying conditions and IH settings.",
+          "line": null
+        },
+        {
+          "key": "quest_uiShow_Open",
+          "value": "Will try and show all Open sideops, which is usually every sideop as soon as they are introduced through game progression. Most likely to hit the UI limit entries when a lot of addon sideops are installed.",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_category",
+          "value": "The base game sideops are more or less ordered by category already, however addon sideops are added to the end, this sorts by a similar order but puts Story sideops first.",
+          "line": null
+        },
+        {
+          "key": "quest_uiSort_questAreaX",
+          "value": "Each main location of the game (Afgh, Africa) is sectioned into about 8 sideops areas to stop overlap and manage loading. You can look at the sideop index to clarify where the list goes from one area to the next (the numbers within an area will be increasing, then be lower for the first sideop in another area). You may want to use in combination with Sort by Location.",
+          "line": null
+        },
+        {
+          "key": "debugQuestsMenu",
+          "value": "WARNING: don't use these unless you know exactly what they do.",
+          "line": null
+        }
+      ]
+    },
+    "InfReinforce.lua": {
+      "eng": [
+        {
+          "key": "enemyReinforceMenu",
+          "value": "Enemy reinforcements menu",
+          "line": null
+        },
+        {
+          "key": "forceSuperReinforce",
+          "value": "Vehicle reinforcements",
+          "line": null
+        },
+        {
+          "key": "forceSuperReinforceSettings",
+          "value": [
+            "Off",
+            "Enemy Prep",
+            "Force Prep"
+          ],
+          "line": null
+        },
+        {
+          "key": "forceReinforceRequest",
+          "value": "Force reinforce request for heli",
+          "line": null
+        },
+        {
+          "key": "enableHeliReinforce",
+          "value": "Force enable enemy heli reinforce (disables heli sideops)",
+          "line": null
+        },
+        {
+          "key": "disableReinforceHeliPullOut",
+          "value": "Disable reinforce heli pull-out",
+          "line": null
+        },
+        {
+          "key": "enableSoldiersWithVehicleReinforce",
+          "value": "Soldier reinforce with all vehicle reinforce types",
+          "line": null
+        },
+        {
+          "key": "overrideReinforceColoring",
+          "value": "Reinforcement class",
+          "line": null
+        },
+        {
+          "key": "overrideReinforceColoringSettings",
+          "value": [
+            "Enemy prep",
+            "None",
+            "Black",
+            "Red"
+          ],
+          "line": null
+        },
+        {
+          "key": "unloadReinforceOnFinish",
+          "value": "Despawn eliminated reinforcement",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "forceSuperReinforce",
+          "value": "In the normal game vehicle reinforcments through this system is only used for two missions, this enables it for more. Only heli will appear in certain outposts.",
+          "line": null
+        },
+        {
+          "key": "enableSoldiersWithVehicleReinforce",
+          "value": "Allows an extra set of reinforce soldiers with all vehicle reinforce types instead of just Wheeled Armored Vehicles.",
+          "line": null
+        },
+        {
+          "key": "enableHeliReinforce",
+          "value": "Since the enemy heli reinforce feature re-uses the sideops heli, enabling this will disable sideops that have a heli in them so that the reinforce can use it.",
+          "line": null
+        },
+        {
+          "key": "overrideReinforceColoring",
+          "value": "Override the coloring type of the reinforcement helicopter or vehicle. Vanilla only uses None or Black.",
+          "line": null
+        },
+        {
+          "key": "unloadReinforceOnFinish",
+          "value": "Despawn eliminated reinforcement vehicles so they can be spawned again later in the same session.",
+          "line": null
+        }
+      ]
+    },
+    "InfResources.lua": {
+      "eng": [
+        {
+          "key": "resourceScaleMenu",
+          "value": "Resource scale menu",
+          "line": null
+        },
+        {
+          "key": "enableResourceScale",
+          "value": "Enable resource amount scales",
+          "line": null
+        },
+        {
+          "key": "resourceScaleMaterial",
+          "value": "Material case scale",
+          "line": null
+        },
+        {
+          "key": "resourceScalePlant",
+          "value": "Plant scale",
+          "line": null
+        },
+        {
+          "key": "resourceScalePoster",
+          "value": "Poster scale",
+          "line": null
+        },
+        {
+          "key": "resourceScaleDiamond",
+          "value": "Diamond scale",
+          "line": null
+        },
+        {
+          "key": "resourceScaleContainer",
+          "value": "Container scale",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "enableResourceScale",
+          "value": "Enables the resource scale options that scale the amount of resources when gathered (material case resources, containers, diamonds, plants)",
+          "line": null
+        }
+      ]
+    },
+    "InfRevengeIvars.lua": {
+      "eng": [
+        {
+          "key": "revengeMenu",
+          "value": "Enemy Prep menu",
+          "line": null
+        },
+        {
+          "key": "revengeCustomMenu",
+          "value": "Custom prep menu",
+          "line": null
+        },
+        {
+          "key": "revengeSystemMenu",
+          "value": "Prep system menu",
+          "line": null
+        },
+        {
+          "key": "revengeModeFREE",
+          "value": "Free roam prep mode",
+          "line": null
+        },
+        {
+          "key": "revengeModeMISSION",
+          "value": "Missions prep mode",
+          "line": null
+        },
+        {
+          "key": "revengeModeMB_ALL",
+          "value": "Mother base prep mode",
+          "line": null
+        },
+        {
+          "key": "revengeModeSettings",
+          "value": [
+            "Enemy prep levels",
+            "Custom prep",
+            "Prep levels + Custom overrides"
+          ],
+          "line": null
+        },
+        {
+          "key": "revengeModeMB_ALLSettings",
+          "value": [
+            "Off",
+            "FOB style",
+            "Enemy prep levels",
+            "Custom prep",
+            "Prep levels + Custom overrides"
+          ],
+          "line": null
+        },
+        {
+          "key": "resetRevenge",
+          "value": "Reset enemy preparedness levels",
+          "line": null
+        },
+        {
+          "key": "revenge_reset",
+          "value": "Enemy prep levels reset",
+          "line": null
+        },
+        {
+          "key": "revengeBlockForMissionCount",
+          "value": "Resupply in #missions",
+          "line": null
+        },
+        {
+          "key": "revengeProfile",
+          "value": "Enemy prep system profile",
+          "line": null
+        },
+        {
+          "key": "printCustomRevengeConfig",
+          "value": "Print example current config (look in iDroid Log>All tab)",
+          "line": null
+        },
+        {
+          "key": "dEBUG_PrintRevengePoints",
+          "value": "Print enemy prep levels",
+          "line": null
+        },
+        {
+          "key": "applyPowersToOuterBase",
+          "value": "Apply enemy prep to guard posts",
+          "line": null
+        },
+        {
+          "key": "applyPowersToLrrp",
+          "value": "Apply enemy prep to patrol soldiers",
+          "line": null
+        },
+        {
+          "key": "allowHeavyArmorFREE",
+          "value": "Allow heavy armor in free roam (may have issues)",
+          "line": null
+        },
+        {
+          "key": "allowHeavyArmorMB_ALL",
+          "value": "Allow heavy armor in MB",
+          "line": null
+        },
+        {
+          "key": "allowHeavyArmorMISSION",
+          "value": "Allow heavy armor in all missions (may have issues)",
+          "line": null
+        },
+        {
+          "key": "disableMissionsWeaponRestriction",
+          "value": "Disable weapon restrictions in certain missions",
+          "line": null
+        },
+        {
+          "key": "disableNoStealthCombatRevengeMission",
+          "value": "Allow Enemy Prep change from free roam",
+          "line": null
+        },
+        {
+          "key": "allowHeadGearCombo",
+          "value": "Allow helmet and NVG or Gas mask combo",
+          "line": null
+        },
+        {
+          "key": "balanceHeadGear",
+          "value": "Ballance heavy armor and head gear distribution",
+          "line": null
+        },
+        {
+          "key": "balanceWeaponPowers",
+          "value": "Balance primary weapon distribution",
+          "line": null
+        },
+        {
+          "key": "allowMissileWeaponsCombo",
+          "value": "Allow missile combo with other weapons",
+          "line": null
+        },
+        {
+          "key": "disableConvertArmorToShield",
+          "value": "Disable convert armor to shield (if armor off)",
+          "line": null
+        },
+        {
+          "key": "enableMgVsShotgunVariation",
+          "value": "Mg vs Shotgun variation",
+          "line": null
+        },
+        {
+          "key": "randomizeSmallCpPowers",
+          "value": "Balance small CPs",
+          "line": null
+        },
+        {
+          "key": "weaponPowersMenu",
+          "value": "Weapon deployment",
+          "line": null
+        },
+        {
+          "key": "armorPowersMenu",
+          "value": "Armor deployment",
+          "line": null
+        },
+        {
+          "key": "gearPowersMenu",
+          "value": "Headgear deployment",
+          "line": null
+        },
+        {
+          "key": "cpEquipPowersMenu",
+          "value": "CP deterrent deployment",
+          "line": null
+        },
+        {
+          "key": "abilityCustomMenu",
+          "value": "Soldier abilities",
+          "line": null
+        },
+        {
+          "key": "reinforceLevel_MIN",
+          "value": "Vehicle reinforcement level min",
+          "line": null
+        },
+        {
+          "key": "reinforceLevel_MAX",
+          "value": "Vehicle reinforcement level max",
+          "line": null
+        },
+        {
+          "key": "revengeIgnoreBlocked_MIN",
+          "value": "Ignore combat-deploy supply blocks min",
+          "line": null
+        },
+        {
+          "key": "revengeIgnoreBlocked_MAX",
+          "value": "Ignore combat-deploy supply blocks max",
+          "line": null
+        },
+        {
+          "key": "reinforceCount_MIN",
+          "value": "Reinforce calls min",
+          "line": null
+        },
+        {
+          "key": "reinforceCount_MAX",
+          "value": "Reinforce calls max",
+          "line": null
+        },
+        {
+          "key": "weaponStrengthCustomMenu",
+          "value": "Weapon strength menu",
+          "line": null
+        },
+        {
+          "key": "cpEquipBoolPowersMenu",
+          "value": "CP equip strength menu",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "revengeMenu",
+          "value": "Ways to modify the Enemy preparedness system that equips the enemy in response to your actions.",
+          "line": null
+        },
+        {
+          "key": "revengeCustomMenu",
+          "value": "Lets you set the individual values that go into an enemy prep configuration (does not use the enemy prep levels), a random value between MIN and MAX for each setting is chosen on mission start. The order of items in the menu is generally order the equipment is allocated to each soldier in a CP.",
+          "line": null
+        },
+        {
+          "key": "revengeModeFREE",
+          "value": "Enemy prep levels - the normal games enemy prep levels, Custom prep - uses all the settings in the Custom prep menu, Prep levels + Custom overrides - overrides the Enemy prep levels config with any Custom prep settings that aren't set to their default setting.",
+          "line": null
+        },
+        {
+          "key": "revengeBlockForMissionCount",
+          "value": "The number of missions the enemy dispatch/resupply with unlock after your last successful dispatch mission for that type.",
+          "line": null
+        },
+        {
+          "key": "disableMissionsWeaponRestriction",
+          "value": "Missions 2, 12, 13, 16, 26, 31 normally prevent the application of shields, missiles, shotguns and MGs to the general CP enemy prep (though some may have custom enemy prep).",
+          "line": null
+        },
+        {
+          "key": "disableNoStealthCombatRevengeMission",
+          "value": "By default enemy prep only changes in response to actual missions, this option allows enemy prep changes to be applied after leaving Free roam (but not via abort)",
+          "line": null
+        },
+        {
+          "key": "resetRevenge",
+          "value": "Resets enemy prep levels to 0",
+          "line": null
+        },
+        {
+          "key": "weaponStrengthCustomMenu",
+          "value": "Whether to deploy the stronger weapon class for the weapon type",
+          "line": null
+        },
+        {
+          "key": "enableMgVsShotgunVariation",
+          "value": "In the default game the enemy prep config chooses randomly either MG or Shotguns which is applied for all CPs in the whole mission. This setting allows mixed MGs and Shotguns (but still with the enemy prep total) and also applies them per CP.",
+          "line": null
+        },
+        {
+          "key": "allowMissileWeaponsCombo",
+          "value": "In the default game soldiers with missiles only have SMGs, this allows them to have MGs, shotguns or assault rifles assigned to them.",
+          "line": null
+        },
+        {
+          "key": "randomizeSmallCpPowers",
+          "value": "Adds limits and some randomisation to small cp/lrrps enemy prep application",
+          "line": null
+        },
+        {
+          "key": "disableConvertArmorToShield",
+          "value": "Where heavy armor is disabled (free roam by default) the normal game converts armor to shields in addition to the normal shield application, this often leads to it feeling like there's just too many.",
+          "line": null
+        },
+        {
+          "key": "balanceHeadGear",
+          "value": "Adjusts application percentages of the normally mutally exclusive options of heavy armor and the different headgear pieces, not nessesary if Allow helmet and NVG or Gas mask combo option is on",
+          "line": null
+        },
+        {
+          "key": "reinforceCount_MIN",
+          "value": "Number of reinforcement calls a CP has.",
+          "line": null
+        },
+        {
+          "key": "reinforceCount_MAX",
+          "value": "Number of reinforcement calls a CP has.",
+          "line": null
+        },
+        {
+          "key": "revengeIgnoreBlocked_MIN",
+          "value": "Ignores the current results of the Combat Deployment/Dispatch/'cut off the supply' missions that affect enemy prep.",
+          "line": null
+        },
+        {
+          "key": "STEALTH_MIN",
+          "value": "Adjusts enemy soldiers notice,cure,reflex and speed ablilities.",
+          "line": null
+        },
+        {
+          "key": "COMBAT_MIN",
+          "value": "Adjusts enemy soldiers shot,grenade,reload,hp and speed abilities.",
+          "line": null
+        }
+      ]
+    },
+    "InfRouteSet.lua": {
+      "eng": [
+        {
+          "key": "routeSetMenu",
+          "value": "RouteSet menu",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeRouteSetsFREE",
+          "value": "Randomize RouteSets in free roam",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeRouteSetsMISSION",
+          "value": "Randomize RouteSets in missions",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeOnShiftChange",
+          "value": "Randomize on shift change",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeOnPhaseChange",
+          "value": "Randomize on phase change",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizePriority",
+          "value": "Randomize group priority",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeGroups",
+          "value": "Randomize group routes",
+          "line": null
+        },
+        {
+          "key": "randomizeCurrentRouteSetCmd",
+          "value": "Randomize RouteSet now",
+          "line": null
+        },
+        {
+          "key": "requires_prio_or_routes",
+          "value": "Requires rnd group priority or rnd group routes to be enabled",
+          "line": null
+        },
+        {
+          "key": "randomizing_routeset",
+          "value": "Randomizing Routeset",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "routeSetMenu",
+          "value": "Options to randomize what routes soldiers use in a Command Post.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeRouteSetsFREE",
+          "value": "Enables all following options. Also randomizes current routeSet on mission load/reload. Requires randomize group priority or group routes to be on.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeRouteSetsMISSION",
+          "value": "Enables all following options. Also randomizes current routeSet on mission load/reload. WARNING: may mess up scripted mission routes.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeOnShiftChange",
+          "value": "Randomize current routeSet on morning and night shift changes.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeOnPhaseChange",
+          "value": "Randomize current routeSet when enemy phase changes in any way, Sneak, Caution, Alert, Evasion. Up or down.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizePriority",
+          "value": "Each routeSet for a CP has a number of groups of routes, this will change the order the groups are picked from.",
+          "line": null
+        },
+        {
+          "key": "routeset_randomizeGroups",
+          "value": "Each routeSet for a CP has a number of groups of routes, this will change the order within the group.",
+          "line": null
+        },
+        {
+          "key": "randomizeCurrentRouteSetCmd",
+          "value": "Randomize current routeset right now. (Use the command in-mission).",
+          "line": null
+        }
+      ]
+    },
+    "InfRoutes.lua": {
+      "eng": [
+        {
+          "key": "routesMenu",
+          "value": "Routes menu",
+          "line": null
+        },
+        {
+          "key": "writeRoutes",
+          "value": "Write Routes List",
+          "line": null
+        },
+        {
+          "key": "loadRouteNames",
+          "value": "Load Routes List",
+          "line": null
+        },
+        {
+          "key": "clearRoutes",
+          "value": "Clear Routes List",
+          "line": null
+        },
+        {
+          "key": "selectListRoute",
+          "value": "Browse route list",
+          "line": null
+        },
+        {
+          "key": "addLookupList",
+          "value": "Add lookup list",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "routesMenu",
+          "value": "For adding route names in the game to a Routes List, and writing/loading them to files.",
+          "line": null
+        },
+        {
+          "key": "writeRoutes",
+          "value": "Writes Routes List to file in MGS_TPP\\mod\\",
+          "line": null
+        },
+        {
+          "key": "loadRouteNames",
+          "value": "Loads routes list from file in MGS_TPP\\mod\\",
+          "line": null
+        },
+        {
+          "key": "clearRoutes",
+          "value": "Clears Routes List",
+          "line": null
+        }
+      ]
+    },
+    "InfShootingPractice.lua": {
+      "eng": [
+        {
+          "key": "quest_no_best_time",
+          "value": "No best time set",
+          "line": null
+        },
+        {
+          "key": "quest_best_time",
+          "value": "Best time",
+          "line": null
+        },
+        {
+          "key": "quest_enableShootingPracticeRetry",
+          "value": "Enable Shooting Practice Retry",
+          "line": null
+        },
+        {
+          "key": "quest_setShootingPracticeTimeLimitToBestTime",
+          "value": "Set Shooting Practice time limit to best time",
+          "line": null
+        },
+        {
+          "key": "quest_setShootingPracticeCautionTimeToBestTime",
+          "value": "Set Shooting Practice caution time to best time",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "quest_enableShootingPracticeRetry",
+          "value": "Does not hide the starting point when Shooting Practice starts or finishes, and allows you to cancel while in progress and start again.",
+          "line": null
+        },
+        {
+          "key": "quest_setShootingPracticeCautionTimeToBestTime",
+          "value": "Sets the caution time/time when the timer turns red to the current best time (rounded up to the second) so you have a clearer idea when going for best time.",
+          "line": null
+        }
+      ]
+    },
+    "InfSoldier.lua": {
+      "eng": [
+        {
+          "key": "enableLrrpFreeRoam",
+          "value": "Foot patrols in free roam",
+          "line": null
+        },
+        {
+          "key": "lrrpSizeFreeRoam_MIN",
+          "value": "Patrol size min",
+          "line": null
+        },
+        {
+          "key": "lrrpSizeFreeRoam_MAX",
+          "value": "Patrol size max",
+          "line": null
+        },
+        {
+          "key": "enableWildCardFreeRoam",
+          "value": "Wildcard soldiers Free roam",
+          "line": null
+        },
+        {
+          "key": "mbAdditionalSoldiers",
+          "value": "More soldiers on MB plats",
+          "line": null
+        },
+        {
+          "key": "mbNpcRouteChange",
+          "value": "Soldiers move between platforms",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "enableWildCardFreeRoam",
+          "value": "Changes a few soldiers throughout the CPs to have unique models and high end weapons.",
+          "line": null
+        },
+        {
+          "key": "enableLrrpFreeRoam",
+          "value": "Foot patrols will travel between random CPs and will cross the field to get there.",
+          "line": null
+        },
+        {
+          "key": "mbNpcRouteChange",
+          "value": "Soldiers will periodically move between platforms (only within the same cluster).",
+          "line": null
+        },
+        {
+          "key": "mbAdditionalSoldiers",
+          "value": "Increases soldiers on platforms from 4 soldiers to 9.",
+          "line": null
+        }
+      ]
+    },
+    "InfSoldierParams.lua": {
+      "eng": [
+        {
+          "key": "soldierParamsMenu",
+          "value": "Soldier parameters menu",
+          "line": null
+        },
+        {
+          "key": "soldierParamsProfile",
+          "value": "Enable soldier parameter settings",
+          "line": null
+        },
+        {
+          "key": "soldierHealthScale",
+          "value": "Soldier life scale",
+          "line": null
+        },
+        {
+          "key": "soldierSightDistScale",
+          "value": "Soldier sight scale",
+          "line": null
+        },
+        {
+          "key": "soldierNightSightDistScale",
+          "value": "Soldier night sight scale",
+          "line": null
+        },
+        {
+          "key": "printSightFormParameter",
+          "value": "Print sight param table (look in iDroid Log>All tab)",
+          "line": null
+        },
+        {
+          "key": "printHealthTableParameter",
+          "value": "Print health param table (look in iDroid Log>All tab)",
+          "line": null
+        },
+        {
+          "key": "soldierHearingDistScale",
+          "value": "Soldier hearing distance scale",
+          "line": null
+        },
+        {
+          "key": "printHearingTable",
+          "value": "Print hearing distance table (look in iDroid Log>All tab)",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "soldierParamsProfile",
+          "value": "[[Turn this on to enable the life, sight and hearing enemy param options, turn this off if you have another mod that modifies Soldier2ParameterTables.lua (ie Hardcore mod).\",\r\n      \"Any of the following option only apply on map load or checkpoint restart.]]",
+          "line": null
+        },
+        {
+          "key": "soldierHealthScale",
+          "value": "0% will kill off all enemies",
+          "line": null
+        },
+        {
+          "key": "soldierSightDistScale",
+          "value": "A rough scale over all the soldier sight distances, except for night sight distance, use the command 'Print sight param table (look in iDroid Log>All tab)' to see exact values.",
+          "line": null
+        }
+      ]
+    },
+    "InfTimeScale.lua": {
+      "eng": [
+        {
+          "key": "timeScaleMenu",
+          "value": "Time scale menu",
+          "line": null
+        },
+        {
+          "key": "highSpeedCameraToggle",
+          "value": "Toggle TSM",
+          "line": null
+        },
+        {
+          "key": "speedCamContinueTime",
+          "value": "TSM length (seconds)",
+          "line": null
+        },
+        {
+          "key": "speedCamWorldTimeScale",
+          "value": "TSM world time scale",
+          "line": null
+        },
+        {
+          "key": "speedCamPlayerTimeScale",
+          "value": "TSM player time scale",
+          "line": null
+        },
+        {
+          "key": "speedCamNoDustEffect",
+          "value": "No screen effect",
+          "line": null
+        },
+        {
+          "key": "highspeedcam_cancel",
+          "value": "TSM cancel",
+          "line": null
+        },
+        {
+          "key": "clockTimeScale",
+          "value": "Clock time scale",
+          "line": null
+        },
+        {
+          "key": "clock_setTime",
+          "value": "Set clock hour",
+          "line": null
+        },
+        {
+          "key": "clock_setMinute",
+          "value": "Set clock minute",
+          "line": null
+        },
+        {
+          "key": "clock_setSecond",
+          "value": "Set clock second",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "highSpeedCameraToggle",
+          "value": "Lets you manually toggle Time scale mode that's usually used for Reflex/CQC.",
+          "line": null
+        },
+        {
+          "key": "speedCamContinueTime",
+          "value": "The time in seconds of the TSM",
+          "line": null
+        },
+        {
+          "key": "speedCamWorldTimeScale",
+          "value": "Time scale of the world, including soldiers/vehicles during TSM",
+          "line": null
+        },
+        {
+          "key": "speedCamPlayerTimeScale",
+          "value": "Time scale of the player during TSM",
+          "line": null
+        },
+        {
+          "key": "speedCamNoDustEffect",
+          "value": "Does not apply the dust and blur effect while TSM is active.",
+          "line": null
+        },
+        {
+          "key": "clockTimeScale",
+          "value": "Changes the time scale of the day/night/weather system. Does not change the speed of soldiers like the cigar does. Lower for closer to real time, higher for faster.",
+          "line": null
+        }
+      ]
+    },
+    "InfUserMarker.lua": {
+      "eng": [
+        {
+          "key": "userMarkerMenu",
+          "value": "User marker menu",
+          "line": null
+        },
+        {
+          "key": "warpToLastUserMarker",
+          "value": "Warp to latest marker",
+          "line": null
+        },
+        {
+          "key": "printLatestUserMarker",
+          "value": "Print latest marker",
+          "line": null
+        },
+        {
+          "key": "printUserMarkers",
+          "value": "Print all markers",
+          "line": null
+        },
+        {
+          "key": "warped_to_marker",
+          "value": "Warped to marker",
+          "line": null
+        }
+      ],
+      "help": []
+    },
+    "InfVehicle.lua": {
+      "eng": [
+        {
+          "key": "vehiclePatrolProfile",
+          "value": "Vehicle patrols in free roam",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolProfileSettings",
+          "value": [
+            "Game default - trucks only",
+            "All of one type",
+            "Each vehicle differing type"
+          ],
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolLvEnable",
+          "value": "Allow jeeps",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolTruckEnable",
+          "value": "Allow trucks",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolWavEnable",
+          "value": "Allow wheeled armored vehicles",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolWavHeavyEnable",
+          "value": "Allow heavy wheeled armored vehicles",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolTankEnable",
+          "value": "Allow tanks",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolClass",
+          "value": "Vehicle patrol class",
+          "line": null
+        },
+        {
+          "key": "vehiclePatrolClassSettings",
+          "value": [
+            "Default",
+            "Dark grey",
+            "Red",
+            "All one random type",
+            "Each vehicle random type",
+            "Enemy prep"
+          ],
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "vehiclePatrolProfile",
+          "value": "Replaces the patrolling trucks in free roam with other vehicles, picked randomly from enabled types.",
+          "line": null
+        }
+      ]
+    },
+    "InfWalkerGear.lua": {
+      "eng": [
+        {
+          "key": "enableWalkerGearsMB",
+          "value": "Walker gears in MB",
+          "line": null
+        },
+        {
+          "key": "enableWalkerGearsFREE",
+          "value": "Walker gears in free roam",
+          "line": null
+        },
+        {
+          "key": "mbWalkerGearsColor",
+          "value": "Walker gears type",
+          "line": null
+        },
+        {
+          "key": "mbWalkerGearsColorSettings",
+          "value": [
+            "Soviet",
+            "Rogue Coyote",
+            "CFA",
+            "ZRS",
+            "Diamond Dogs",
+            "Hueys Prototype (texture issues)",
+            "All one random type",
+            "Each gear random type"
+          ],
+          "line": null
+        },
+        {
+          "key": "mbWalkerGearsWeapon",
+          "value": "Walker gears weapons",
+          "line": null
+        },
+        {
+          "key": "mbWalkerGearsWeaponSettings",
+          "value": [
+            "Even split of weapons",
+            "Minigun",
+            "Missiles",
+            "All one random type",
+            "Each gear random type"
+          ],
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "enableWalkerGearsFREE",
+          "value": "Adds a Walker gear to each main base.",
+          "line": null
+        }
+      ]
+    },
+    "InfWarp.lua": {
+      "eng": [
+        {
+          "key": "warpPlayerUpdate",
+          "value": "Warp [Mode]",
+          "line": null
+        },
+        {
+          "key": "warp_mode_on",
+          "value": "Warp mode on",
+          "line": null
+        },
+        {
+          "key": "warp_mode_off",
+          "value": "Warp mode off",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "warpPlayerUpdate",
+          "value": "Essentially no-clip mode (for those that remember what that means). It teleports your player a small distance each update of which warp direction button you press or hold. Will move you through walls/geometry. The menu navigation/dpad/arrow keys will warp you in that direction, [STANCE] will warp you down and [CALL] will warp you up.",
+          "line": null
+        }
+      ]
+    },
+    "InfWeather.lua": {
+      "eng": [
+        {
+          "key": "weatherMenu",
+          "value": "Weather menu",
+          "line": null
+        },
+        {
+          "key": "weather_forceType",
+          "value": "Force weather",
+          "line": null
+        },
+        {
+          "key": "weather_fogDensity",
+          "value": "Fog density",
+          "line": null
+        },
+        {
+          "key": "weather_fogType",
+          "value": "Fog type",
+          "line": null
+        },
+        {
+          "key": "weather_requestTag",
+          "value": "RequestTag",
+          "line": null
+        },
+        {
+          "key": "weather_requestTagInterpTime",
+          "value": "RequestTag interp time",
+          "line": null
+        },
+        {
+          "key": "setSkyParameters",
+          "value": "Apply Sky Parameters",
+          "line": null
+        },
+        {
+          "key": "restoreDefaultSkyParameters",
+          "value": "Unapply Sky Parameters",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterSetSkyScale",
+          "value": "Upper clouds scale",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterAddOffsetY",
+          "value": "Horizon clouds height",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterSetScrollSpeedRate",
+          "value": "Horizon clouds speed",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "weather_requestTag",
+          "value": "A collection of sky, lighting settings bundled under a 'tag' name in the locations weatherParameters file. Only applies when you press activate (not persitant over sessions). Game may reset or change it at different points.",
+          "line": null
+        },
+        {
+          "key": "weather_requestTagInterpTime",
+          "value": "Interpolation time between the prior tag and the one requested.",
+          "line": null
+        },
+        {
+          "key": "restoreDefaultSkyParameters",
+          "value": "Stops the IH sky parameters from being applied.",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterSetSkyScale",
+          "value": "Scale of main clouds overhead",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterAddOffsetY",
+          "value": "Height of horizon clouds",
+          "line": null
+        },
+        {
+          "key": "weather_skyParameterSetScrollSpeedRate",
+          "value": "Scrolling speed of horizon clouds",
+          "line": null
+        }
+      ]
+    },
+    "InfZooSoldier.lua": {
+      "eng": [
+        {
+          "key": "mbZooEnableSoldiers",
+          "value": "Enable soldiers on Zoo",
+          "line": null
+        }
+      ],
+      "help": [
+        {
+          "key": "mbZooEnableSoldiers",
+          "value": "Adds soldiers to the Animal Conservation Platform.",
+          "line": null
+        }
+      ]
+    }
+  }
+}
