@@ -17,14 +17,10 @@ if (-not (Test-Path -LiteralPath (Join-Path $ih "GameDir\mod\modules\InfLang.lua
   $extract = Join-Path $env:TEMP "InfiniteHeaven-r267-extract"
   Remove-Item -LiteralPath $extract -Recurse -Force -ErrorAction SilentlyContinue
   Expand-Archive -LiteralPath $zip -DestinationPath $extract -Force
+  $mgsv = Get-ChildItem -LiteralPath $extract -Filter "*.mgsv" -File | Select-Object -First 1
+  if (-not $mgsv) { throw "r267 archive has no .mgsv" }
   New-Item -ItemType Directory -Path $ih -Force | Out-Null
-  if (Test-Path -LiteralPath (Join-Path $extract "metadata.xml")) {
-    Copy-Item -LiteralPath (Join-Path $extract "*") -Destination $ih -Recurse -Force
-  } else {
-    $inner = Get-ChildItem -LiteralPath $extract -Directory | Select-Object -First 1
-    if (-not $inner) { throw "r267 archive has neither metadata.xml nor a root folder" }
-    Copy-Item -LiteralPath (Join-Path $inner.FullName "*") -Destination $ih -Recurse -Force
-  }
+  Expand-Archive -LiteralPath $mgsv.FullName -DestinationPath $ih -Force
 }
 
 if (-not (Test-Path -LiteralPath (Join-Path $hook "IHHook\IHHook.vcxproj"))) {

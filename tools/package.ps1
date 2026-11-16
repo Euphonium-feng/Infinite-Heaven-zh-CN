@@ -22,7 +22,7 @@ New-Item -ItemType Directory -Path (Join-Path $out "staging-ihhook") -Force | Ou
 $ihStage = Join-Path $out "staging-ih"
 $hookStage = Join-Path $out "staging-ihhook"
 
-Copy-Item -LiteralPath (Join-Path $ih "*") -Destination $ihStage -Recurse -Force
+Copy-Item -Path (Join-Path $ih "*") -Destination $ihStage -Recurse -Force
 New-Item -ItemType Directory -Path (Join-Path $ihStage "GameDir\mod\fonts") -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repo "assets\SarasaGothicSC-Regular.ttf") `
   -Destination (Join-Path $ihStage "GameDir\mod\fonts\SarasaGothicSC-Regular.ttf") -Force
@@ -32,7 +32,7 @@ Copy-Item -LiteralPath (Join-Path $repo "assets\Sarasa-LICENSE.txt") `
   -Metadata (Join-Path $ihStage "metadata.xml") `
   -GameDir (Join-Path $ihStage "GameDir")
 
-Copy-Item -LiteralPath (Join-Path $ihhook "makebite\*") -Destination $hookStage -Recurse -Force
+Copy-Item -Path (Join-Path $ihhook "makebite\*") -Destination $hookStage -Recurse -Force
 Copy-Item -LiteralPath $IhhookDll -Destination (Join-Path $hookStage "GameDir\dinput8.dll") -Force
 New-Item -ItemType Directory -Path (Join-Path $hookStage "GameDir\mod\fonts") -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repo "assets\SarasaGothicSC-Regular.ttf") `
