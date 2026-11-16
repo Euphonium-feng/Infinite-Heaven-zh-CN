@@ -25,9 +25,11 @@ if (-not (Test-Path -LiteralPath (Join-Path $ih "GameDir\mod\modules\InfLang.lua
 
 if (-not (Test-Path -LiteralPath (Join-Path $hook "IHHook\IHHook.vcxproj"))) {
   git clone --no-checkout --branch r25 --depth 1 https://github.com/kapuragu/IHHook.git $hook
-  git -C $hook -c core.symlinks=false checkout -- .
+  git -C $hook -c core.symlinks=false reset --hard
 }
 
+New-Item -ItemType Directory -Path (Join-Path $hook "include\GameDir\mod\fonts") -Force | Out-Null
+New-Item -ItemType Directory -Path (Join-Path $hook "makebite\GameDir\mod\fonts") -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repo "assets\SarasaGothicSC-Regular.ttf") `
   -Destination (Join-Path $hook "include\GameDir\mod\fonts\SarasaGothicSC-Regular.ttf") -Force
 Copy-Item -LiteralPath (Join-Path $repo "assets\SarasaGothicSC-Regular.ttf") `
