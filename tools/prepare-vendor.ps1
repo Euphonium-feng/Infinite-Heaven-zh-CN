@@ -24,7 +24,8 @@ if (-not (Test-Path -LiteralPath (Join-Path $ih "GameDir\mod\modules\InfLang.lua
 }
 
 if (-not (Test-Path -LiteralPath (Join-Path $hook "IHHook\IHHook.vcxproj"))) {
-  git clone --branch r25 --depth 1 https://github.com/kapuragu/IHHook.git $hook
+  git clone --no-checkout --branch r25 --depth 1 https://github.com/kapuragu/IHHook.git $hook
+  git -C $hook -c core.symlinks=false checkout -- .
 }
 
 Copy-Item -LiteralPath (Join-Path $repo "assets\SarasaGothicSC-Regular.ttf") `
