@@ -39,6 +39,9 @@ namespace IHHook {
 
 	//DEBUGNOW actually select the font in combobox, ala styles combo?
 	bool SelectFont(std::string selectFontName) {
+		if (selectFontName.empty()) {
+			selectFontName = cjkDefaultFont;
+		}
 		bool foundFont = false;
 		ImGuiIO& io = ImGui::GetIO();
 		ImFont* font_current = ImGui::GetFont();
@@ -321,7 +324,7 @@ namespace IHHook {
 			return false;
 		}
 
-		std::string fontName = defaultFont;
+		std::string fontName = cjkDefaultFont;
 
 		std::string line;
 		while (std::getline(infile, line)) {
@@ -499,7 +502,9 @@ namespace IHHook {
 			}
 		}//while line
 
-		SelectFont(fontName);
+		if (!SelectFont(fontName)) {
+			SelectFont(cjkDefaultFont);
+		}
 
 		return true;
 	}//ParseGuiStyle
