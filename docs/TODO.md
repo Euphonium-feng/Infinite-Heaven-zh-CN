@@ -11,7 +11,7 @@
 
 ## 已完成（云端）
 
-- GitHub Actions 运行 `43902070199` 全部步骤通过。
+- GitHub Actions 运行 `43904515068` 全部步骤通过（含最终文档提交）。
 - 云端已生成并上传 `Infinite-Heaven-r267-zh-CN.mgsv` 与 `IHHook-r25-zh-CN.mgsv`。
 - 已下载制品并核对：两个包的 `FileEntries` 均与实体文件哈希一致；IHHook 包已登记 `dinput8.dll`、配置、样式与字体。
 
