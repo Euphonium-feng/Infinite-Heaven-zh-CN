@@ -1,5 +1,6 @@
 node_modules/
 artifacts/
 *.mgsv
+.tmp-url.txt
 vendor/infinite-heaven/
 vendor/ihhook/

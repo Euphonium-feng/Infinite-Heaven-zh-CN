@@ -9,14 +9,16 @@
 - IHHook 字体加载改为 Sarasa Gothic SC 与 CJK glyph range。
 - 增加 GitHub Actions 构建、Lua 校验和 SnakeBite 打包脚本。
 
+## 已完成（云端）
+
+- GitHub Actions 运行 `43902070199` 全部步骤通过。
+- 云端已生成并上传 `Infinite-Heaven-r267-zh-CN.mgsv` 与 `IHHook-r25-zh-CN.mgsv`。
+- 已下载制品并核对：两个包的 `FileEntries` 均与实体文件哈希一致；IHHook 包已登记 `dinput8.dll`、配置、样式与字体。
+
 ## 待完成
 
-- 云构建已能编译 IHHook 并生成两个 `.mgsv`；当前只剩工作流收尾状态修正。
-- 等待修正后的 GitHub Actions 运行成功。
-- 下载制品并在 SnakeBite 中实机安装检查。
+- 由用户在 SnakeBite 中实机安装检查中文菜单显示、字体和切换项。
 
 ## 下一步
 
-提交当前工作区并推送，然后运行：
-
-`gh run watch --exit-status`
+下载最新绿色运行的制品，安装后检查中文菜单显示与切换项。
