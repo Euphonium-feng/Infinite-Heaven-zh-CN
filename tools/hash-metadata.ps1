@@ -30,8 +30,9 @@ $known = @{}
 foreach ($entry in $fileEntriesNode.SelectNodes("FileEntry")) {
   $known[$entry.FilePath] = $true
 }
-foreach ($file in Get-ChildItem -LiteralPath (Join-Path $root "mod") -Recurse -File) {
+foreach ($file in Get-ChildItem -LiteralPath $root -Recurse -File) {
   $relative = "/" + $file.FullName.Substring($root.Length).Replace("\", "/").TrimStart("/")
+  if ($relative -eq "/metadata.xml") { continue }
   if ($known.ContainsKey($relative)) { continue }
   $entry = $xml.CreateElement("FileEntry")
   $entry.SetAttribute("FilePath", $relative)
